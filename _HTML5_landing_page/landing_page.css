@@ -1,0 +1,231 @@
+/*
+	@name landing_page
+*/
+/* Only edit this if you know what you are doing! */
+body { margin: 0px; padding: 0px; font-family:"Arial"; overflow-x:hidden; }
+
+/* Only edit this if you know what you are doing! */
+img { position: absolute; display: block; margin: 0px; border: none; padding: 0px; }
+
+/* Only edit this if you know what you are doing! */
+div { position: absolute; }
+
+#content-container { display: block; position: relative; width: 1440px; width: 1440px; height: 1024px; overflow: hidden; display: block;  margin-left: auto; margin-right: auto;  }
+
+#_bg__landing_page {
+	top: 0px;
+	left: 0px;
+	width: 1440px;
+	height: 1024px;
+	-ms-box-shadow:0px 4px 4px 1px rgba(0,0,0,0.25);
+	-o-box-shadow:0px 4px 4px 1px rgba(0,0,0,0.25);
+	-webkit-box-shadow:0px 4px 4px 1px rgba(0,0,0,0.25);
+	-moz-box-shadow:0px 4px 4px 1px rgba(0,0,0,0.25);
+	box-shadow:0px 4px 4px 1px rgba(0,0,0,0.25);
+	background:rgba(255,255,255,1);
+}
+
+#bar_atas {
+	top: 0px;
+	left: 0px;
+	width: 1440px;
+	height: 1024px;
+}
+
+#_bg__bar_atas_ek1 {
+	top: 0px;
+	left: 0px;
+	width: 1440px;
+	height: 1024px;
+	background:#;
+}
+
+
+#rectangle_1 {
+	top: 0px;
+	left: 0px;
+	width: 1440px;
+	height: 1024px;
+	background:rgba(231.35,232.69,211.36,1);
+}
+
+
+#rectangle_2 {
+	top: 0px;
+	left: 0px;
+	width: 1440px;
+	height: 68px;
+	background:rgba(94,124,96,1);
+}
+
+
+#ellipse_2 {
+	top: 5px;
+	left: 18px;
+	width: 58px;
+	height: 58px;
+}
+
+
+#missing_center_polindra {
+	top: 11px;
+	left: 90px;
+	width: 214.4px;
+	height: 47.4px;
+	overflow: hidden;
+	font-family: Inter;
+	font-size: 14px;
+	font-style: italic;
+	line-height: 42.4px;
+	text-align: left;
+	color:#FFFFFF;
+}
+
+#menu {
+	top: 5px;
+	left: 1288px;
+	width: 48px;
+	height: 58px;
+}
+
+#_bg__menu_ek1 {
+	top: 0px;
+	left: 0px;
+	width: 48px;
+	height: 58px;
+	background:#;
+}
+
+
+#vector {
+	top: 0px;
+	left: 0px;
+	width: 48px;
+	height: 58px;
+}
+
+
+#vector_ek1 {
+	top: 14.5px;
+	left: 6px;
+	width: 36px;
+	height: 29px;
+}
+
+
+#menu_ek2 {
+	top: 12px;
+	left: 1319px;
+	width: 111px;
+	height: 51px;
+	overflow: hidden;
+	font-family: Inter;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 46px;
+	text-align: center;
+	color:#FFFFFF;
+}
+
+
+#rectangle_37 {
+	top: 68px;
+	left: 0px;
+	width: 1440px;
+	height: 487px;
+}
+
+
+#rectangle_38 {
+	top: 68px;
+	left: 0px;
+	width: 1440px;
+	height: 487px;
+	background:rgba(255,255,255,0);
+	background: -webkit-linear-gradient(-180deg , rgba(0,0,0,0.4) 5%, rgba(94,124,96,0.31) 100%);
+	background: -o-linear-gradient(-180deg , rgba(0,0,0,0.4) 5%, rgba(94,124,96,0.31) 100%);
+	background: -moz-linear-gradient(-180deg , rgba(0,0,0,0.4) 5%, rgba(94,124,96,0.31) 100%);
+	background: -ms-linear-gradient(-180deg , rgba(0,0,0,0.4) 5%, rgba(94,124,96,0.31) 100%);
+	background: linear-gradient(-180deg , rgba(0,0,0,0.4) 5%, rgba(94,124,96,0.31) 100%);
+}
+
+
+#missing_center_polindra_ek1 {
+	top: 236px;
+	left: 167px;
+	width: 1093px;
+	height: 172.5px;
+	overflow: hidden;
+	font-family: Inter;
+	font-size: 75px;
+	font-weight: bold;
+	line-height: 167.5px;
+	text-align: center;
+	-ms-text-shadow:1px 5px 4px rgba(0,0,0,0.25);
+	-o-text-shadow:1px 5px 4px rgba(0,0,0,0.25);
+	-webkit-text-shadow:1px 5px 4px rgba(0,0,0,0.25);
+	-moz-text-shadow:1px 5px 4px rgba(0,0,0,0.25);
+	text-shadow:1px 5px 4px rgba(0,0,0,0.25);
+	color:#FFFFFF;
+}
+
+
+#lapor_kehilangan_barang {
+	top: 568px;
+	left: 191px;
+	width: 1052px;
+	height: 149px;
+	overflow: hidden;
+	font-family: Inter;
+	font-size: 40px;
+	line-height: 144px;
+	text-align: center;
+	color:#000000;
+}
+
+
+#bagi_anda_yang_kehilangan_atau_tertinggal_dan_menemukan_barang_di_wilayah_politeknik_negeri_indramayu_anda_dapat_melaporkannya_secara_langsung_melalui_website_ini_ {
+	top: 662px;
+	left: 138px;
+	width: 1240px;
+	height: 105.5px;
+	overflow: hidden;
+	font-family: Inter;
+	font-size: 25px;
+	line-height: 100.5px;
+	text-align: center;
+	color:#000000;
+}
+
+
+#rectangle_39 {
+	top: 810px;
+	left: 578px;
+	width: 281px;
+	height: 81px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #000000;
+	background:rgba(231.35,232.69,211.36,1);
+}
+
+
+#laporkan_ {
+	top: 822px;
+	left: 591px;
+	width: 256px;
+	height: 67.5px;
+	overflow: hidden;
+	font-family: Inter;
+	font-size: 25px;
+	line-height: 62.5px;
+	text-align: center;
+	color:#000000;
+}
+
+
+
+/* Add your custom CSS here */
