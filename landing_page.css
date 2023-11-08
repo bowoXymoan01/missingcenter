@@ -2,15 +2,36 @@
 	@name landing_page
 */
 /* Only edit this if you know what you are doing! */
-body { margin: 0px; padding: 0px; font-family:"Arial"; overflow-x:hidden; }
+
+body {
+	-ms-overflow-style: scrollbar; 
+	line-height: 1; 
+}
 
 /* Only edit this if you know what you are doing! */
-img { position: absolute; display: block; margin: 0px; border: none; padding: 0px; }
+img { 
+	position: absolute; 
+	display: block; 
+	margin: 0px; border: none; 
+	padding: 0px; 
+}
 
 /* Only edit this if you know what you are doing! */
-div { position: absolute; }
+div { 
+	position: absolute; 
+}
 
-#content-container { display: block; position: relative; width: 1440px; width: 1440px; height: 1024px; overflow: hidden; display: block;  margin-left: auto; margin-right: auto;  }
+#content-container { 
+	display: block; 
+	position: relative; 
+	width: 1440px; 
+	width: 1440px; 
+	height: 1024px; 
+	overflow: hidden; 
+	display: block; 
+	margin-left: auto; 
+	margin-right: auto;  
+}
 
 #_bg__landing_page {
 	top: 0px;
@@ -39,7 +60,6 @@ div { position: absolute; }
 	height: 1024px;
 	background:#000000;
 }
-
 
 #rectangle_1 {
 	top: 0px;
@@ -93,7 +113,7 @@ div { position: absolute; }
 	left: 0px;
 	width: 48px;
 	height: 58px;
-	background: #000;;
+	background: rgba(94,124,96,1);
 }
 
 
@@ -184,7 +204,7 @@ div { position: absolute; }
 }
 
 
-#bagi_anda_yang_kehilangan_atau_tertinggal_dan_menemukan_barang_di_wilayah_politeknik_negeri_indramayu_anda_dapat_melaporkannya_secara_langsung_melalui_website_ini_ {
+#keterangan {
 	top: 662px;
 	left: 138px;
 	width: 1240px;
@@ -211,7 +231,6 @@ div { position: absolute; }
 	border: 1px solid #000000;
 	background:rgba(231.35,232.69,211.36,1);
 }
-
 
 #laporkan_ {
 	top: 822px;
