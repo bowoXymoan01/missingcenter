@@ -9,9 +9,7 @@
 
         <title>Startmin - Bootstrap Admin Theme</title>
 <link rel="stylesheet" href="assets/css/main.css" />
-    
-
-		
+    		
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -107,9 +105,6 @@
 					</div>
 				</div>
 			</footer>
-
-
-      
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
