@@ -9,19 +9,12 @@
 
         <title>Startmin - Bootstrap Admin Theme</title>
         <link rel="stylesheet" href="assets/bootstrap/css/main.css" />
-    		
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
     </head>
 
     <body class="is-preload">
         <!-- Header -->
 		<header id="header">
-			<a class="logo" href="index.html">LOST AND FOUND</a>
+			<a class="logo" href="index.html">MISSING CENTER</a>
 			    <nav>
 					<a href="#menu">Menu</a>
 				</nav>
@@ -34,12 +27,10 @@
 				<li><a href="login.php">Login</a></li>
 			</ul>
 		</nav>
-
 		<!-- Heading -->
 		<div id="heading" >
 			<h1>LOGIN</h1>
 		</div>
-
 		<!-- Main -->
 		<section id="main" class="wrapper">
 			<div class="inner">
@@ -49,7 +40,6 @@
                     //memeriksa apakah form login sudah terisi:
                         if (isset($_POST['login'])){
                             include "mysqli-connect.php";
-
                             $cek_data=mysqli_query($conn, "SELECT * FROM pengguna WHERE
                             username ='".$_POST['username']."' AND password = '".$_POST['password']."' ");
                             $data = mysqli_fetch_array($cek_data);
@@ -99,10 +89,10 @@
             </div>
         </footer>
 		<!-- Scripts -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
+        <script src="assets/bootstrap/js/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/browser.min.js"></script>
+        <script src="assets/bootstrap/js/bregitakpoints.min.js"></script>
+        <script src="assets/bootstrap/js/util.js"></script>
+        <script src="assets/bootstrap/js/main.js"></script>
     </body>
 </html>
