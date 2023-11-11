@@ -6,7 +6,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="assets/bootstrap/css/landing_page.css"> 
+        <link rel="stylesheet" href="assets/bootstrap/css/landing_page.css">
         <title>MISSING CENTER</title>
     </head>
     <body>
@@ -23,6 +23,6 @@
             </nav>
         </header>
         <!--  penutup Header -->
-        <!--isi content-->>
+        <!--isi content-->
     </body>
 </html>
