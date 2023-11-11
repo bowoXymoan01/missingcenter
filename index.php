@@ -16,9 +16,9 @@
             <h1 class="logo">MISSING CENTER</h1>
             <nav>
                 <ul>
-                    <li><button class="btn-cta"><a href="Admin.php">Login Admin</a></button></li>
-                    <li><button class="btn-cta"><a href="Tentang.php">About</a></button></li>
-                    <li><button class="btn-cta"><a href="Contact.php">Kontak kami!</a></button></li>
+                    <li><button class="btn-cta"><a href="#">Login Admin</a></button></li>
+                    <li><button class="btn-cta"><a href="#">About</a></button></li>
+                    <li><button class="btn-cta"><a href="#">Kontak kami!</a></button></li>
                 </ul>
             </nav>
         </header>
