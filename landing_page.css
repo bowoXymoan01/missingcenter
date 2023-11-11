@@ -16,9 +16,11 @@ header{
 .logo{
     margin-right: auto;
     margin-left: 5px;
+    cursor: pointer;
 }
 .logo1{
     margin-left :25px;
+    cursor: pointer;
 }
 
 .btn-cta{
@@ -29,6 +31,14 @@ header{
     border-radius: 5px;
     background: #E7E9D3;
 
+}
+
+.btn-cta:hover{
+    background: #ffffff;
+}
+
+.logo:hover{
+    color:#E7E9D3;
 }
 
 nav ul{
