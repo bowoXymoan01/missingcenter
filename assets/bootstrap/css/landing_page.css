@@ -67,7 +67,7 @@ a{
 }
 /* header dan navbar */
 
-/* JUMBOTRON */
+/* JUMBOTRON & button */
 .container-fluid{
     width:100%;
 }
@@ -75,7 +75,7 @@ a{
     background-image: url(../../../img/rectangle_37.png);
     background-position:left;
     background-size: cover;
-    height: 600px;
+    height: 650px;
     position: relative;
     margin-bottom: 50px;
     display: block;
@@ -130,6 +130,12 @@ a{
     position: relative;
     top:20px;
 }
+/* JUMBOTRON & BUTTON */
+
+/* LOGIN */
+
+/* LOGIN */
+
 
 
 
