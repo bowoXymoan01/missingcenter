@@ -6,8 +6,11 @@
 }
 
 header{
+    display:flex;
+    justify-content: center;
+    align-items: center;
     background: #5E7C60;
-    color:#ffffff
+    color:#ffffff;
 }
 
 nav ul{
