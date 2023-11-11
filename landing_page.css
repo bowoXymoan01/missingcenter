@@ -4,10 +4,21 @@
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
 }
+
 header{
     background: #5E7C60;
     color:#ffffff
 }
+
+nav ul{
+    display: flex;
+}
+
+li{
+    list-style-type: none;
+}
+
+
 a{
     text-decoration: none;
     color:#ffffff;
