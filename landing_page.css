@@ -15,14 +15,20 @@ header{
 
 .logo{
     margin-right: auto;
+    margin-left: 5px;
+}
+.logo1{
+    margin-left :25px;
 }
 
 nav ul{
+    padding:38px;
     display: flex;
 }
 
 li{
     list-style-type: none;
+    padding: 15px;
 }
 
 a{
