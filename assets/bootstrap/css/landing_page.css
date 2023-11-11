@@ -11,6 +11,7 @@ header{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    height: 160px;
     background: #5E7C60;
     color:#ffffff;
 }
@@ -34,7 +35,7 @@ body{
     margin-right: 10px;
     border: none;
     font-size: 20px;
-    padding: 6px 12px;
+    padding: 12px 6px;
     border-radius: 5px;
     transition: .2s ease-in-out 0s;
     background: #E7E9D3;
@@ -77,6 +78,9 @@ a{
     height: 600px;
     position: relative;
     margin-bottom: 50px;
+    display: block;
+    text-align: center;
+    flex-wrap: wrap;
 }
 
 .jumbotron:after{
@@ -92,7 +96,6 @@ a{
 .jumbotron h1 {
     color:#ffffff;
     font-size: 3em;
-    text-align: center;
     padding:250px 0 250px;
     text-shadow: 5px 5px 5px rgba(0,0,0,0.6);
     z-index: 1;
@@ -102,15 +105,14 @@ a{
 .jumbotron p{
     color:#ffffff;
     font-size: 2em;
-    text-align: center;
     text-shadow: 5px 5px 5px rgba(0,0,0,0.6);
     z-index: 1;
     position:relative;
 }
 
-.jumbotron button{
+.jumbotron button {
     font-size: 25px;
-    padding: 20px 15px;
+    padding: 15px 15px;
     border-radius: 15px;
     transition: .2s ease-in-out 0s;
     border-color: #5E7C60;
@@ -122,6 +124,11 @@ a{
     .laporkan{
         color:#ffffff;
     }
+}
+
+.btn-jumbotron{
+    position: relative;
+    top:20px;
 }
 
 
