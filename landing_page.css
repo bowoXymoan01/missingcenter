@@ -13,6 +13,10 @@ header{
     color:#ffffff;
 }
 
+body{
+    background: #E7E9D3;
+}
+
 .logo{
     margin-right: auto;
     margin-left: 5px;
