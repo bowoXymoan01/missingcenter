@@ -1,4 +1,8 @@
 *, body, html{
-    font-family: 'Silkscreen', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     margin: 0px;
+}
+header{
+    background: #5E7C60;
+    color:#ffffff
 }
