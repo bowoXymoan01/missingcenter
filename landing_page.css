@@ -21,6 +21,7 @@ body{
     margin-right: auto;
     margin-left: 5px;
     cursor: pointer;
+    transition: .2s ease-in-out 0s;
 }
 .logo1{
     margin-left :25px;
@@ -33,6 +34,7 @@ body{
     font-size: 20px;
     padding: 6px 12px;
     border-radius: 5px;
+    transition: .2s ease-in-out 0s;
     background: #E7E9D3;
 
 }
@@ -43,6 +45,7 @@ body{
 
 .logo:hover{
     color:#E7E9D3;
+    transform: rotate(2deg);
 }
 
 nav ul{
@@ -73,4 +76,3 @@ a{
 
 
 
-/* #00000066, #5E7C604F */
