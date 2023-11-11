@@ -28,10 +28,18 @@ nav ul{
 
 li{
     list-style-type: none;
-    padding: 15px;
+    padding: 10px;
 }
 
 a{
     text-decoration: none;
     color:#ffffff;
+}
+.btn-cta{
+    margin-right: 10px;
+    border: none;
+    font-size: 20px;
+    padding: 6px 12px;
+    background: #ffffff;
+    color:#5E7C60;
 }
