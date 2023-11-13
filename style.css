@@ -1,20 +1,72 @@
 *, body, html{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
 }
-
-body{
-    background-color: #E7E9D3;
+.container {
+  max-width: 960px;
+  padding: 100px;
+}
+  
+h2 {
+  text-align: center;
+  font-size: 2rem;
 
 }
-.container{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    border: 2px solid black;
+  
+.box {
+  padding: 20px;
+  margin: 20px;
+  border-radius: 15px;
+  background: #ffffff;
+}
+  
+input {
+  width: 100%;
+  padding: 10px;  
+  border-radius: 5px;
+}
+  
+.btn {
+    font-size: 15px;
+    padding: 15px;
     border-radius: 20px;
-    background-color:#ffffff;
-
+    transition: .2s ease-in-out 0s;
+    background: #5E7C60; 
 }
+
+
+@media (max-width: 576px) {
+    .container {
+      max-width: 100%;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    form {
+      padding: 10px;
+    }
+  
+    input {
+      font-size: 0.75rem;
+    }
+  
+    button {
+      font-size: 0.75rem;
+    }
+}
+.text-center {
+text-align: center;
+}
+
+.d-flex {
+display: flex;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+  
