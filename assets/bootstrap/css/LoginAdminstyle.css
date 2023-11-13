@@ -36,6 +36,8 @@ input {
 
 button:hover{
   background: #E7E9D3;
+  border-color: #5E7C60;
+  border-style: solid;
 }
 
 @media (max-width: 576px) {
