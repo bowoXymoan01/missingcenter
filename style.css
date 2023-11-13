@@ -8,10 +8,13 @@ body{
     background-color: #E7E9D3;
 
 }
-
 .container{
-    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     border: 2px solid black;
+    border-radius: 20px;
     background-color:#ffffff;
 
 }
