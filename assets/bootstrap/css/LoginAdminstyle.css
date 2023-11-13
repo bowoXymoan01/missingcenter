@@ -24,18 +24,19 @@ h2 {
   
 input {
   width: 100%;
-  padding: 10px;  
+  padding: 20px;  
   border-radius: 5px;
 }
   
 .btn {
-    font-size: 15px;
-    padding: 15px;
-    border-radius: 20px;
-    transition: .2s ease-in-out 0s;
-    background: #5E7C60; 
+  border-radius: 20px;
+  transition: .2s ease-in-out 0s;
+  background: #5E7C60; 
 }
 
+button:hover{
+  background: #E7E9D3;
+}
 
 @media (max-width: 576px) {
     .container {
