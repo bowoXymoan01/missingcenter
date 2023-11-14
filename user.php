@@ -7,6 +7,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="assets/bootstrap/css/landing_page.css">
+        <link rel="stylesheet" href="assets/bootstrap/css/adminpage.css">
         <title>MISSING CENTER</title>
     </head>
     <body>
@@ -16,9 +17,9 @@
             <h1 class="logo">MISSING CENTER</h1>
             <nav>
                 <ul>
-                    <li><button class="btn-cta"><a href="login.php" id="login">Login</a></button></li>
-                    <li><button class="btn-cta"><a href="#">About</a></button></li>
-                    <li><button class="btn-cta"><a href="#">Kontak kami</a></button></li>
+                    <li><button class="btn-cta"><a href="#">Laporkan barang<br>hilang</a></button></li>
+                    <li><button class="btn-cta"><a href="#">Lihat barang<br>hilang</a></button></li>
+                    <li><a href="logout.php">Logout</a></li>
                 </ul>
             </nav>
         </header>
@@ -26,12 +27,7 @@
         <!--isi content-->
         <main>
             <div class="container-fluid jumbotron">
-                <h1>MISSING CENTER DI KAMPUS POLINDRA</h1>
-                <p>Jika barang anda hilang atau tertinggal di daerah kampus POLINDRA atau menemukan barang segera laporkan!<br></p>
-                <br>
-                <button class="btn-jumbotron">
-                    <a href="#login" class="laporkan">Laporkan!</a>
-                </button>
+                <h1>HALO USER!</h1>
             </div>
         </main>
     </body>

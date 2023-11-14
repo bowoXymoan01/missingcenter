@@ -1,6 +1,8 @@
+
+
 *, body, html{
     margin: 0;
-    padding: 0;
+    padding:0;
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
 }
@@ -11,7 +13,7 @@ header{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    height: 160px;
+    height: 175px;
     background: #5E7C60;
     color:#ffffff;
 }
@@ -27,21 +29,21 @@ body{
     transition: .2s ease-in-out 0s;
 }
 .logo1{
-    margin-left :25px;
+    margin-left : 15px;
     cursor: pointer;
 }
 
-.btn-cta{
-    margin-right: 10px;
+ul li {
+    margin-right: 25px;
     border: none;
     font-size: 20px;
-    padding: 12px 6px;
-    border-radius: 5px;
+    padding: 5px 5px;
+    border-radius: 15px;
     transition: .2s ease-in-out 0s;
     background: #E7E9D3;
 }
 
-.btn-cta:hover{
+ul li:hover{
     background: #ffffff;
 }
 
@@ -53,14 +55,17 @@ body{
 nav ul{
     padding:10px;
     display: flex;
+
 }
 
 li{
     list-style-type: none;
-    padding: 10px;
+    padding: 0px;
 }
 
 a{
+    text-align: center;
+    justify-content: center;
     text-decoration: none;
     color:#ffffff;
     color: #5E7C60;
@@ -112,7 +117,7 @@ a{
 
 .jumbotron button {
     font-size: 25px;
-    padding: 15px 15px;
+    padding: 10px 10px;
     border-radius: 15px;
     transition: .2s ease-in-out 0s;
     border-color: #5E7C60;
@@ -128,13 +133,24 @@ a{
 
 .btn-jumbotron{
     position: relative;
-    top:20px;
+    top:10px;
+}
+
+@media (max-width: 300px) {
+    header{
+        width: 100%;
+    }
+
 }
 /* JUMBOTRON & BUTTON */
 
 /* LOGIN */
 
+
 /* LOGIN */
+
+
+/* backend menggunakan switch case ada di praktikum pw */
 
 
 

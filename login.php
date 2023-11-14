@@ -16,29 +16,50 @@
     </header>
     <main class="container md-10">
         <?php
-			//Bagian ini berfungsi untuk memproses submisi form login!
-			//memeriksa apakah form login sudah terisi:
-			if (isset($_POST['login'])){
-				include "mysqli-connect.php";
-
-				$cek_data=mysqli_query($conn, "SELECT * FROM pengguna WHERE
-				username ='".$_POST['username']."' AND password = '".$_POST['password']."' ");
-				$data = mysqli_fetch_array($cek_data);
-				$level = $data['level'];
-				if (mysqli_num_rows($cek_data) > 0){
-					if($level == 'admin'){
-						header("Location:index.html");
-					}elseif($level == 'user'){
-						header("Location:admin.php");
-					}
-				}else{
-					echo '<script type="text/javascript">alert("Username atau Password salah!");</script> ';
-				}
-			}
-		?>
+            include_once 'mysqli-connect.php';
+            session_start();
+            
+            // Periksa apakah form login sudah terisi
+            if (isset($_POST['login'])) {
+            
+                // Melakukan query SQL untuk mencari data pengguna berdasarkan username dan password
+                try {
+                    // Mendefinisikan variabel username dan password
+                    $username = $_POST['username'];
+                    $password = $_POST['password'];
+                    $query = "SELECT * FROM pengguna WHERE username = ? AND password = ?";
+                    $stmt = $conn->prepare($query);
+                    $stmt->bind_param("ss", $username, $password);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                } catch (Exception $e) {
+                    // Tangkap kesalahan query SQL
+                    echo "Terjadi kesalahan saat melakukan query SQL: " . $e->getMessage();
+                    exit();
+                }
+            
+                // Periksa apakah data pengguna ditemukan
+                if ($result->num_rows > 0) {
+                    // Data pengguna ditemukan
+                    $row = $result->fetch_assoc();
+                    $level = $row['level'];
+            
+                    // Redirect pengguna ke halaman admin atau halaman user sesuai dengan levelnya
+                    if ($level == 'admin') {
+                        header("Location:admin.php");
+                    } elseif ($level == 'user') {
+                        header("Location:user.php");
+                    }
+                } else {
+                    // Data pengguna tidak ditemukan
+                    echo '<script type="text/javascript">alert("Username atau Password salah!");</script> ';
+                }
+            }
+            
+        ?>        
         <div class="row justify-content-center">
             <div class="col-md-12 box">
-                <h2 class="text-center">LOGIN ADMIN</h2>
+                <h2 class="text-center">LOGIN</h2>
                 <form action="login.php" method="post">
                     <div class="mb-4">
                         <input class="form-control" id="username"  for="username" 
@@ -52,10 +73,13 @@
                     </div>
                     <div class="mb-4 d-grid gap-2">
                         <input id="submit"  class="btn"
-						type="submit" name="login" value="Sign In"/>
+						type="submit" name="login" value="LOGIN"/>
                     </div>
                     <div class="d-flex justify-content-center">
                         <a href="index.html">Kembali</a>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <a href="register.php">Buat akun</a>
                     </div>
                 </form>
             </div>
