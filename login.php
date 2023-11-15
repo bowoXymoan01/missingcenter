@@ -79,7 +79,7 @@
                         <a href="index.html">Kembali</a>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <a href="register.php">Buat akun</a>
+                        <a href="daftarmhs.php">Buat akun</a>
                     </div>
                 </form>
             </div>
