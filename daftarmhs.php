@@ -34,7 +34,7 @@ if(isset($_POST["register"]) ) {
             <div class="col-md-9 box">
                 <h2 class="text-center">DAFTAR</h2>
                 <p>isikan data dengan benar!</p>
-                <form action="login.php" method="post">
+                <form action="" method="post">
 
                     <div class="mb-4">
                         <label for="username">
@@ -79,7 +79,7 @@ if(isset($_POST["register"]) ) {
                         <button class="btn" type="submit" name="register">Daftarkan</button>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <a href="index.html">Kembali</a>
+                        <a href="login.php">Kembali</a>
                     </div>
                 </form>
             </div>
