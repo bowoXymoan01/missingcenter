@@ -30,30 +30,5 @@
         <main>
             <div class="container-fluid jumbotron">
                 <h1>HALO ADMIN!</h1>
-                <?php
-                include_once 'mysqli-connect.php';
-                // Koneksi ke database
-                // Periksa apakah pengguna sudah login
-                if (!isset($_GET['username'])) {
-                    // Pengguna belum login, redirect ke halaman login
-                    header(".php");
-                    exit();
-                }
-            
-                // Melakukan query untuk mencari data pengguna berdasarkan username dan password
-                $query = "SELECT nama FROM pengguna WHERE username='$username' AND password='$password'";
-                $result = mysqli_query($conn, $query);
-
-                
-                // Jika data pengguna ditemukan
-                if (mysqli_num_rows($result) > 0) {
-                    // Mengambil data nama pengguna
-                    $row = mysqli_fetch_assoc($result);
-                    $nama = $row['nama'];
-                
-                    // Menampilkan nama pengguna
-                    echo "<h1>HALO ADMIN!, $nama</h1>";
-                }
-                ?>
             </div>
         </main>

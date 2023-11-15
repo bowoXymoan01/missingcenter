@@ -16,7 +16,7 @@
     </header>
     <main class="container md-10">
         <?php
-            include "kon.php";
+            include_once "kon.php";
             //skrip ini melakukan query INSERT yg menambah sebuah rekaman pada tabel pengguna.
             if($_SERVER['REQUEST_METHOD']=='POST'){
                 $arrayError = array();//inisialisasi array error
@@ -32,9 +32,6 @@
                 if(empty($_POST['username'])){
                     $arrayError[]='<script type="text/javascript">alert("username barang tidak boleh kosong");</script> ';
                 }
-                else{$username = trim($_POST['username']);
-                }
-                
                 //apakah kedua password cocok
                 if(!empty($_POST['password1'])){
                     if($_POST['password1'] != $_POST['password']){
@@ -53,17 +50,13 @@
                     $cek_data=mysqli_query($dbkoneksi, "SELECT * FROM pengguna WHERE
                     username ='".$_POST['username']."'  ");
                     if (mysqli_num_rows($cek_data) > 1){
-                        $q = "INSERT INTO pengguna (iduser,username,password,level,nama,)
-                        VALUES('','$username','$password','user','$nama')";
+                        $q = "INSERT INTO pengguna (username,password,level,nama)
+                        VALUES('$username','$password','user','$nama')";
                         $hasil = @mysqli_query ($dbkoneksi, $q);//menjalankan query
-                        if($hasil){//jika berhasil
+                        if($hasil){
+                            //jika berhasil
                             echo'<script type="text/javascript">alert("Data berhasil dimasukkan");</script> ';
                             header("Location:sadata.php");
-                        }else{//jika gagal
-                        //tampilkan error
-                        echo '<script type="text/javascript">alert("Data gagal dimasukkan karena error sistem");</script> ';
-                        //Debug:
-                        echo '<p>'. mysqli_error($dbkoneksi).'<br><br>Query: ' .$q. '</p>';
                         }
                     }else{
                         echo'<script type="text/javascript">alert("Username Telah Digunakan");</script> ';
@@ -81,7 +74,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12 box">
                 <h2 class="text-center">REGISTER</h2>
-                <form action="login.php" method="post">
+                <form action="register.php" method="post">
                     <div class="mb-4">
                         <input class="form-control" id="nama"  for="nama" 
                         placeholder="Nama Lengkap" name="nama" type="text" required autofocus
@@ -115,3 +108,4 @@
     </main>
 </body>
 </html>
+
