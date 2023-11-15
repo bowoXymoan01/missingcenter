@@ -23,7 +23,7 @@
                 
                 //apakah nama telah dimasukkan
                 if(empty($_POST['nama'])){
-                    $arrayError[]='<script type="text/javascript">alert("nama tidak boleh kosong");</script> ';
+                    $arrayError[]='<script type="text/javascript"git >alert("nama tidak boleh kosong");</script> ';
                 }
                 else{$nama = trim($_POST['nama']);
                 }
