@@ -19,7 +19,7 @@
                     <li><a href="#">Barang Belum <br>Terklaim</a></li>
                     <li><a href="#">Barang Sudah <br>Terklaim</a></li>
                     <li><a href="#">Barang <br>hilang</a></li>
-                    <li><a href="#">Input <br>Data</a></li>
+                    <li><a href="form.php">Input <br>Data</a></li>
                     <li><a href="register.php">Daftar</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
