@@ -11,7 +11,6 @@ if(isset($_POST["register"]) ) {
     } else {
     echo mysqli_error($conn);
 }
-
 ?>
 
 
@@ -31,11 +30,11 @@ if(isset($_POST["register"]) ) {
         <img src="img/ellipse_2.png" alt="missingcenter-logo" class="logo1" />
         <h1 class="logo">MISSING CENTER</h1>
     </header>
-    <main class="container md-10">				 
+    <main class="container md-12">				 
         <div class="row justify-content-center">
-            <div class="col-md-12 box">
+            <div class="col-md-9 box">
                 <h2 class="text-center">DAFTAR</h2>
-                <form action="login.php" method="post">
+                <form action="" method="post">
                     <div class="mb-4">
                         <label for="nama">
                             <input class="form-control" id="nama"  for="nama" 
@@ -62,7 +61,7 @@ if(isset($_POST["register"]) ) {
                         <br>
                         <br>
                     <div class="mb-4">
-                        <button type="submit" name="register">Daftarkan</button>
+                        <button class="btn" type="submit" name="register">Daftarkan</button>
                     </div>
                     <div class="d-flex justify-content-center">
                         <a href="index.html">Kembali</a>

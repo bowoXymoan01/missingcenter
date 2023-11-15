@@ -23,7 +23,7 @@ function register($data) {
         return false;
     }
 
-    mysqli_query($conn, "INSERT INTO pengguna VALUES('', '$username','$password','user','$nama')");
+    mysqli_query($conn, "INSERT INTO pengguna VALUES('', '$username','$password','admin','$nama')");
     return mysqli_affected_rows($conn);
 
 }
