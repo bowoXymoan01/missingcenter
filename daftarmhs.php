@@ -79,7 +79,7 @@ if(isset($_POST["register"]) ) {
                         <button class="btn" type="submit" name="register">Daftarkan</button>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <a href="#">Kembali</a>
+                        <a href="index.html">Kembali</a>
                     </div>
                 </form>
             </div>
