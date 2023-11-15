@@ -1,3 +1,20 @@
+<?php
+require "function.php";
+
+if(isset($_POST["Register"]) ) {
+
+    if(registra($_POST) > 0 ) {
+        echo "<script>
+                alert('User Baru Berhasil Dibuat!');
+            </script>";
+        }
+    } else {
+    echo 'mysqli_error($conn)';
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
