@@ -38,25 +38,25 @@ if(isset($_POST["register"]) ) {
                     <div class="mb-4">
                         <label for="nama">
                             <input class="form-control" id="nama"  for="nama" 
-                            placeholder="Nama Lengkap" name="nama" type="text"/>
+                            placeholder="Nama Lengkap" name="nama" type="text" required autofocus/>
                         </label>
                     </div>
                     <div class="mb-4">
                         <label for="username">
                             <input class="form-control" id="username" for="username" 
-                            placeholder="Username" name="username" type="text" />
+                            placeholder="Username" name="username" type="text" required autofocus />
                         </label>
                     </div>
                     <div class="mb-4">
                         <label for="password">
                             <input class="form-control" id="password" for="password" 
-                            placeholder="Password" name="password" type="password" />
+                            placeholder="Password" name="password" type="password" required autofocus/>
                         </label>
                     </div>
                     <div class="mb-4">
                         <label for="password1">
                             <input class="form-control" id="password1"  for="password1" 
-                            placeholder="konfirmasi password" name="password1" type="password" />
+                            placeholder="konfirmasi password" name="password1" type="password"  required autofocus />
                         </label>
                     </div>
                         <br>
@@ -64,7 +64,7 @@ if(isset($_POST["register"]) ) {
                         <button class="btn" type="submit" name="register">Daftarkan</button>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <a href="index.html">Kembali</a>
+                        <a href="admin.php">Kembali</a>
                     </div>
                 </form>
             </div>

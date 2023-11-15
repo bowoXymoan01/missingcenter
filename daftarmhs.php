@@ -34,24 +34,24 @@ if(isset($_POST["register"]) ) {
             <div class="col-md-9 box">
                 <h2 class="text-center">DAFTAR</h2>
                 <p>isikan data dengan benar!</p>
-                <form action="" method="post">
+                <form action="login.php" method="post">
 
                     <div class="mb-4">
                         <label for="username">
                             <input class="form-control" id="username" for="username" 
-                            placeholder="Username" name="username" type="text" />
+                            placeholder="Username" name="username" type="text" required autofocus />
                         </label>
                     </div>
                     <div class="mb-4">
                         <label for="password">
                             <input class="form-control" id="password" for="password" 
-                            placeholder="Password" name="password" type="password" />
+                            placeholder="Password" name="password" type="password" required autofocus />
                         </label>
                     </div>
                     <div class="mb-">
                         <label for="password1">
                             <input class="form-control" id="password1"  for="password1" 
-                            placeholder="konfirmasi password" name="password1" type="password" />
+                            placeholder="konfirmasi password" name="password1" type="password" required autofocus/>
                         </label>
                     </div>
                     <br>
@@ -59,19 +59,19 @@ if(isset($_POST["register"]) ) {
                     <div class="mb-4">
                         <label for="nama">
                             <input class="form-control" id="nama"  for="nama" 
-                            placeholder="Nama Lengkap" name="nama" type="text"/>
+                            placeholder="Nama Lengkap" name="nama" type="text" required autofocus/>
                         </label>
                     </div>
                     <div class="mb-4">
                         <label for="nim">
                             <input class="form-control" id="nim"  for="nim" 
-                            placeholder="nim" name="nim" type="text"/>
+                            placeholder="nim" name="nim" type="text" required autofocus/>
                         </label>
                     </div>
                     <div class="mb-4">
                         <label for="no_wa">
                             <input class="form-control" id="no_wa"  for="no_wa" 
-                            placeholder="no_wa" name="no_wa" type="text"/>
+                            placeholder="no_wa" name="no_wa" type="text" required autofocus/>
                         </label>
                     </div>
 
