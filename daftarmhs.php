@@ -35,6 +35,10 @@ if(isset($_POST["register"]) ) {
                 <h2 class="text-center">DAFTAR</h2>
                 <p>isikan data dengan benar!</p>
                 <form action="" method="post">
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0b8059e8c8c6fb6b5623f21ce1e5a29e36e1ab23
                     <div class="mb-4">
                         <label for="username">
                             <input class="form-control" id="username" for="username" 
@@ -77,7 +81,7 @@ if(isset($_POST["register"]) ) {
                         </label>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <a href="index.html">Kembali</a>
+                        <a href="login.php">Kembali</a>
                     </div>
                 </form>
             </div>
