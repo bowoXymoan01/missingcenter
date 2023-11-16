@@ -1,3 +1,26 @@
+<?php
+    include_once 'mysqli-connect.php';
+    if (isset($_POST['login'])){
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+
+        $result1 = mysqli_query($conn,"SELECT * FROM usermhs WHERE
+        username = '$username'");
+        $result2 = mysqli_query($conn,"SELECT * FROM pengguna WHERE
+        username = '$username'");
+
+        if(mysqli_num_rows($result1) == 1){
+            $row = mysqli_fetch_assoc($result1);
+            header("Location: user.php");
+            exit;
+        }elseif(mysqli_num_rows($result2) == 1){
+            $row1 = mysqli_fetch_assoc($result2);
+            header("Location: admin.php");
+            exit;
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,63 +37,25 @@
         <img src="img/ellipse_2.png" alt="missingcenter-logo" class="logo1" />
         <h1 class="logo">MISSING CENTER</h1>
     </header>
-    <main class="container md-10">
-        <?php
-            include_once 'mysqli-connect.php';            
-            // Periksa apakah form login sudah terisi
-            if (isset($_POST['login'])) {
-            
-                // Melakukan query SQL untuk mencari data pengguna berdasarkan username dan password
-                try {
-                    // Mendefinisikan variabel username dan password
-                    $username = $_POST['username'];
-                    $password = $_POST['password'];
-                    $query = "SELECT * FROM pengguna WHERE username = ? AND password = ?";
-                    $stmt = $conn->prepare($query);
-                    $stmt->bind_param("ss", $username, $password);
-                    $stmt->execute();
-                    $result = $stmt->get_result();
-                } catch (Exception $e) {
-                    // Tangkap kesalahan query SQL
-                    echo "Terjadi kesalahan saat melakukan query SQL: " . $e->getMessage();
-                    exit();
-                }
-            
-                // Periksa apakah data pengguna ditemukan
-                if ($result->num_rows > 0) {
-                    // Data pengguna ditemukan
-                    $row = $result->fetch_assoc();
-                    $level = $row['level'];
-            
-                    // Redirect pengguna ke halaman admin atau halaman user sesuai dengan levelnya
-                    if ($level == 'admin') {
-                        header("Location:admin.php");
-                    } elseif ($level == 'user') {
-                        header("Location:user.php");
-                    }
-                } else {
-                    // Data pengguna tidak ditemukan
-                    echo '<script type="text/javascript">alert("Username atau Password salah!");</script> ';
-                }
-            }
-            
-        ?>        
+    <main class="container md-10">      
         <div class="row justify-content-center">
             <div class="col-md-12 box">
                 <h2 class="text-center">LOGIN</h2>
                 <form action="" method="post">
                     <div class="mb-4">
-                        <input class="form-control" id="username"  for="username" 
-						placeholder="Username" name="username" type="text" required autofocus
-						value="<?php if (isset($_POST['username'])) echo $_POST['username']; ?>"/>
+                        <label for="username">
+                            <input class="form-control" id="username"  for="username" 
+						        placeholder="Username" name="username" type="text" required autofocus/>
+                        </label>
                     </div>
                     <div class="mb-4">
-                        <input class="form-control" id="password" for="password" 
-						placeholder="Password" name="password" type="password" required autofocus
-						value="<?php if (isset($_POST['password'])) echo $_POST['password']; ?>"/>
+                        <label for="password">
+                            <input class="form-control" id="password" for="password" 
+						    placeholder="Password" name="password" type="password" required autofocus/>
+                        </label>
                     </div>
-                    <div class="mb-4 d-grid gap-2">
-                        <input id="submit"  class="btn"
+                    <div class="mb-4">
+                        <input id="login"  class="btn"
 						type="submit" name="login" value="LOGIN"/>
                     </div>
                     <div class="d-flex justify-content-center">
