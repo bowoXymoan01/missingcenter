@@ -34,8 +34,7 @@ if(isset($_POST["register"]) ) {
             <div class="col-md-9 box">
                 <h2 class="text-center">DAFTAR</h2>
                 <p>isikan data dengan benar!</p>
-                <form action="login.php" method="post">
-
+                <form action="" method="post">
                     <div class="mb-4">
                         <label for="username">
                             <input class="form-control" id="username" for="username" 
@@ -48,14 +47,12 @@ if(isset($_POST["register"]) ) {
                             placeholder="Password" name="password" type="password" required autofocus />
                         </label>
                     </div>
-                    <div class="mb-">
+                    <div class="mb-4">
                         <label for="password1">
                             <input class="form-control" id="password1"  for="password1" 
                             placeholder="konfirmasi password" name="password1" type="password" required autofocus/>
                         </label>
                     </div>
-                    <br>
-                    
                     <div class="mb-4">
                         <label for="nama">
                             <input class="form-control" id="nama"  for="nama" 
@@ -74,9 +71,10 @@ if(isset($_POST["register"]) ) {
                             placeholder="no_wa" name="no_wa" type="text" required autofocus/>
                         </label>
                     </div>
-
                     <div class="mb-4">
-                        <button class="btn" type="submit" name="register">Daftarkan</button>
+                        <label for="register">
+                            <button class="btn" type="submit" name="register" id="no_wa"  for="no_wa">Daftarkan</button>
+                        </label>
                     </div>
                     <div class="d-flex justify-content-center">
                         <a href="index.html">Kembali</a>

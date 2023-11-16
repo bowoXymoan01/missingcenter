@@ -29,6 +29,7 @@ function register($data) {
 }
 
 function daftarmhs($data) {
+    include_once 'mysqli-connect.php';
     global $conn;
 
     $nama = strtolower(stripslashes($data["nama"]));
@@ -41,7 +42,7 @@ function daftarmhs($data) {
     $banding = mysqli_query($conn, "SELECT username FROM usermhs WHERE username ='$username'");
     if (mysqli_fetch_assoc($banding)){
         echo "<script>
-                alert('Username sudah digunakan')
+                alert('Username sudah digunakan');
             </script>";
         return 0;
     }

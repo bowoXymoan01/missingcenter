@@ -16,9 +16,7 @@
     </header>
     <main class="container md-10">
         <?php
-            include_once 'mysqli-connect.php';
-            session_start();
-            
+            include_once 'mysqli-connect.php';            
             // Periksa apakah form login sudah terisi
             if (isset($_POST['login'])) {
             
@@ -60,7 +58,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12 box">
                 <h2 class="text-center">LOGIN</h2>
-                <form action="login.php" method="post">
+                <form action="" method="post">
                     <div class="mb-4">
                         <input class="form-control" id="username"  for="username" 
 						placeholder="Username" name="username" type="text" required autofocus
