@@ -19,6 +19,11 @@
             exit;
         }
     }
+    if (mysqli_num_rows($result1) == 0 && mysqli_num_rows($result2) == 0){
+        echo "<script>
+                alert('Username dan password tidak ditemukan');
+            </script>";    
+    }    
 ?>
 
 <!DOCTYPE html>
@@ -68,5 +73,6 @@
             </div>
         </div>
     </main>
+</script>
 </body>
 </html>
