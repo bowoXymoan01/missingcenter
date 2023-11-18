@@ -17,21 +17,21 @@
             $row1 = mysqli_fetch_assoc($result2);
             header("Location: admin.php");
             exit;
+        }elseif (mysqli_num_rows($result1) == 0 && mysqli_num_rows($result2) == 0){
+            echo "<script>
+                    alert('Username dan password tidak ditemukan');
+                </script>";
         }
+    
     }
-    if (mysqli_num_rows($result1) == 0 && mysqli_num_rows($result2) == 0){
-        echo "<script>
-                alert('Username dan password tidak ditemukan');
-            </script>";    
-    }    
-?>
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form Admin</title>
+    <title>Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/bootstrap/css/LoginAdminstyle.css">
