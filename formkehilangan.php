@@ -6,8 +6,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/bootstrap/css/landing_page.css">
-        <link rel="stylesheet" href="assets/bootstrap/css/adminpage.css">
+        <link rel="stylesheet" href="assets/bootstrap/css/loginadminstyle.css">
         <title>MISSING CENTER</title>
     </head>
     <body>
@@ -25,10 +26,8 @@
 		<section id="main" class="wrapper">
 			<div class="inner">
 				<div class="content">
-					<p><a href="user.php">Batal</a></p>
 					<div class="row">
 						<div class="col-12 col-12-medium">
-							<h2>Form Barang Hilang</h2>
 							<?php
 							include_once "mysqli-connect.php";
 							//skrip ini melakukan query INSERT yg menambah sebuah rekaman pada tabel pengguna.
@@ -115,58 +114,66 @@
 							?>
 					
 							<form action="" method="post">
-								<div class="row gtr-uniform">
-									<div class="col-6 col-12-xsmall">
+								<div class="box">
+									<h3>Form Barang Hilang</h2>
+									<div class="col-8">
 										<input class="form-control" id="nama"  for="nama" 
 										placeholder="Nama Lengkap Anda" name="nama" type="text" required autofocus
 										value="<?php if (isset($_POST['nama'])) echo $_POST['nama']; ?>"/>
 									</div>
-									
-									<div class="col-2">
+									<br>
+									<div class="col-8">
 										<input class="form-control" id="nim" for="nim" 
 										placeholder="NIM" name="nim" type="text" required autofocus
 										value="<?php if (isset($_POST['nim'])) echo $_POST['nim']; ?>"/>
 										</label>
 									</div>
-									<div class="col-3">
+									<br>
+									<div class="col-8">
 										<input class="form-control" id="tempatditemukan" for="tempatditemukan" 
 										placeholder="Lokasi Ditemukan" name="tempatditemukan" type="text" required autofocus
 										value="<?php if (isset($_POST['tempatditemukan'])) echo $_POST['tempatditemukan']; ?>"/>
 										</label>
 									</div>
-									<div class="col-6 col-12-xsmall">
+									<br>
+									<div class="col-8">
 										<input class="form-control" id="telepon" for="telepon" 
 										placeholder="No. Telpon Anda" name="telepon" type="text" required autofocus
 										value="<?php if (isset($_POST['telepon'])) echo $_POST['telepon']; ?>"/>
 									</div>
-									<div class="col-6 col-12-xsmall">
+									<br>
+									<div class="col-8">
 										<input class="form-control" id="jenis"  for="jenis" 
 										placeholder="Jenis Barang Yang Hilang" name="jenis" type="text" required autofocus
 										value="<?php if (isset($_POST['jenis'])) echo $_POST['jenis']; ?>"/>
 									</div>
-									<div class="col-6">
+									<br>
+									<div class="col-8">
 										<textarea name="deskripsi" id="deskripsi" for="deskripsi" placeholder="Deskripsi Lainnya" 
 										type="text" rows="2" 
 										value="<?php if (isset($_POST['deskripsi'])) echo $_POST['deskripsi']; ?>"></textarea>
 									</div>
-									<h3>Waktu Barang Hilang	:</h3>
-									<div class="col-3 col-12-xsmall">
+									<br>
+									<h4>Waktu Barang Hilang	:</h3>
+									<div class="col-8">
 									<input class="form-control" id="waktuditemukan"  for="waktuditemukan" 
 										placeholder="" name="waktuditemukan" type="time" required autofocus
 										value="<?php if (isset($_POST['waktuditemukan'])) echo $_POST['waktuditemukan']; ?>"/>
 									</div>
-									<h3>Tanggal Barang Hilang	:</h3>
-									<div class="col-3 col-12-xsmall">
+									<br>
+									<h4>Tanggal Barang Hilang :</h3>
+									<div class="col-8">
 										<input class="form-control" id="tglditemukan"  for="tglditemukan" 
 										placeholder="" name="tglditemukan" type="date" required autofocus
 										value="<?php if (isset($_POST['tglditemukan'])) echo $_POST['tglditemukan']; ?>"/>
 									</div>	
-								
+									<br>
 									<!-- Change this to a button or input when using this as a form -->
-									<div class="col-6 ">
-										<input id="submit"  class="primary fit"
-										type="submit" name="Submit" value="Kirim"/>
+									<div class="col-8">
+										<button id='submit' class="primary" type="submit" name="submit"  value="kirim">Kirim</button>
 									</div>
+									
+									<p><a href="user.php">kembali</a></p>
 								</div>
 							</form>
 						</div>

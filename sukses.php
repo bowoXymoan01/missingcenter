@@ -14,57 +14,39 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="assets/bootstrap/css/adminpage.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/bootstrap/css/landing_page.css">
+        <link rel="stylesheet" href="assets/bootstrap/css/loginAdminstyle.css">
         <title>MISSING CENTER</title>
 	</head>
 	<body class="is-preload">
-
-		<!-- Header -->
-			<header id="header">
-				<a class="logo" href="index.html">MISSING CENTER</a>
-				<nav>
-					<a href="#menu">Menu</a>
-				</nav>
-			</header>
-
-		<!-- Nav -->
-			<nav id="menu">
-				<ul class="links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="login.php">Login</a></li>
+		<header>
+			<img src="img/ellipse_2.png" alt="missingcenter-logo" class="logo1" />
+			<h1 class="logo">MISSING CENTER</h1>
+			<nav>
+				<ul>
+					<li><button class="btn-cta"><a href="formkehilangan.php">Laporkan barang<br>hilang</a></button></li>
+					<li><button class="btn-cta"><a href="found.php">Lihat barang<br>hilang</a></button></li>
 				</ul>
 			</nav>
-			
-		<!-- Heading -->
-			<div id="heading" >
-				<h1>MISSING CENTER Group 5 D4 RPL 2C</h1>
+		</header>
+		<section id="main" class="box">
+			<div class="inner">
+				<div class="content">
+				<h2>Laporan anda berhasil dikirim.</h2>
+					<p>Kami akan segera memproses laporan anda, pemberitahuan akan kami informasikan melalui panggilan telepon atau melalui WhatsApp.</p>
+					<a href='user.php'>KEMBALI</a>
+				</div>
 			</div>
-			
-			<section id="main" class="wrapper">
-				<div class="inner">
-					<div class="content">
-					<h2>Laporan anda berhasil dikirIm.</h2>
-						<p>Kami akan segera memproses laporan anda, pemberitahuan akan kami informasikan melalui panggilan telepon atau melalui WhatsApp.</p>
-						<a href='index.html'>KEMBALI</a>
-					</div>
-				</div>
-			</section>
-			
+		</section>
+		
 		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<div class="copyright">
-						&copy; MISSING CENTER Group 5 D4 RPL 2C</a>.
-					</div>
+		<footer id="footer">
+			<div class="inner">
+				<div class="copyright">
+					&copy; MISSING CENTER Group 5 D4 RPL 2C</a>.
 				</div>
-			</footer>
-
-		<!-- Scripts -->
-            <script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
+			</div>
+		</footer>
 	</body>
 </html>
