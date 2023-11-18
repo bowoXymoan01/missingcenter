@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Nov 2023 pada 16.18
--- Versi server: 10.4.28-MariaDB
--- Versi PHP: 8.2.4
+-- Generation Time: Nov 18, 2023 at 04:03 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 
 DELIMITER $$
 --
--- Prosedur
+-- Procedures
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `cekpoint` ()   BEGIN 
 START TRANSACTION;
@@ -47,7 +47,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `getJumlahBarangTemuan` (IN `p_lokas
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `trans1` ()   BEGIN 
-SET @@autocommit = 0;
+SET @@autocommit = 1;
 INSERT INTO trans_demo VALUES("MongoDB");
 SELECT * FROM trans_demo;
 END$$
@@ -70,7 +70,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `barang_hilang`
+-- Table structure for table `barang_hilang`
 --
 
 CREATE TABLE `barang_hilang` (
@@ -80,7 +80,7 @@ CREATE TABLE `barang_hilang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `barang_hilang`
+-- Dumping data for table `barang_hilang`
 --
 
 INSERT INTO `barang_hilang` (`id`, `tipe`, `merek`) VALUES
@@ -91,7 +91,7 @@ INSERT INTO `barang_hilang` (`id`, `tipe`, `merek`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `barang_temuan`
+-- Table structure for table `barang_temuan`
 --
 
 CREATE TABLE `barang_temuan` (
@@ -106,7 +106,7 @@ CREATE TABLE `barang_temuan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `barang_temuan`
+-- Dumping data for table `barang_temuan`
 --
 
 INSERT INTO `barang_temuan` (`id`, `tipe`, `merek`, `warna`, `deskripsi`, `tanggal`, `lokasi`, `status`) VALUES
@@ -121,7 +121,7 @@ INSERT INTO `barang_temuan` (`id`, `tipe`, `merek`, `warna`, `deskripsi`, `tangg
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `data`
+-- Table structure for table `data`
 --
 
 CREATE TABLE `data` (
@@ -138,17 +138,40 @@ CREATE TABLE `data` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `data`
+-- Dumping data for table `data`
 --
 
 INSERT INTO `data` (`idbarang`, `penerima`, `penemu`, `tempatditemukan`, `jenis`, `nim`, `deskripsi`, `tglditemukan`, `tgldiambil`, `status`) VALUES
-(0, '', 'rtyvublkn', 'tvhbkjnlm', 'fjbkln', 0, 'dgvhjbknk', '2023-11-15', '0000-00-00', ''),
-(0, '', 'temon', 'saritem', 'dildo', 0, 'pandawa', '2023-11-15', '0000-00-00', '');
+(1, '', 'rtyvublkn', 'tvhbkjnlm', 'fjbkln', 0, 'dgvhjbknk', '2023-11-15', '0000-00-00', ''),
+(2, '', 'temon', 'saritem', 'dildo', 0, 'pandawa', '2023-11-15', '0000-00-00', ''),
+(3, '', 'Jamal', 'Lab Basis Data GTI', 'Handphone Samsung', 0, 'berwarna hitam', '2023-11-15', '0000-00-00', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengguna`
+-- Table structure for table `kehilangan`
+--
+
+CREATE TABLE `kehilangan` (
+  `iddata` int(20) NOT NULL,
+  `nama` char(100) NOT NULL,
+  `telpon` char(20) NOT NULL,
+  `jenis` varchar(100) NOT NULL,
+  `deskripsi` varchar(100) NOT NULL,
+  `mc` varchar(100) NOT NULL,
+  `tempatditemukan` varchar(100) NOT NULL,
+  `nim` int(10) NOT NULL,
+  `tglditemukan` date NOT NULL,
+  `waktuditemukan` time NOT NULL,
+  `tgl` date NOT NULL,
+  `tglproses` date NOT NULL,
+  `status` enum('Terproses','Belum diproses') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pengguna`
 --
 
 CREATE TABLE `pengguna` (
@@ -156,21 +179,25 @@ CREATE TABLE `pengguna` (
   `username` char(25) NOT NULL,
   `password` varchar(25) NOT NULL,
   `level` enum('admin','user') NOT NULL,
-  `nama` char(100) NOT NULL
+  `nama` char(100) NOT NULL,
+  `nim` int(7) NOT NULL,
+  `nowa` int(13) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `pengguna`
+-- Dumping data for table `pengguna`
 --
 
-INSERT INTO `pengguna` (`iduser`, `username`, `password`, `level`, `nama`) VALUES
-(1, 'andre@mahmud', 'andre123', 'admin', 'Andre Wibowo'),
-(2, 'naila@123', 'naila123', 'user', 'naila f');
+INSERT INTO `pengguna` (`iduser`, `username`, `password`, `level`, `nama`, `nim`, `nowa`) VALUES
+(1, 'andre@mahmud', 'andre123', 'admin', 'Andre Wibowo', 0, 0),
+(2, 'naila@123', 'naila123', 'user', 'naila f', 0, 0),
+(6, 'gamma@js', '12345', 'admin', 'aprila aditia', 0, 0),
+(7, 'java@css', '123', 'user', 'java', 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `trans_demo`
+-- Table structure for table `trans_demo`
 --
 
 CREATE TABLE `trans_demo` (
@@ -178,11 +205,12 @@ CREATE TABLE `trans_demo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `trans_demo`
+-- Dumping data for table `trans_demo`
 --
 
 INSERT INTO `trans_demo` (`nama`) VALUES
 ('Firebird'),
+('MongoDB'),
 ('MySQL'),
 ('Oracle'),
 ('PostgreSQL');
@@ -190,7 +218,7 @@ INSERT INTO `trans_demo` (`nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `usermhs`
+-- Table structure for table `usermhs`
 --
 
 CREATE TABLE `usermhs` (
@@ -203,55 +231,80 @@ CREATE TABLE `usermhs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `usermhs`
+-- Dumping data for table `usermhs`
 --
 
 INSERT INTO `usermhs` (`iduser`, `username`, `password`, `nama_lengkap`, `nim`, `no_wa`) VALUES
-(1, 'andre@jadu', 'andre123', 'andre wibowo', '2205063', '081214627146');
+(1, 'andre@jadu', 'andre123', 'andre wibowo', '2205063', '081214627146'),
+(5, 'gamma@py', '12345', 'gamma', '003', '300');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `barang_hilang`
+-- Indexes for table `barang_hilang`
 --
 ALTER TABLE `barang_hilang`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `pengguna`
+-- Indexes for table `data`
+--
+ALTER TABLE `data`
+  ADD PRIMARY KEY (`idbarang`);
+
+--
+-- Indexes for table `kehilangan`
+--
+ALTER TABLE `kehilangan`
+  ADD PRIMARY KEY (`iddata`);
+
+--
+-- Indexes for table `pengguna`
 --
 ALTER TABLE `pengguna`
   ADD PRIMARY KEY (`iduser`);
 
 --
--- Indeks untuk tabel `trans_demo`
+-- Indexes for table `trans_demo`
 --
 ALTER TABLE `trans_demo`
   ADD PRIMARY KEY (`nama`);
 
 --
--- Indeks untuk tabel `usermhs`
+-- Indexes for table `usermhs`
 --
 ALTER TABLE `usermhs`
   ADD PRIMARY KEY (`iduser`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `pengguna`
+-- AUTO_INCREMENT for table `data`
+--
+ALTER TABLE `data`
+  MODIFY `idbarang` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `kehilangan`
+--
+ALTER TABLE `kehilangan`
+  MODIFY `iddata` int(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pengguna`
 --
 ALTER TABLE `pengguna`
-  MODIFY `iduser` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `iduser` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `usermhs`
+-- AUTO_INCREMENT for table `usermhs`
 --
 ALTER TABLE `usermhs`
-  MODIFY `iduser` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `iduser` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
