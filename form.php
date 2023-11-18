@@ -24,10 +24,10 @@
             <h1 class="logo">MISSING CENTER</h1>
             <nav>
                 <ul>
-                    <li><a href="#">Barang Belum <br>Terklaim</a></li>
-                    <li><a href="#">Barang Sudah <br>Terklaim</a></li>
+				<li><a href="lost.php">Barang Belum <br>Terklaim</a></li>
+                    <li><a href="found.php">Barang Sudah <br>Terklaim</a></li>
                     <li><a href="#">Barang <br>hilang</a></li>
-                    <li><a href="#">Input <br>Data</a></li>
+                    <li><a href="form.php">Input <br>Data</a></li>
                     <li><a href="register.php">Daftar</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
@@ -166,7 +166,7 @@
 				<div class="inner">
 					
 					<div class="copyright">
-						&copy; MISSING CENTER </a>.
+						&copy; MISSING CENTER Group 5 D4 RPL 2C</a>.
 					</div>
 				</div>
 			</footer>

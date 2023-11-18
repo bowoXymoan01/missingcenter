@@ -17,8 +17,8 @@
             <h1 class="logo">MISSING CENTER</h1>
             <nav>
                 <ul>
-                    <li><button class="btn-cta"><a href="#">Laporkan barang<br>hilang</a></button></li>
-                    <li><button class="btn-cta"><a href="#">Lihat barang<br>hilang</a></button></li>
+                    <li><button class="btn-cta"><a href="formkehilangan.php">Laporkan barang<br>hilang</a></button></li>
+                    <li><button class="btn-cta"><a href="found.php">Lihat barang<br>hilang</a></button></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </nav>

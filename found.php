@@ -1,31 +1,23 @@
 <!DOCTYPE HTML>
-<!--
-	Industrious by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
 <html>
-	<head>
-		<title>MISSING CENTER</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="assets/bootstrap/css/adminpage.css">
         <title>MISSING CENTER</title>
-	</head>
-	<body class="is-preload">
-               <!--  pembuka Header -->
+    </head>
+    <body>
+        <!--  pembuka Header -->
         <header>
             <img src="img/ellipse_2.png" alt="missingcenter-logo" class="logo1" />
             <h1 class="logo">MISSING CENTER</h1>
             <nav>
                 <ul>
-				<li><a href="lost.php">Barang Belum <br>Terklaim</a></li>
-                    <li><a href="found.php">Barang Sudah <br>Terklaim</a></li>
+                    <li><a href="lost.php">Barang Belum <br>Terklaim</a></li>
+                    <li><a href="#">Barang Sudah <br>Terklaim</a></li>
                     <li><a href="#">Barang <br>hilang</a></li>
                     <li><a href="form.php">Input <br>Data</a></li>
                     <li><a href="register.php">Daftar</a></li>
@@ -33,11 +25,10 @@
                 </ul>
             </nav>
         </header>
-
-
+			
 			<!-- Heading -->
 			<div id="heading" >
-				<h1>Data Barang Belum Diklaim</h1>
+				<h1>Data Barang Terklaim</h1>
 			</div>
 			
 			<section id="main" class="wrapper">
@@ -49,7 +40,7 @@
 							//skrip untuk koneksi
 							require('mysqli_connect.php');
 							//skrip ini u/ membaca rekaman
-							$q="SELECT * FROM data WHERE status='belum diklaim'";
+							$q="SELECT * FROM data WHERE status='terklaim'";
 							$hasil=@mysqli_query ($dbkoneksi, $q);// menjalankan query 
 						
 								if($hasil){
@@ -62,27 +53,30 @@
                                                 <th>Jenis Barang</th>
 												<th>Tempat Ditemukan</th>
 												<th>Penemu</th>
-												<th>Deskripsi</th>
+												<th>Penerima</th>
+												<th>NIM</th>
+												<th>Deskripsi Lainnya</th>
 												<th>Ditemukan</th>
+												<th>Diambil</th>
 												<th>Status</th>
-												<th>Claim</th>
                                             </tr>
                                         </thead>
 										<tbody>';
 										//tampilkan semua user
                                             while($baris=mysqli_fetch_array($hasil, MYSQLI_ASSOC)){
                                         echo'<tr>
-												<td><a href="edit-before.php?idbarang=' . $baris['idbarang'] . '">
+												<td><a href="edit.php?idbarang=' . $baris['idbarang'] . '">
 												<button type="button" class="button primary fit small">Edit</button></a></td>
 												<td>' . $baris['idbarang'] . '</td>
                                                 <td>' . $baris['jenis'] . '</td>
 												<td>' . $baris['tempatditemukan'] . '</td>
                                                 <td>' . $baris['penemu'] . '</td>
+												<td>' . $baris['penerima'] . '</td>
+												<td>' . $baris['nim'] . '</td>
 												<td>' . $baris['deskripsi'] . '</td>
 												<td>' . $baris['tglditemukan'] . '</td>
+												<td>' . $baris['tgldiambil'] . '</td>
 												<td>' . $baris['status'] . '</td>
-												<td><a href="klaim.php?idbarang=' . $baris['idbarang'] . '">
-												<button type="button" class="button primary fit">Claim</button></a></td>
 												</tr>
                                         </tbody>';}
 									mysqli_free_result($hasil);
@@ -99,13 +93,22 @@
 				</div>
 			</section>
 			
+			
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="inner">
 					<div class="copyright">
-						&copy; MISSING CENTER Group 5 D4 RPL 2C</a>.
+						&copy; MISSING CENTER </a>.
 					</div>
 				</div>
 			</footer>
+
+		<!-- Scripts -->
+            <script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
 	</body>
 </html>
