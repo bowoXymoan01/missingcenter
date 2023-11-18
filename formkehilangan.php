@@ -30,7 +30,7 @@
 						<div class="col-12 col-12-medium">
 							<h2>Form Barang Hilang</h2>
 							<?php
-							include "mysqli-connect.php";
+							include_once "mysqli-connect.php";
 							//skrip ini melakukan query INSERT yg menambah sebuah rekaman pada tabel pengguna.
 							if($_SERVER['REQUEST_METHOD']=='POST'){
 								$arrayError = array();//inisialisasi array error
@@ -53,9 +53,8 @@
 								}
 								else{$nim = trim($_POST['nim']);
 								}
-								
 								if(empty($_POST['deskripsi'])){
-									$deskripsi = trim($_POST['deskripsi']);
+									$arrayError[]='<script type="text/javascript">alert("NIM tidak boleh kosong");</script> ';
 								}
 								else{$deskripsi = trim($_POST['deskripsi']);
 								}
@@ -88,9 +87,9 @@
 								if(empty($arrayError)){
 									require('mysqli_connect.php');//koneksi ke database.
 									//melakukan query
-									$q = "INSERT INTO kehilangan (iddata,jenis,nama,nim,deskripsi,status,tempatditemukan,telepon,tanggal,tglproses,tglditemukan,waktuditemukan)
-									VALUES('','$jenis','$nama','$nim','$deskripsi','Belum diproses','$tempatditemukan','$telepon',NOW(),'','','$tglditemukan','$waktuditemukan')";
-									$hasil = @mysqli_query ($dbkoneksi, $q);//menjalankan query
+									$q = "INSERT INTO kehilangan (iddata,jenis,nama,nim,deskripsi,status,tempatditemukan,telpon,tgl,tglproses,tglditemukan,waktuditemukan)
+									VALUES('','$jenis','$nama','$nim','$deskripsi','Belum diproses','$tempatditemukan','$telepon',NOW(),'','$tglditemukan','$waktuditemukan')";
+									$hasil = @mysqli_query ($conn, $q);//menjalankan query
 									if($hasil){//jika berhasil
 										echo'<script type="text/javascript">alert("Laporan berhasil dikirim");</script> ';
 										
@@ -99,9 +98,9 @@
 										//tampilkan error
 										echo '<script type="text/javascript">alert("Data gagal dimasukkan karena error sistem");</script> ';
 										//Debug:
-										echo '<p>'. mysqli_error($dbkoneksi).'<br><br>Query: ' .$q. '</p>';
+										echo '<p>'. mysqli_error($conn).'<br><br>Query: ' .$q. '</p>';
 									}
-									mysqli_close($dbkoneksi);//menutup koneksi
+									mysqli_close($conn);//menutup koneksi
 									header("Location:sukses.php");
 									//menyertakan footer dan keluar dari skript:
 									exit();
@@ -115,7 +114,7 @@
 							}
 							?>
 					
-							<form action="formkehilangan.php" method="post">
+							<form action="" method="post">
 								<div class="row gtr-uniform">
 									<div class="col-6 col-12-xsmall">
 										<input class="form-control" id="nama"  for="nama" 
@@ -136,9 +135,9 @@
 										</label>
 									</div>
 									<div class="col-6 col-12-xsmall">
-										<input class="form-control" id="telpon" for="telpon" 
-										placeholder="No. Telpon Anda" name="telpon" type="text" required autofocus
-										value="<?php if (isset($_POST['telpon'])) echo $_POST['telpon']; ?>"/>
+										<input class="form-control" id="telepon" for="telepon" 
+										placeholder="No. Telpon Anda" name="telepon" type="text" required autofocus
+										value="<?php if (isset($_POST['telepon'])) echo $_POST['telepon']; ?>"/>
 									</div>
 									<div class="col-6 col-12-xsmall">
 										<input class="form-control" id="jenis"  for="jenis" 
@@ -156,17 +155,18 @@
 										placeholder="" name="waktuditemukan" type="time" required autofocus
 										value="<?php if (isset($_POST['waktuditemukan'])) echo $_POST['waktuditemukan']; ?>"/>
 									</div>
-									<!-- Change this to a button or input when using this as a form -->
-									<div class="col-6 ">
-										<input id="submit"  class="primary fit"
-										type="submit" name="Submit" value="Kirim"/>
-									</div>
 									<h3>Tanggal Barang Hilang	:</h3>
 									<div class="col-3 col-12-xsmall">
 										<input class="form-control" id="tglditemukan"  for="tglditemukan" 
 										placeholder="" name="tglditemukan" type="date" required autofocus
 										value="<?php if (isset($_POST['tglditemukan'])) echo $_POST['tglditemukan']; ?>"/>
 									</div>	
+								
+									<!-- Change this to a button or input when using this as a form -->
+									<div class="col-6 ">
+										<input id="submit"  class="primary fit"
+										type="submit" name="Submit" value="Kirim"/>
+									</div>
 								</div>
 							</form>
 						</div>
