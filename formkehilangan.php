@@ -59,7 +59,7 @@
 								}
 													
 								if(empty($_POST['tempatditemukan'])){
-									$arrayError[]='<script type="text/javascript">alert("Tempat ditemukan tidak boleh kosong");</script> ';
+									$arrayError[]='<script type="text/javascript">alert("Tempat Barang Hilang tidak boleh kosong");</script> ';
 								}
 								else{$tempatditemukan = trim($_POST['tempatditemukan']);
 								}
@@ -71,13 +71,13 @@
 								}
 								
 								if(empty($_POST['tglditemukan'])){
-									$arrayError[]='<script type="text/javascript">alert("Tanggal ditemukan tidak boleh kosong");</script> ';
+									$arrayError[]='<script type="text/javascript">alert("Tanggal Barang Hilang tidak boleh kosong");</script> ';
 								}
 								else{$tglditemukan = trim($_POST['tglditemukan']);
 								}
 								
 								if(empty($_POST['waktuditemukan'])){
-									$arrayError[]='<script type="text/javascript">alert("Waktu ditemukan tidak boleh kosong");</script> ';
+									$arrayError[]='<script type="text/javascript">alert("Waktu Barang Hilang tidak boleh kosong");</script> ';
 								}
 								else{$waktuditemukan = trim($_POST['waktuditemukan']);
 								}
@@ -93,19 +93,16 @@
 										echo'<script type="text/javascript">alert("Laporan berhasil dikirim");</script> ';
 										
 									}
-									else{//jika gagal
-										//tampilkan error
+									else {
 										echo '<script type="text/javascript">alert("Data gagal dimasukkan karena error sistem");</script> ';
-										//Debug:
 										echo '<p>'. mysqli_error($conn).'<br><br>Query: ' .$q. '</p>';
 									}
-									mysqli_close($conn);//menutup koneksi
+									mysqli_close($conn);
 									header("Location:sukses.php");
-									//menyertakan footer dan keluar dari skript:
 									exit();
 								}
 								else{
-									foreach ($arrayError as $psn) {//menampilkan error
+									foreach ($arrayError as $psn) {
 										echo"<h11>$psn</h11><br>\n";
 									}
 									echo '</p><h2>Silahkan coba lagi.</h2>';
@@ -168,7 +165,6 @@
 										value="<?php if (isset($_POST['tglditemukan'])) echo $_POST['tglditemukan']; ?>"/>
 									</div>	
 									<br>
-									<!-- Change this to a button or input when using this as a form -->
 									<div class="col-8">
 										<button id='submit' class="primary" type="submit" name="submit"  value="kirim">Kirim</button>
 									</div>

@@ -98,7 +98,7 @@
 			<footer id="footer">
 				<div class="inner">
 					<div class="copyright">
-						&copy; MISSING CENTER </a>.
+						&copy; MISSING CENTER Group 5 D4 RPL 2C </a>.
 					</div>
 				</div>
 			</footer>
