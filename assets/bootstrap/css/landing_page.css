@@ -8,10 +8,10 @@
 /* header dan navbar */
 header{
     display:flex;
+    height: 180px;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    height: 160px;
     background: #5E7C60;
     color:#ffffff;
 }
