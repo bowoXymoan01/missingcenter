@@ -60,6 +60,7 @@ function daftarmhs($data) {
 }
 
 function query($query) {
+    include_once 'mysqli-connect.php';
     global $conn;
     $result = mysqli_query($conn, $query);
     $rows = [];

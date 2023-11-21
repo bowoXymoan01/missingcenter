@@ -109,9 +109,8 @@
 								}
 							}
 							?>
-					
 							<form action="" method="post">
-								<div class="box">
+								<div class="col-md-12 box">
 									<h3>Form Barang Hilang</h2>
 									<div class="col-8">
 										<input class="form-control" id="nama"  for="nama" 
