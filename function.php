@@ -59,4 +59,35 @@ function daftarmhs($data) {
 
 }
 
+function query($query) {
+    global $conn;
+    $result = mysqli_query($conn, $query);
+    $rows = [];
+    while($row = mysqli_fetch_assoc($result) ) {
+        $rows[] = $row;
+    }
+
+}
+
+function tambah($data) {
+    include_once 'mysqli-connect.php';
+    global $conn;
+
+    $nama= $data["nama"];
+    $telepon= $data["telepon"];
+    $jenis= $data["jenis"];
+    $deskripsi= $data["deskripsi"];
+    $tempatditemukan= $data["tempatditemukan"];
+    $nim= $data["nim"];
+    $tglditemukan= $data["tglditemukan"];
+    $waktuditemukan= $data["waktuditemukan"];
+
+    $query = "INSERT INTO kehilangan VALUES ('', '$nama', '$telepon', '$jenis', '$deskripsi', '$tempatditemukan', '$nim', '$tglditemukan', '$waktuditemukan')";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+
+}
+
 ?>

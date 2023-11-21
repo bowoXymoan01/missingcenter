@@ -1,21 +1,16 @@
 <?php 
-$conn = mysqli_connect("localhost", "root", "", "missingcenter");
-
+include_once "function.php";
 if(isset($_POST["submit"]) ) {
 
-    $nama= $_POST["nama"];
-    $telepon= $_POST["telepon"];
-    $jenis= $_POST["jenis"];
-    $deskripsi= $_POST["deskripsi"];
-    $tempatditemukan= $_POST["tempatditemukan"];
-    $nim= $_POST["nim"];
-    $tglditemukan= $_POST["tglditemukan"];
-    $waktuditemukan= $_POST["waktuditemukan"];
+    if( tambah($_POST) > 0) {
+        echo "Data Berhasil Ditambahkan";
+    } 
+    else {
+        echo "Data Gagal Ditambahkan";
+    }
+    
 
-    $query = "INSERT INTO kehilangan VALUES ('', '$nama', '$telepon', '$jenis', '$deskripsi', '$tempatditemukan', '$nim', '$tglditemukan', '$waktuditemukan')";
-
-    mysqli_query($conn, $query);
-
+    
     
 }
 ?>
