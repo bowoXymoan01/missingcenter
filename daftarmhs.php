@@ -73,7 +73,7 @@ if(isset($_POST["register"]) ) {
                     </div>
                     <div class="mb-4">
                         <label for="register">
-                            <button class="btn" type="submit" name="register" id="no_wa"  for="no_wa">Daftarkan</button>
+                            <button class="btn" type="submit" name="register" id="register"  for="register">Daftarkan</button>
                         </label>
                     </div>
                     <div class="d-flex justify-content-center">

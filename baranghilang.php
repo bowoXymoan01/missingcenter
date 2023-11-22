@@ -22,7 +22,9 @@ if(isset($_POST["submit"]) ) {
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="assets/bootstrap/css/adminpage.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/bootstrap/css/LoginAdminstyle.css">
+        <link rel="stylesheet" href="assets/bootstrap/css/landing_page.css">
         <title>MISSING CENTER</title>
     </head>
     <body>
@@ -38,49 +40,67 @@ if(isset($_POST["submit"]) ) {
                 </ul>
             </nav>
         </header>
-        <form action="" method="post">
-            <ul>
-                <li>
-                    <label for="nama">NAMA : </label>
-                    <input type="text" name="nama" id="nama">
-                </li>
-                <li>
-                    <label for="telepon">TELEPON : </label>
-                    <input type="text" name="telepon" id="telepon">
-                </li>
-                <li>
-                    <label for="namabarang">JENIS : </label>
-                    <input type="text" name="namabarang" id="namabarang">
-                </li>
-                <li>
-                    <label for="deskripsi">DESKRIPSI : </label>
-                    <input type="text" name="deskripsi" id="deskripsi">
-                </li>
-                <li>
-                    <label for="tempatkehilangan">Tempat Kehilangan Barang : </label>
-                    <input type="text" name="tempatkehilangan" id="tempatkehilangan">
-                </li>
-                <li>
-                    <label for="nim">NIM : </label>
-                    <input type="text" name="nim" id="nim">
-                </li>
-                <li>
-                    <label for="tglhilang">Tanggal Kehilangan Barang : </label>
-                    <input type="date" name="tglhilang" id="tglhilang">
-                </li>
-                <li>
-                    <label for="wkthilang">Waktu Kehilangan Barang : </label>
-                    <input type="time" name="wkthilang" id="wkthilang">
-                </li>
-                <li>
-                    <label for="gambar">Foto Barang : </label>
-                    <input type="file" name="gambar" id="gambar">
-                </li>
-                <li>
-                    <button type="submit" name="submit">Tambah Barang Hilang !</button>
-                </li>
-            </ul>
-        </form>
-    
+        <main class="container">      
+            <div class="row justify-content-center">
+                <div class="col-md-12 box">
+                    <h3 class="text-center">FORM LAPORAN</h3>
+                    <form action="" method="post">
+                        <div class="mb-4">
+                            <label for="nama">
+                                <input type="text" name="nama" id="nama" placeholder="Nama" required autofocus>
+                            </label>
+                        </div>
+                        <div class="mb-4">
+                            <label for="telepon">
+                                <input type="text" name="telepon" id="telepon" placeholder="No.Wa" required autofocus>
+                            </label> 
+                        </div>
+                        <div class="mb-4">
+                            <label for="namabarang">
+                                <input type="text" name="namabarang" id="namabarang" placeholder="Nama Barang" required autofocus>
+                            </label>
+                        </div>
+                        <div class="mb-4">
+                            <label for="deskripsi">
+                                <input type="text" name="deskripsi" id="deskripsi" placeholder="Deskripsi" required autofocus>
+                            </label>
+                        </div>
+                        <div class="mb-4">
+                            <label for="tempatkehilangan">
+                                <input type="text" name="tempatkehilangan" id="tempatkehilangan" placeholder="Tempat Kehilangan" required autofocus>
+                            </label>
+                        </div>
+                        <div class="mb-4">
+                            <label for="nim">
+                                <input type="text" name="nim" id="nim" placeholder="Nim" required autofocus>
+                            </label>
+                        </div>
+                        <div class="mb-4">
+                            <label for="tglhilang">Tanggal
+                                <input type="date" name="tglhilang" id="tglhilang" required autofocus>
+                            </label>
+                        </div>
+                        <div class="mb-4">
+                            <label for="wkthilang">Waktu: 
+                                <input type="time" name="wkthilang" id="wkthilang" required autofocus>
+                            </label>
+                        </div>
+                        <div class="mb-4">
+                            <label for="gambar">Masukan Gambar Jika Ada
+                                <input type="file" name="gambar" id="gambar">
+                            </label>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <label for="submit">
+                                <button class="btn" type="submit" name="submit" id="submit"  for="submit">Laporkan!</button>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
     </body>    
 </html>
+
+
+
