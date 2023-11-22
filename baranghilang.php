@@ -59,28 +59,32 @@ if(isset($_POST["submit"]) ) {
                         <input type="text" name="telepon" id="telepon">
                     </li>
                     <li>
-                        <label for="jenis">JENIS : </label>
-                        <input type="text" name="jenis" id="jenis">
+                        <label for="namabarang">JENIS : </label>
+                        <input type="text" name="namabarang" id="namabarang">
                     </li>
                     <li>
                         <label for="deskripsi">DESKRIPSI : </label>
                         <input type="text" name="deskripsi" id="deskripsi">
                     </li>
                     <li>
-                        <label for="tempatditemukan">Tempat Kehilangan Barang : </label>
-                        <input type="text" name="tempatditemukan" id="tempatditemukan">
+                        <label for="tempatkehilangan">Tempat Kehilangan Barang : </label>
+                        <input type="text" name="tempatkehilangan" id="tempatkehilangan">
                     </li>
                     <li>
                         <label for="nim">NIM : </label>
                         <input type="text" name="nim" id="nim">
                     </li>
                     <li>
-                        <label for="tglditemukan">Tanggal Kehilangan Barang : </label>
-                        <input type="date" name="tglditemukan" id="tglditemukan">
+                        <label for="tglhilang">Tanggal Kehilangan Barang : </label>
+                        <input type="date" name="tglhilang" id="tglhilang">
                     </li>
                     <li>
-                        <label for="waktuditemukan">Waktu Kehilangan Barang : </label>
-                        <input type="time" name="waktuditemukan" id="waktuditemukan">
+                        <label for="wkthilang">Waktu Kehilangan Barang : </label>
+                        <input type="time" name="wkthilang" id="wkthilang">
+                    </li>
+                    <li>
+                        <label for="gambar">Foto Barang : </label>
+                        <input type="file" name="gambar" id="gambar">
                     </li>
                     <li>
                         <button type="submit" name="submit">Tambah Barang Hilang !</button>

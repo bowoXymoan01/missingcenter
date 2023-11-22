@@ -74,16 +74,17 @@ function tambah($data) {
     include_once 'mysqli-connect.php';
     global $conn;
 
-    $nama= $data["nama"];
-    $telepon= $data["telepon"];
-    $jenis= $data["jenis"];
-    $deskripsi= $data["deskripsi"];
-    $tempatditemukan= $data["tempatditemukan"];
-    $nim= $data["nim"];
-    $tglditemukan= $data["tglditemukan"];
-    $waktuditemukan= $data["waktuditemukan"];
+    $nama = ($data["nama"]);
+    $telepon = ($data["telepon"]);
+    $namabarang = ($data["namabarang"]);
+    $deskripsi = ($data["deskripsi"]);
+    $tempatkehilangan = ($data["tempatkehilangan"]);
+    $nim = ($data["nim"]);
+    $tglhilang = ($data["tglhilang"]);
+    $wkthilang = ($data["wkthilang"]);
+    $gambar = ($data["gambar"]);
 
-    $query = "INSERT INTO kehilangan VALUES ('', '$nama', '$telepon', '$jenis', '$deskripsi', '$tempatditemukan', '$nim', '$tglditemukan', '$waktuditemukan')";
+    $query = "INSERT INTO barang_hilang VALUES ('', '$nama', '$telepon', '$namabarang', '$deskripsi', '$tempatkehilangan', '$nim', '$tglhilang', '$wkthilang', '$gambar')";
 
     mysqli_query($conn, $query);
 
