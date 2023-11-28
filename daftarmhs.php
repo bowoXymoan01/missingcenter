@@ -62,13 +62,13 @@ if(isset($_POST["register"]) ) {
                     <div class="mb-4">
                         <label for="nim">
                             <input class="form-control" id="nim"  for="nim" 
-                            placeholder="nim" name="nim" type="text" required autofocus/>
+                            placeholder="Nim" name="nim" type="text" required autofocus/>
                         </label>
                     </div>
                     <div class="mb-4">
                         <label for="no_wa">
                             <input class="form-control" id="no_wa"  for="no_wa" 
-                            placeholder="no_wa" name="no_wa" type="text" required autofocus/>
+                            placeholder="No. WA" name="no_wa" type="text" required autofocus/>
                         </label>
                     </div>
                     <div class="mb-4">
