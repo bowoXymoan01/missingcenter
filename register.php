@@ -1,4 +1,5 @@
 <?php
+session_start();
 require "function.php";
 
 if(isset($_POST["register"]) ) {
@@ -11,7 +12,14 @@ if(isset($_POST["register"]) ) {
     } else {
     echo mysqli_error($conn);
 }
+
+
+if(!isset($_SESSION["admin"])){
+    header("Location:login.php");
+    exit;
+}
 ?>
+
 
 
 <!DOCTYPE html>

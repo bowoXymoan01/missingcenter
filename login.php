@@ -1,4 +1,13 @@
 <?php
+    session_start();
+    if (isset($_SESSION["user"])){
+        header("Location: user.php");
+        exit;
+    }
+    elseif(isset($_SESSION["admin"])){
+        header("Location: admin.php");
+        exit;
+    }
     include_once 'mysqli-connect.php';
     if (isset($_POST['login'])){
         $username = $_POST["username"];
@@ -11,10 +20,12 @@
 
         if(mysqli_num_rows($result1) == 1){
             $row = mysqli_fetch_assoc($result1);
+            $_SESSION["user"] =  true;
             header("Location: user.php");
             exit;
         }elseif(mysqli_num_rows($result2) == 1){
             $row1 = mysqli_fetch_assoc($result2);
+            $_SESSION["admin"] =  true;
             header("Location: admin.php");
             exit;
         }elseif (mysqli_num_rows($result1) == 0 && mysqli_num_rows($result2) == 0){
