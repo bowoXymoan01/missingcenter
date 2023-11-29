@@ -1,6 +1,6 @@
 <?php
-include_once "function.php";
-$barang = query("SELECT * FROM barang_hilang");
+require "function.php";
+$barang = query(" SELECT * FROM barang_hilang ");
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +30,7 @@ $barang = query("SELECT * FROM barang_hilang");
         </nav>
     </header>
 
-    <table border="2" cellpadding="12" cellspacing="8" class="table">
+    <table border="1" cellpadding="10" cellspacing="6" class="table">
         <tr>
             <th>No. </th>
             <th>Aksi </th>
@@ -53,15 +53,15 @@ $barang = query("SELECT * FROM barang_hilang");
                     <a href="">Ubah</a>
                     <a href="">Hapus</a>
                 </td>
-                <td><img src="img/<?= $row["Gambar"]; ?>" width="50"></td>
-                <td><?= $row["Nama"]; ?></td>
-                <td><?= $row["Telepon"]; ?></td>
-                <td><?= $row["Nama Barang"]; ?></td>
-                <td><?= $row["Deskripsi"]; ?></td>
-                <td><?= $row["Tempat Kehilangan"]; ?></td>
-                <td><?= $row["Nim"]; ?></td>
-                <td><?= $row["Tanggal Hilang"]; ?></td>
-                <td><?= $row["Waktu Hilang"]; ?></td>
+                <td><img src="img/<?= $row["gambar"]; ?>" width="50"></td>
+                <td><?= $row["nama"]; ?></td>
+                <td><?= $row["telepon"]; ?></td>
+                <td><?= $row["namabarang"]; ?></td>
+                <td><?= $row["deskripsi"]; ?></td>
+                <td><?= $row["tempatkehilangan"]; ?></td>
+                <td><?= $row["nim"]; ?></td>
+                <td><?= $row["tglhilang"]; ?></td>
+                <td><?= $row["wkthilang"]; ?></td>
             </tr>
             <?php $i++; ?>
             <?php endforeach; ?>
