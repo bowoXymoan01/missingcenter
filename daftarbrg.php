@@ -30,7 +30,7 @@ $barang = query(" SELECT * FROM barang_hilang ");
         </nav>
     </header>
 
-    <table border="1" cellpadding="10" cellspacing="6" class="table">
+    <table border="2" cellpadding="12" cellspacing="8" class="table">
         <tr>
             <th>No. </th>
             <th>Aksi </th>
@@ -53,7 +53,7 @@ $barang = query(" SELECT * FROM barang_hilang ");
                     <a href="">Ubah</a>
                     <a href="">Hapus</a>
                 </td>
-                <td><img src="img/<?= $row["gambar"]; ?>" width="50"></td>
+                <td><img src="img/<?= $row["gambar"]; ?>" width="60"></td>
                 <td><?= $row["nama"]; ?></td>
                 <td><?= $row["telepon"]; ?></td>
                 <td><?= $row["namabarang"]; ?></td>
