@@ -1,15 +1,8 @@
-
 <?php
-    session_start();
-    if(!isset($_SESSION["admin"])){
-        header("Location:login.php");
-        exit;
-    }
-	else if(!isset($_SESSION["user"])){
-        header("Location:login.php");
-        exit;
-	}
+require "function.php";
+$barang = query(" SELECT * FROM barang_temuan ");
 ?>
+
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -29,8 +22,8 @@
             <nav>
                 <ul>
                     <li><a href="lost.php">Barang Belum <br>Terklaim</a></li>
-                    <li><a href="#">Barang Sudah <br>Terklaim</a></li>
-                    <li><a href="#">Barang <br>hilang</a></li>
+                    <li><a href="found.php">Barang Sudah <br>Terklaim</a></li>
+                    <li><a href="daftarbrg.php">Barang <br>hilang</a></li>
                     <li><a href="form.php">Input <br>Data</a></li>
                     <li><a href="register.php">Daftar</a></li>
                     <li><a href="logout.php">Logout</a></li>
@@ -38,89 +31,39 @@
             </nav>
         </header>
 			
-			<!-- Heading -->
-			<div id="heading" >
-				<h1>Data Barang Terklaim</h1>
-			</div>
-			
-			<section id="main" class="wrapper">
-				<div class="inner">
-					<div class="content">
-					<div class="table-wrapper">
-						<table class="alt">
-							<?php
-							//skrip untuk koneksi
-							require('mysqli_connect.php');
-							//skrip ini u/ membaca rekaman
-							$q="SELECT * FROM data WHERE status='terklaim'";
-							$hasil=@mysqli_query ($dbkoneksi, $q);// menjalankan query 
-						
-								if($hasil){
-							
-                                    echo '
-                                        <thead>
-                                            <tr">
-												<th>Edit</th>
-                                                <th>No</th>
-                                                <th>Jenis Barang</th>
-												<th>Tempat Ditemukan</th>
-												<th>Penemu</th>
-												<th>Penerima</th>
-												<th>NIM</th>
-												<th>Deskripsi Lainnya</th>
-												<th>Ditemukan</th>
-												<th>Diambil</th>
-												<th>Status</th>
-                                            </tr>
-                                        </thead>
-										<tbody>';
-										//tampilkan semua user
-                                            while($baris=mysqli_fetch_array($hasil, MYSQLI_ASSOC)){
-                                        echo'<tr>
-												<td><a href="edit.php?idbarang=' . $baris['idbarang'] . '">
-												<button type="button" class="button primary fit small">Edit</button></a></td>
-												<td>' . $baris['idbarang'] . '</td>
-                                                <td>' . $baris['jenis'] . '</td>
-												<td>' . $baris['tempatditemukan'] . '</td>
-                                                <td>' . $baris['penemu'] . '</td>
-												<td>' . $baris['penerima'] . '</td>
-												<td>' . $baris['nim'] . '</td>
-												<td>' . $baris['deskripsi'] . '</td>
-												<td>' . $baris['tglditemukan'] . '</td>
-												<td>' . $baris['tgldiambil'] . '</td>
-												<td>' . $baris['status'] . '</td>
-												</tr>
-                                        </tbody>';}
-									mysqli_free_result($hasil);
-								
-								}else{
-									echo '<p class="error">Terjadi Kesalahan.! </p>';
-									echo '<p>' . mysqli_error($dbkoneksi) . '<br><br>Query:' . $q . '</p>'; 
-								}
-								mysqli_close($dbkoneksi);
-								?>
-						</table>
-						</div>
-					</div>
-				</div>
-			</section>
-			
-			
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<div class="copyright">
-						&copy; MISSING CENTER Group 5 D4 RPL 2C </a>.
-					</div>
-				</div>
-			</footer>
+		<table border="2" cellpadding="20" cellspacing="10" class="table">
+        <tr>
+            <th>No. </th>
+            <th>Aksi </th>
+            <th>Tipe </th>
+            <th>Merek </th>
+            <th>Nama </th>
+            <th>Warna </th>
+            <th>Deskripsi </th>
+            <th>Tanggal </th>
+            <th>Lokasi </th>
+            <th>Status </th>
+        </tr>
 
-		<!-- Scripts -->
-            <script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+            <?php $i = 1; ?>
+            <?php foreach( $barang as $row ) : ?>
+            <tr>
+                <td><?= $i ?></td>
+                <td>
+                    <a href="">Ubah</a>
+                    <a href="">Hapus</a>
+                </td>
+                <td><?= $row["tipe"]; ?></td>
+                <td><?= $row["merek"]; ?></td>
+                <td><?= $row["nama"]; ?></td>
+                <td><?= $row["warna"]; ?></td>
+                <td><?= $row["deskripsi"]; ?></td>
+                <td><?= $row["tanggal"]; ?></td>
+                <td><?= $row["lokasi"]; ?></td>
+                <td><?= $row["status"]; ?></td>
+            </tr>
+            <?php $i++; ?>
+            <?php endforeach; ?>
+    </table>
+</body>
 </html>

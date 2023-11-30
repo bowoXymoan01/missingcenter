@@ -25,7 +25,7 @@
                 <ul>
                     <li><a href="lost.php">Barang Belum <br>Terklaim</a></li>
                     <li><a href="found.php">Barang Sudah <br>Terklaim</a></li>
-                    <li><a href="#">Barang <br>hilang</a></li>
+                    <li><a href="daftarbrg.php">Barang <br>hilang</a></li>
                     <li><a href="form.php">Input <br>Data</a></li>
                     <li><a href="register.php">Daftar</a></li>
                     <li><a href="logout.php">Logout</a></li>

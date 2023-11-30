@@ -19,7 +19,7 @@
             <nav>
                 <ul>
                     <li><button class="btn-cta"><a href="formkehilangan.php">Laporkan barang<br>hilang</a></button></li>
-                    <li><button class="btn-cta"><a href="found.php">Lihat barang<br>hilang</a></button></li>
+                    <li><button class="btn-cta"><a href="daftarbrg.php">Lihat barang<br>hilang</a></button></li>
 				</ul>
 			</nav>
 		</header>
