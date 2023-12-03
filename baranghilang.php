@@ -35,7 +35,6 @@ if(isset($_POST["submit"]) ) {
             <nav>
                 <ul>
                     <li><button class="btn-cta"><a href="daftarbrg.php">Lihat barang hilang</a></button></li>
-                    <li><button class="btn-cta"><a href="logout.php">Logout</a></button></li>
                 </ul>
             </nav>
         </header>
