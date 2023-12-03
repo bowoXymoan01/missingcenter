@@ -42,12 +42,10 @@ $barang = query(" SELECT * FROM barang_hilang ");
             <th>Tanggal Hilang </th>
             <th>Waktu Hilang </th>
         </tr>
-
             <?php $i = 1; ?>
             <?php foreach( $barang as $row ) : ?>
             <tr>
                 <td><?= $i ?></td>
-
                 <td><img src="img/<?= $row["gambar"];?>" width="60"></td>
                 <td><?= $row["nama"]; ?></td>
                 <td><?= $row["telepon"]; ?></td>
