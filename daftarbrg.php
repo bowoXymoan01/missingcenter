@@ -29,7 +29,7 @@ $barang = query(" SELECT * FROM barang_hilang ");
         </nav>
     </header>
 
-    <table border="2" cellpadding="12" cellspacing="8" class="table">
+    <table border="2" cellpadding="14" cellspacing="10" class="table">
         <tr>
             <th>No. </th>
             <th>Gambar </th>
