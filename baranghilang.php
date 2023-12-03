@@ -34,9 +34,8 @@ if(isset($_POST["submit"]) ) {
             <h1 class="logo">MISSING CENTER</h1>
             <nav>
                 <ul>
-                    <li><button class="btn-cta"><a href="baranghilang.php">Laporkan barang<br>hilang</a></button></li>
-                    <li><button class="btn-cta"><a href="found.php">Lihat barang<br>hilang</a></button></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <li><button class="btn-cta"><a href="daftarbrg.php">Lihat barang hilang</a></button></li>
+                    <li><button class="btn-cta"><a href="logout.php">Logout</a></button></li>
                 </ul>
             </nav>
         </header>
@@ -94,6 +93,10 @@ if(isset($_POST["submit"]) ) {
                             <label for="submit">
                                 <button class="btn" type="submit" name="submit" id="submit"  for="submit">Laporkan!</button>
                             </label>
+                        </div>
+                        <br>
+                        <div class="d-flex justify-content-center">
+                            <a href="user.php">Kembali</a>
                         </div>
                     </form>
                 </div>

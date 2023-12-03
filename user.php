@@ -27,7 +27,7 @@
                 <ul>
                     <li><button class="btn-cta"><a href="baranghilang.php">Laporkan barang<br>hilang</a></button></li>
                     <li><button class="btn-cta"><a href="daftarbrg.php">Lihat barang<br>hilang</a></button></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <li><button class="btn-cta"><a href="logout.php">Logout</a></button></li>
                 </ul>
             </nav>
         </header>
