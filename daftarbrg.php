@@ -23,9 +23,8 @@ $barang = query(" SELECT * FROM barang_hilang ");
         <h1 class="logo">MISSING CENTER</h1>
         <nav>
             <ul>
-                <li><button class="btn-cta"><a href="baranghilang.php">Laporkan barang<br>hilang</a></button></li>
-                <li><button class="btn-cta"><a href="daftarbrg.php">Lihat barang<br>hilang</a></button></li>
-                <li><a href="logout.php">Logout</a></li>
+                <li><button class="btn-cta"><a href="baranghilang.php">Laporkan barang hilang</a></button></li>
+                <li><button class="btn-cta"><a href="user.php">Kembali</a></button></li>
             </ul>
         </nav>
     </header>
