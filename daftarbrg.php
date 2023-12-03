@@ -32,7 +32,6 @@ $barang = query(" SELECT * FROM barang_hilang ");
     <table border="2" cellpadding="12" cellspacing="8" class="table">
         <tr>
             <th>No. </th>
-            <th>Aksi </th>
             <th>Gambar </th>
             <th>Nama </th>
             <th>Telepon </th>
@@ -48,11 +47,8 @@ $barang = query(" SELECT * FROM barang_hilang ");
             <?php foreach( $barang as $row ) : ?>
             <tr>
                 <td><?= $i ?></td>
-                <td>
-                    <a href="">Ubah</a>
-                    <a href="">Hapus</a>
-                </td>
-                <td><img src="img/<?= $row["gambar"]; ?>" width="60"></td>
+
+                <td><img src="img/<?= $row["gambar"];?>" width="60"></td>
                 <td><?= $row["nama"]; ?></td>
                 <td><?= $row["telepon"]; ?></td>
                 <td><?= $row["namabarang"]; ?></td>
