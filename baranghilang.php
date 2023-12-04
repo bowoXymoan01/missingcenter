@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include_once "function.php";
 if(isset($_POST["submit"]) ) {
 
@@ -8,6 +9,10 @@ if(isset($_POST["submit"]) ) {
     else {
         echo "<script>alert('Data Gagal ditambahkan');</script>";
     }
+}
+if(!isset($_SESSION["user"])){
+    header("Location:login.php");
+    exit;
 }
 ?>
 

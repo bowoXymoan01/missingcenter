@@ -1,6 +1,12 @@
 <?php
+session_start();
 require "function.php";
 $barang = query(" SELECT * FROM barang_hilang ");
+
+if(!isset($_SESSION["user"])){
+    header("Location:login.php");
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +35,7 @@ $barang = query(" SELECT * FROM barang_hilang ");
         </nav>
     </header>
 
-    <table border="2" cellpadding="14" cellspacing="10" class="table">
+    <table border="2" cellpadding="20" cellspacing="20" class="table" >
         <tr>
             <th>No. </th>
             <th>Gambar </th>
@@ -46,7 +52,7 @@ $barang = query(" SELECT * FROM barang_hilang ");
             <?php foreach( $barang as $row ) : ?>
             <tr>
                 <td><?= $i ?></td>
-                <td><img src="img/<?= $row["gambar"];?>" width="60"></td>
+                <td><img src="img/<?= $row["gambar"];?>" width="80"></td>
                 <td><?= $row["nama"]; ?></td>
                 <td><?= $row["telepon"]; ?></td>
                 <td><?= $row["namabarang"]; ?></td>
