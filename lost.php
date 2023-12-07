@@ -32,7 +32,7 @@ $barang = query(" SELECT * FROM barang_temuan ");
             </nav>
         </header>
 			
-		<table border="2" cellpadding="20" cellspacing="10" class="table">
+		<table border="2" cellpadding="20" cellspacing="12" class="table">
         <tr>
             <th>No. </th>
             <th>Aksi </th>
@@ -50,20 +50,20 @@ $barang = query(" SELECT * FROM barang_temuan ");
             <?php $i = 1; ?>
             <?php foreach( $barang as $row ) : ?>
             <tr>
-                <td><?= $i ?></td>
+                <td><?= $i ?></td> <!--no-->
                 <td>
-                    <a href="">Ubah</a>
+                    <a href="">Ubah</a> <!--aksi-->
                     <a href="">Hapus</a>
                 </td>
-                <td><img src="img/<?= $row["gambar"];?>" width="80"></td>
-                <td><?= $row["nama"]; ?></td>
-                <td><?= $row["tipe"]; ?></td>
-                <td><?= $row["merek"]; ?></td>
-                <td><?= $row["deskripsi"]; ?></td>
-                <td><?= $row["waktu"]; ?></td>
-                <td><?= $row["tanggal"]; ?></td>
-                <td><?= $row["lokasi"]; ?></td>
-                <td><?= $row["status"]; ?></td>
+                <td><img src="img/<?= $row["gambar"];?>" width="80"></td> <!--gambar-->
+                <td><?= $row["nama"]; ?></td> <!--nama penemu-->
+                <td><?= $row["tipe"]; ?></td> <!--nama barang-->
+                <td><?= $row["merek"]; ?></td> <!--merek-->
+                <td><?= $row["deskripsi"]; ?></td> <!--deskripsi-->
+                <td><?= $row["waktu"]; ?></td> <!--waktu ditemukan-->
+                <td><?= $row["tanggal"]; ?></td> <!--tanggal-->
+                <td><?= $row["lokasi"]; ?></td> <!--lokasi-->
+                <td><?= $row["status"]; ?></td> <!--status-->
             </tr>
             <?php $i++; ?>
             <?php endforeach; ?>

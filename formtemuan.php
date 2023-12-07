@@ -77,7 +77,7 @@ if(!isset($_SESSION["admin"])){
                         </div>
                         <div class="mb-4">
                             <label for="waktu">Waktu: 
-                                <input type="time" name="wkthilang" id="waktu" required autofocus>
+                                <input type="time" name="waktu" id="waktu" required autofocus>
                             </label>
                         </div>
                         <div class="mb-4">

@@ -106,7 +106,7 @@ function tambah_barang_temuan($data) {
     $waktu = ($data["waktu"]);
     $gambar = ($data["gambar"]);
 
-    $query = "INSERT INTO barang_temuan VALUES ('', '$tipe', '$merek', '$nama', '$tanggal','$lokasi','$status','$deskripsi','$waktu','$gambar')";
+    $query = "INSERT INTO barang_temuan VALUES ('', '$tipe', '$merek', '$nama', '$deskripsi','$tanggal','$lokasi','$status','$waktu','$gambar')";
 
     mysqli_query($conn, $query);
 
