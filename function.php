@@ -113,6 +113,4 @@ function tambah_barang_temuan($data) {
     return mysqli_affected_rows($conn);
 }
 
-
-
 ?>
