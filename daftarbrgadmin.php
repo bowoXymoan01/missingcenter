@@ -3,7 +3,7 @@ session_start();
 require "function.php";
 $barang = query(" SELECT * FROM barang_hilang ");
 
-if(!isset($_SESSION["user"])){
+if(!isset($_SESSION["admin"])){
     header("Location:login.php");
     exit;
 }
@@ -31,8 +31,8 @@ if(!isset($_SESSION["user"])){
         <h1 class="logo">MISSING CENTER</h1>
         <nav>
             <ul>
-                <li><button class="btn-cta"><a href="baranghilang.php">Laporkan barang hilang</a></button></li>
-                <li><button class="btn-cta"><a href="user.php">Kembali</a></button></li>
+                <li><button class="btn-cta"><a href="admin.php">Kembali</a></button></li>
+                //fitur cari pake 
             </ul>
         </nav>
     </header>
@@ -40,6 +40,7 @@ if(!isset($_SESSION["user"])){
     <table border="2" cellpadding="20" cellspacing="20" class="table" >
         <tr>
             <th>No. </th>
+            <th>Aksi </th>
             <th>Gambar </th>
             <th>Nama </th>
             <th>Telepon </th>
@@ -52,8 +53,13 @@ if(!isset($_SESSION["user"])){
         </tr>
             <?php $i = 1; ?>
             <?php foreach( $barang as $row ) : ?>
+
             <tr>
                 <td><?= $i ?></td>
+                <td>
+                    <a href="">Ubah</a>
+                    <a href="">Hapus</a>
+                </td>
                 <td><img src="img/<?= $row["gambar"];?>" width="80"></td>
                 <td><?= $row["nama"]; ?></td>
                 <td><?= $row["telepon"]; ?></td>

@@ -90,7 +90,29 @@ function tambah($data) {
     mysqli_query($conn, $query);
 
     return mysqli_affected_rows($conn);
-
 }
+
+function tambah_barang_temuan($data) {
+    include_once 'mysqli-connect.php';
+    global $conn;
+
+    $nama = ($data["nama"]);
+    $tipe = ($data["tipe"]);
+    $merek = ($data["merek"]);
+    $deskripsi = ($data["deskripsi"]);
+    $tanggal = ($data["tanggal"]);
+    $lokasi = ($data["lokasi"]);
+    $status = ($data["status"]);
+    $waktu = ($data["waktu"]);
+    $gambar = ($data["gambar"]);
+
+    $query = "INSERT INTO barang_temuan VALUES ('', '$tipe', '$merek', '$nama', '$tanggal','$lokasi','$status','$deskripsi','$waktu','$gambar')";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+
+
 
 ?>
