@@ -52,7 +52,7 @@ if(!isset($_SESSION["admin"])){
                     <div class="mb-4">
                         <label for="username">
                             <input class="form-control" id="username" for="username" 
-                            placeholder="Username" name="username" type="text" required autofocus />
+                            placeholder="Username" name="username" type="email" required autofocus />
                         </label>
                     </div>
                     <div class="mb-4">
@@ -67,7 +67,19 @@ if(!isset($_SESSION["admin"])){
                             placeholder="konfirmasi password" name="password1" type="password"  required autofocus />
                         </label>
                     </div>
-                        <br>
+                    <div class="mb-4">
+                        <label for="nim">
+                            <input class="form-control" id="nim" for="nim" 
+                            placeholder="Nim" name="nim" type="text" required autofocus />
+                        </label>
+                    </div>
+                    <div class="mb-4">
+                        <label for="nowa">
+                            <input class="form-control" id="nowa" for="nowa" 
+                            placeholder="No Wa" name="nowa" type="text" required autofocus />
+                        </label>
+                    </div>
+                    <br>
                     <div class="mb-4">
                         <button class="btn" type="submit" name="register">Daftarkan</button>
                     </div>
