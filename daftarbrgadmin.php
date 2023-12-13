@@ -36,7 +36,7 @@ if(!isset($_SESSION["admin"])){
             </ul>
         </nav>
     </header>
-
+    <br>
     <table border="2" cellpadding="20" cellspacing="20" class="table" >
         <tr>
             <th>No. </th>
@@ -58,7 +58,8 @@ if(!isset($_SESSION["admin"])){
                 <td><?= $i ?></td>
                 <td>
                     <a href="update.php?id=<?= $row["idbarang"];?>">Ubah</a>
-                    <a href="hapus.php?id=<?= $row["idbarang"];?>">Hapus</a>
+                    <a href="hapus.php?id=<?= $row["idbarang"];?>" onclick="
+                    return confirm('Apakah anda ingin menghapus data ini?');">Hapus</a>
                 </td>
                 <td><img src="img/<?= $row["gambar"];?>" width="80"></td>
                 <td><?= $row["nama"]; ?></td>

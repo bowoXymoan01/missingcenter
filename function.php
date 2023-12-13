@@ -31,7 +31,6 @@ function register($data) {
 }
 
 function daftarmhs($data) {
-    include_once 'mysqli-connect.php';
     global $conn;
 
     $nama = strtolower(stripslashes($data["nama"]));
@@ -62,7 +61,6 @@ function daftarmhs($data) {
 }
 
 function query($query) {
-    include_once 'mysqli-connect.php';
     global $conn;
     $result = mysqli_query($conn, $query);
     $rows = [];
@@ -74,7 +72,6 @@ function query($query) {
 
 
 function tambah($data) {
-    include_once 'mysqli-connect.php';
     global $conn;
 
     $nama = htmlspecialchars($data["nama"]);
@@ -95,7 +92,6 @@ function tambah($data) {
 }
 
 function tambah_barang_temuan($data) {
-    include_once 'mysqli-connect.php';
     global $conn;
 
     $nama = htmlspecialchars($data["nama"]);
@@ -121,6 +117,37 @@ function hapus($id){
     return mysqli_affected_rows($conn);
 }
 
+function ubah($data){
+    global $conn;
+
+    $id = $data["id"];
+    $nama = htmlspecialchars($data["nama"]);
+    $telepon = htmlspecialchars($data["telepon"]);
+    $namabarang = htmlspecialchars($data["namabarang"]);
+    $deskripsi = htmlspecialchars($data["deskripsi"]);
+    $tempatkehilangan = htmlspecialchars($data["tempatkehilangan"]);
+    $nim = htmlspecialchars($data["nim"]);
+    $tglhilang = htmlspecialchars($data["tglhilang"]);
+    $wkthilang = htmlspecialchars($data["wkthilang"]);
+    $gambar = htmlspecialchars($data["gambar"]);
+
+    $query = "UPDATE barang_hilang SET 
+    nama = '$nama',
+    telepon = '$telepon',
+    namabarang = '$namabarang',
+    deskripsi = '$deskripsi',
+    tempatkehilangan = '$tempatkehilangan',
+    nim = '$nim',
+    tglhilang = '$tglhilang',
+    wkthilang = '$wkthilang',
+    gambar = '$gambar'
+    WHERE idbarang = $id
+    ";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
 
 
 ?>

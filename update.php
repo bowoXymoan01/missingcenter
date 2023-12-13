@@ -1,15 +1,19 @@
 <?php
 require_once "function.php";
 
+
+$id = $_GET["id"];
+
+$barang_hilang = query("SELECT * FROM barang_hilang WHERE idbarang = $id")[0];
+
 if(isset($_POST["submit"] ) ) {
 
     if(ubah($_POST) > 0) {
         echo "
             <script>
-                alert('data berhasil diubah!');
+              alert('data berhasil diubah!');
                 document.location.href = 
                     'daftarbrgadmin.php';
-            
                 </script>
         ";
     } else {
@@ -18,7 +22,6 @@ if(isset($_POST["submit"] ) ) {
                 alert('data gagal diubah!');
                 document.location.href = 
                     'daftarbrgadmin.php';
-    
             </script>
         ";
     }
@@ -32,7 +35,9 @@ if(isset($_POST["submit"] ) ) {
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="assets/bootstrap/css/adminpage.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/bootstrap/css/LoginAdminstyle.css">
+        <link rel="stylesheet" href="assets/bootstrap/css/landing_page.css">
         <title>MISSING CENTER</title>
     </head>
     <body>
@@ -42,61 +47,82 @@ if(isset($_POST["submit"] ) ) {
             <h1 class="logo">MISSING CENTER</h1>
             <nav>
                 <ul>
-                    <li><a href="lost.php">Barang Belum <br>Terklaim</a></li>
-                    <li><a href="found.php">Barang Sudah <br>Terklaim</a></li>
-                    <li><a href="daftarbrgadmin.php">Barang <br>hilang</a></li>
-                    <li><a href="formtemuan.php">Input <br>Data</a></li>
-                    <li><a href="register.php">Daftar</a></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <li><button class="btn-cta"><a href="daftarbrg.php">Lihat barang hilang</a></button></li>
                 </ul>
             </nav>
         </header>
-<body>
-    <h1>Ubah Data Barang Temuan</h1>
-
-    <form action="" method="post">
-        <ul>
-            <li>
-                <label for="tipe">Tipe : </label>
-                <input type="text" name="tipe" id="tipe" required>
-            </li>
-            <li>
-                <label for="merek">Merek : </label>
-                <input type="text" name="merek" id="merek" required>
-            </li>
-            <li>
-                <label for="nama">Nama : </label>
-                <input type="text" name="nama" id="nama" required>
-            </li>
-            <li>
-                <label for="deskripsi">Deskripsi : </label>
-                <input type="text" name="deskripsi" id="deskripsi" required>
-            </li>
-            <li>
-                <label for="tanggal">Tanggal : </label>
-                <input type="date" name="tanggal" id="tanggal" required>
-            </li>
-            <li>
-                <label for="lokasi">Lokasi : </label>
-                <input type="text" name="lokasi" id="lokasi" required>
-            </li>
-            <li>
-                <label for="status">Status : </label>
-                <input type="text" name="status" id="status" required>
-            </li>
-            <li>
-                <label for="waktu">Waktu : </label>
-                <input type="time" name="waktu" id="waktu" required>
-            </li>
-            <li>
-                <label for="gambar">Gambar : </label>
-                <input type="file" name="gambar" id="gambar" required>
-            </li>
-            <li>
-                <label for="submit">
-                    <button class="btn" type="submit" name="submit" id="submit"  for="submit">Simpan</button>
-                </label>
-            </li>
-        </ul>
-</body>
+        <main class="container">      
+            <div class="row justify-content-center">
+                <div class="col-md-12 box">
+                    <h3 class="text-center">FORM EDIT</h3>
+                    <form action="" method="post">
+                        <input type="hidden" name="id" value="<?= $barang_hilang["idbarang"];?>" >
+                        <div class="mb-4">
+                            <label for="nama">
+                                <input type="text" name="nama" id="nama" placeholder="Nama" required autofocus
+                                value="<?=$barang_hilang["nama"];?>">
+                            </label>
+                        </div>
+                        <div class="mb-4">
+                            <label for="telepon">
+                                <input type="text" name="telepon" id="telepon" placeholder="No.Wa" required autofocus
+                                value="<?=$barang_hilang["telepon"];?>">
+                            </label> 
+                        </div>
+                        <div class="mb-4">
+                            <label for="namabarang">
+                                <input type="text" name="namabarang" id="namabarang" placeholder="Nama Barang" required autofocus
+                                value="<?=$barang_hilang["namabarang"];?>">
+                            </label>
+                        </div>
+                        <div class="mb-4">
+                            <label for="deskripsi">
+                                <input type="text" name="deskripsi" id="deskripsi" placeholder="Deskripsi" required autofocus
+                                value="<?=$barang_hilang["deskripsi"];?>">
+                            </label>
+                        </div>
+                        <div class="mb-4">
+                            <label for="tempatkehilangan">
+                                <input type="text" name="tempatkehilangan" id="tempatkehilangan" placeholder="Tempat Kehilangan" required autofocus
+                                value="<?=$barang_hilang["tempatkehilangan"];?>">
+                            </label>
+                        </div>
+                        <div class="mb-4">
+                            <label for="nim">
+                                <input type="text" name="nim" id="nim" placeholder="Nim" required autofocus
+                                value="<?=$barang_hilang["nim"];?>">
+                            </label>
+                        </div>
+                        <div class="mb-4">
+                            <label for="tglhilang">Tanggal
+                                <input type="date" name="tglhilang" id="tglhilang" required autofocus
+                                value="<?=$barang_hilang["tglhilang"];?>">
+                            </label>
+                        </div>
+                        <div class="mb-4">
+                            <label for="wkthilang">Waktu: 
+                                <input type="time" name="wkthilang" id="wkthilang" required autofocus
+                                value="<?=$barang_hilang["wkthilang"];?>">
+                            </label>
+                        </div>
+                        <div class="mb-4">
+                            <label for="gambar">Masukan Gambar Jika Ada
+                                <input type="file" name="gambar" id="gambar"
+                                value="<?=$barang_hilang["gambar"];?>">
+                            </label>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <label for="submit">
+                                <button class="btn" type="submit" name="submit" id="submit">Ubah</button>
+                            </label>
+                        </div>
+                        <br>
+                        <div class="d-flex justify-content-center">
+                            <a href="daftarbrgadmin.php">Kembali</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </body>    
 </html>

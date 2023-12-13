@@ -19,8 +19,6 @@ if(!isset($_SESSION["user"])){
 
 <!DOCTYPE html>
 <html lang="en">
-<!DOCTYPE html>
-<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,6 +52,11 @@ if(!isset($_SESSION["user"])){
                             </label>
                         </div>
                         <div class="mb-4">
+                            <label for="nim">
+                                <input type="text" name="nim" id="nim" placeholder="Nim" required autofocus>
+                            </label>
+                        </div>
+                        <div class="mb-4">
                             <label for="telepon">
                                 <input type="text" name="telepon" id="telepon" placeholder="No.Wa" required autofocus>
                             </label> 
@@ -71,11 +74,6 @@ if(!isset($_SESSION["user"])){
                         <div class="mb-4">
                             <label for="tempatkehilangan">
                                 <input type="text" name="tempatkehilangan" id="tempatkehilangan" placeholder="Tempat Kehilangan" required autofocus>
-                            </label>
-                        </div>
-                        <div class="mb-4">
-                            <label for="nim">
-                                <input type="text" name="nim" id="nim" placeholder="Nim" required autofocus>
                             </label>
                         </div>
                         <div class="mb-4">

@@ -31,22 +31,20 @@ $barang = query(" SELECT * FROM barang_temuan ");
                 </ul>
             </nav>
         </header>
-			
-		<table border="2" cellpadding="20" cellspacing="12" class="table">
-        <tr>
-            <th>No. </th>
-            <th>Aksi </th>
-            <th>Gambar </th>
-            <th>Nama Penemu </th>
-            <th>Nama Barang </th>
-            <th>Merek </th>
-            <th>Deskripsi </th>
-            <th>Waktu Ditemukan </th>
-            <th>Tanggal </th>
-            <th>Lokasi </th>
-            <th>Status </th>
-        </tr>
-
+		<table border="2" cellpadding="10" cellspacing="0" class="table">
+            <tr>
+                <th>No. </th>
+                <th>Aksi </th>
+                <th>Gambar </th>
+                <th>Nama Penemu </th>
+                <th>Nama Barang </th>
+                <th>Merek </th>
+                <th>Deskripsi </th>
+                <th>Waktu Ditemukan </th>
+                <th>Tanggal </th>
+                <th>Lokasi </th>
+                <th>Status </th>
+            </tr>
             <?php $i = 1; ?>
             <?php foreach( $barang as $row ) : ?>
             <tr>
@@ -67,6 +65,6 @@ $barang = query(" SELECT * FROM barang_temuan ");
             </tr>
             <?php $i++; ?>
             <?php endforeach; ?>
-    </table>
-</body>
+        </table>
+    </body>
 </html>
