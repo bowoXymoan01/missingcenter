@@ -52,7 +52,7 @@ $barang = query(" SELECT * FROM barang_temuan ");
             <tr>
                 <td><?= $i ?></td>
                 <td>
-                    <a href="">Ubah</a>
+                    <a href="update.php?id=<?= $row ["id"]; ?>">Ubah</a>
                     <a href="">Hapus</a>
                 </td>
                 <td><img src="img/<?= $row["gambar"];?>" width="80"></td>

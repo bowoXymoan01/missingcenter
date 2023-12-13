@@ -57,8 +57,8 @@ if(!isset($_SESSION["admin"])){
             <tr>
                 <td><?= $i ?></td>
                 <td>
-                    <a href="">Ubah</a>
-                    <a href="">Hapus</a>
+                    <a href="update.php?id=<?= $row["idbarang"];?>">Ubah</a>
+                    <a href="hapus.php?id=<?= $row["idbarang"];?>">Hapus</a>
                 </td>
                 <td><img src="img/<?= $row["gambar"];?>" width="80"></td>
                 <td><?= $row["nama"]; ?></td>

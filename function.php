@@ -77,15 +77,15 @@ function tambah($data) {
     include_once 'mysqli-connect.php';
     global $conn;
 
-    $nama = ($data["nama"]);
-    $telepon = ($data["telepon"]);
-    $namabarang = ($data["namabarang"]);
-    $deskripsi = ($data["deskripsi"]);
-    $tempatkehilangan = ($data["tempatkehilangan"]);
-    $nim = ($data["nim"]);
-    $tglhilang = ($data["tglhilang"]);
-    $wkthilang = ($data["wkthilang"]);
-    $gambar = ($data["gambar"]);
+    $nama = htmlspecialchars($data["nama"]);
+    $telepon = htmlspecialchars($data["telepon"]);
+    $namabarang = htmlspecialchars($data["namabarang"]);
+    $deskripsi = htmlspecialchars($data["deskripsi"]);
+    $tempatkehilangan = htmlspecialchars($data["tempatkehilangan"]);
+    $nim = htmlspecialchars($data["nim"]);
+    $tglhilang = htmlspecialchars($data["tglhilang"]);
+    $wkthilang = htmlspecialchars($data["wkthilang"]);
+    $gambar = htmlspecialchars($data["gambar"]);
 
     $query = "INSERT INTO barang_hilang VALUES ('', '$nama', '$telepon', '$namabarang', '$deskripsi', '$tempatkehilangan', '$nim', '$tglhilang', '$wkthilang', '$gambar')";
 
@@ -98,15 +98,15 @@ function tambah_barang_temuan($data) {
     include_once 'mysqli-connect.php';
     global $conn;
 
-    $nama = ($data["nama"]);
-    $tipe = ($data["tipe"]);
-    $merek = ($data["merek"]);
-    $deskripsi = ($data["deskripsi"]);
-    $tanggal = ($data["tanggal"]);
-    $lokasi = ($data["lokasi"]);
-    $status = ($data["status"]);
-    $waktu = ($data["waktu"]);
-    $gambar = ($data["gambar"]);
+    $nama = htmlspecialchars($data["nama"]);
+    $tipe = htmlspecialchars($data["tipe"]);
+    $merek = htmlspecialchars($data["merek"]);
+    $deskripsi = htmlspecialchars($data["deskripsi"]);
+    $tanggal = htmlspecialchars($data["tanggal"]);
+    $lokasi = htmlspecialchars($data["lokasi"]);
+    $status = htmlspecialchars($data["status"]);
+    $waktu = htmlspecialchars($data["waktu"]);
+    $gambar = htmlspecialchars($data["gambar"]);
 
     $query = "INSERT INTO barang_temuan VALUES ('', '$tipe', '$merek', '$nama', '$deskripsi','$tanggal','$lokasi','$status','$waktu','$gambar')";
 
@@ -114,5 +114,13 @@ function tambah_barang_temuan($data) {
 
     return mysqli_affected_rows($conn);
 }
+
+function hapus($id){
+    global $conn;
+    mysqli_query($conn, "DELETE FROM barang_hilang WHERE idbarang =$id");
+    return mysqli_affected_rows($conn);
+}
+
+
 
 ?>
