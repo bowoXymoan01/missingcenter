@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Industrious by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
 <html>
     <head>
 		<title>MISSING CENTER</title>
@@ -25,7 +20,7 @@
 			<h1 class="logo">MISSING CENTER</h1>
 			<nav>
 				<ul>
-					<li><button class="btn-cta"><a href="formkehilangan.php">Laporkan barang<br>hilang</a></button></li>
+					<li><button class="btn-cta"><a href="baranghilang.php">Laporkan barang<br>hilang</a></button></li>
 					<li><button class="btn-cta"><a href="found.php">Lihat barang<br>hilang</a></button></li>
 				</ul>
 			</nav>
@@ -34,12 +29,13 @@
 			<div class="inner">
 				<div class="content">
 				<h2>Laporan anda berhasil dikirim.</h2>
-					<p>Kami akan segera memproses laporan anda, pemberitahuan akan kami informasikan melalui panggilan telepon atau melalui WhatsApp.</p>
+					<p>Kami akan segera memproses laporan anda, pemberitahuan akan kami informasikan melalui panggilan telepon atau melalui WhatsApp.
+						Hubungi kami jika barang anda sudah ditemukan sebelum kami proses beserta kirimkan bukti melalui kontak Admin.
+					</p>
 					<a href='user.php'>KEMBALI</a>
 				</div>
 			</div>
 		</section>
-		
 		<!-- Footer -->
 		<footer id="footer">
 			<div class="inner">

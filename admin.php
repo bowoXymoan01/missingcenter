@@ -23,9 +23,9 @@
             <h1 class="logo">MISSING CENTER</h1>
             <nav>
                 <ul>
-                    <li><a href="lost.php">Barang Belum <br>Terklaim</a></li>
-                    <li><a href="found.php">Barang Sudah <br>Terklaim</a></li>
-                    <li><a href="daftarbrgadmin.php">Barang <br>hilang</a></li>
+                    <li><a href="found.php">Barang Sudah <br>Diklaim</a></li>
+                    <li><a href="lost.php">Barang Belum <br>Diklaim</a></li>
+                    <li><a href="daftarbrgadmin.php">Barang <br>Diproses</a></li>
                     <li><a href="formtemuan.php">Input <br>Data</a></li>
                     <li><a href="register.php">Daftar</a></li>
                     <li><a href="logout.php">Logout</a></li>

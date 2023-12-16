@@ -8,7 +8,7 @@ if(!isset($_SESSION["admin"])){
 }
 $id = $_GET["id"];
 
-if(hapus($id)>0){
+if(hapus1($id)>0){
     echo "
         <script>
             alert('data berhasil dihapus!');

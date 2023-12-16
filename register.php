@@ -2,6 +2,11 @@
 session_start();
 require "function.php";
 
+if(!isset($_SESSION["admin"])){
+    header("Location:login.php");
+    exit;
+}
+
 if(isset($_POST["register"]) ) {
 
     if(register($_POST) > 0 ) {
@@ -10,14 +15,8 @@ if(isset($_POST["register"]) ) {
             </script>";
         }
     } else {
-    echo mysqli_error($conn);
-}
-
-
-if(!isset($_SESSION["admin"])){
-    header("Location:login.php");
-    exit;
-}
+        echo mysqli_error($conn);
+    }
 ?>
 
 
@@ -30,18 +29,24 @@ if(!isset($_SESSION["admin"])){
     <title>Login Form Admin</title>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/bootstrap/css/LoginAdminstyle.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/landing_page.css">
+        <link rel="stylesheet" href="assets/bootstrap/css/LoginAdminstyle.css">
+        <link rel="stylesheet" href="assets/bootstrap/css/landing_page.css">
+        <link rel="stylesheet" href="assets/bootstrap/css/adminpage.css">
 </head>
 <body>
     <header>
         <img src="img/ellipse_2.png" alt="missingcenter-logo" class="logo1" />
         <h1 class="logo">MISSING CENTER</h1>
+        <nav>
+            <ul>
+                <li><a href="admin.php">Kembali</a></li>
+            </ul>
+        </nav>
     </header>
     <main class="container md-12">				 
         <div class="row justify-content-center">
             <div class="col-md-9 box">
-                <h2 class="text-center">DAFTAR</h2>
+                <h2 class="text-center">DAFTAR ADMIN</h2>
                 <form action="" method="post">
                     <div class="mb-4">
                         <label for="nama">

@@ -17,15 +17,15 @@ function register($data) {
             </script>";
         return 0;
     }
-
-    if($password !== $password1) {
+    if($password !== $password1){
         echo "<script>
-                alert('Konfirmasi Password tidak sesuai');
-            </script>";
-        return false;
+                alert('Konfirmasi password tidak sesuai');
+              </script>";
+        return false;  
     }
+    $password = password_hash($password,PASSWORD_DEFAULT);
 
-    mysqli_query($conn, "INSERT INTO pengguna VALUES('', '$username','$password','admin','$nama','$nim','$nowa')");
+    mysqli_query($conn, "INSERT INTO pengguna VALUES ('','$username','$password','admin','$nama','$nim','$nowa')");
     return mysqli_affected_rows($conn);
 
 }
@@ -55,6 +55,8 @@ function daftarmhs($data) {
         return false;
     }
 
+    $password = password_hash($password,PASSWORD_DEFAULT);
+
     mysqli_query($conn, "INSERT INTO usermhs VALUES('', '$username','$password','$nama','$nim','$no_wa')");
     return mysqli_affected_rows($conn);
 
@@ -82,19 +84,60 @@ function tambah($data) {
     $nim = htmlspecialchars($data["nim"]);
     $tglhilang = htmlspecialchars($data["tglhilang"]);
     $wkthilang = htmlspecialchars($data["wkthilang"]);
-    $gambar = htmlspecialchars($data["gambar"]);
 
-    $query = "INSERT INTO barang_hilang VALUES ('', '$nama', '$telepon', '$namabarang', '$deskripsi', '$tempatkehilangan', '$nim', '$tglhilang', '$wkthilang', '$gambar')";
+    $gambar = upload();
+    if(!$gambar){
+        return false;
+    }
+    $query = "INSERT INTO barang_hilang VALUES ('', '$nama', '$telepon', '$namabarang', '$deskripsi', '$tempatkehilangan', '$nim', '$tglhilang', '$wkthilang', '$gambar','belum ditemukan')";
 
     mysqli_query($conn, $query);
 
     return mysqli_affected_rows($conn);
 }
 
+function upload(){
+
+    $namafile = $_FILES['gambar']['name'];
+    $ukuranfile = $_FILES['gambar']['size'];
+    $error = $_FILES['gambar']['error'];
+    $tmpName = $_FILES['gambar']['tmp_name'];
+
+    // if($error === 4 ){
+    //     echo "<script>
+    //             alert('pilih gambar terlebih dahulu');
+    //             </script>";
+    //         return false;
+    // }
+    $ekstensiGambarValid = ['jpg', 'png', 'jpeg'];
+    $ekstensiGambar = explode('.', $namafile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+    if( !in_array($ekstensiGambar, $ekstensiGambarValid)){
+        // echo "<script>
+        // alert('yang anda upload bukan gambar');
+        // </script>";
+    }
+    if( $ukuranfile > 2000000){
+        echo "<script>
+        alert('Ukuruan gambar terlalu besar');
+        </script>";
+    }
+
+    $namafilebaru = uniqid();
+    $namafilebaru .= '.';
+    $namafilebaru .= $ekstensiGambar;
+    var_dump($namafilebaru);
+
+    move_uploaded_file($tmpName, 'img/'.$namafilebaru);
+    return $namafilebaru;
+
+}
+
 function tambah_barang_temuan($data) {
     global $conn;
 
     $nama = htmlspecialchars($data["nama"]);
+    $telepon = htmlspecialchars($data["telepon"]);
     $tipe = htmlspecialchars($data["tipe"]);
     $merek = htmlspecialchars($data["merek"]);
     $deskripsi = htmlspecialchars($data["deskripsi"]);
@@ -102,9 +145,13 @@ function tambah_barang_temuan($data) {
     $lokasi = htmlspecialchars($data["lokasi"]);
     $status = htmlspecialchars($data["status"]);
     $waktu = htmlspecialchars($data["waktu"]);
-    $gambar = htmlspecialchars($data["gambar"]);
+    
+    $gambar = upload();
+    if(!$gambar){
+        return false;
+    }
 
-    $query = "INSERT INTO barang_temuan VALUES ('', '$tipe', '$merek', '$nama', '$deskripsi','$tanggal','$lokasi','$status','$waktu','$gambar')";
+    $query = "INSERT INTO barang_temuan VALUES ('', '$tipe', '$merek', '$nama', '$deskripsi','$tanggal','$lokasi','$status','$waktu','$gambar','$telepon')";
 
     mysqli_query($conn, $query);
 
@@ -114,6 +161,12 @@ function tambah_barang_temuan($data) {
 function hapus($id){
     global $conn;
     mysqli_query($conn, "DELETE FROM barang_hilang WHERE idbarang =$id");
+    return mysqli_affected_rows($conn);
+}
+
+function hapus1($id){
+    global $conn;
+    mysqli_query($conn, "DELETE FROM barang_temuan WHERE id=$id ");
     return mysqli_affected_rows($conn);
 }
 
@@ -129,7 +182,14 @@ function ubah($data){
     $nim = htmlspecialchars($data["nim"]);
     $tglhilang = htmlspecialchars($data["tglhilang"]);
     $wkthilang = htmlspecialchars($data["wkthilang"]);
-    $gambar = htmlspecialchars($data["gambar"]);
+    $status = htmlspecialchars($data["status"]);
+
+    $gambarlama = $data["gambarlama"];
+    if ( $_FILES['gambar']['error'] === 4){
+        $gambar = $gambarlama;
+    }else {
+        $gambar = upload();
+    }
 
     $query = "UPDATE barang_hilang SET 
     nama = '$nama',
@@ -140,6 +200,7 @@ function ubah($data){
     nim = '$nim',
     tglhilang = '$tglhilang',
     wkthilang = '$wkthilang',
+    status = '$status',
     gambar = '$gambar'
     WHERE idbarang = $id
     ";
@@ -149,5 +210,77 @@ function ubah($data){
     return mysqli_affected_rows($conn);
 }
 
+function ubah2($data){
+    global $conn;
+
+    $id = $data["id"];
+    $nama = htmlspecialchars($data["nama"]);
+    $tipe = htmlspecialchars($data["tipe"]);
+    $merek = htmlspecialchars($data["merek"]);
+    $deskripsi = htmlspecialchars($data["deskripsi"]);
+    $tanggal = htmlspecialchars($data["tanggal"]);
+    $lokasi = htmlspecialchars($data["lokasi"]);
+    $status = htmlspecialchars($data["status"]);
+    $waktu = htmlspecialchars($data["waktu"]);
+
+    $gambarlama = $data["gambarlama"];
+    if ( $_FILES['gambar']['error'] === 4){
+        $gambar = $gambarlama;
+    }else {
+        $gambar = upload();
+    }
+
+    $query = "UPDATE barang_temuan SET
+    tipe ='$tipe',
+    merek ='$merek',
+    nama ='$nama',
+    deskripsi ='$deskripsi',
+    tanggal ='$tanggal',
+    lokasi ='$lokasi',
+    status ='$status',
+    waktu ='$waktu',
+    gambar ='$gambar'
+    WHERE id = '$id'
+    ";
+    
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+
+function cari($keyword){
+    $query = "SELECT * FROM barang_hilang
+        WHERE
+        nama LIKE '%$keyword%' OR
+        telepon LIKE '%$keyword%' OR
+        namabarang LIKE '%$keyword%' OR
+        deskripsi LIKE '%$keyword%' OR
+        tempatkehilangan LIKE '%$keyword%' OR
+        nim LIKE '%$keyword%' OR
+        tglhilang LIKE '%$keyword%' OR
+        wkthilang LIKE '%$keyword%' OR
+        status LIKE '%$keyword%'
+    ";
+
+    return query($query);
+}
+
+function cari2($keyword){
+    $query = "SELECT * FROM barang_temuan
+        WHERE
+        tipe LIKE '%$keyword%' OR
+        merek LIKE '%$keyword%' OR
+        nama LIKE '%$keyword%' OR
+        deskripsi LIKE '%$keyword%' OR
+        tanggal LIKE '%$keyword%' OR
+        lokasi LIKE '%$keyword%' OR
+        status LIKE '%$keyword%' OR
+        waktu LIKE '%$keyword%' OR
+        telepon LIKE '%$keyword%' OR
+        status LIKE '%$keyword%'
+    ";
+
+    return query($query);
+}
 
 ?>

@@ -1,19 +1,25 @@
 <?php 
 session_start();
-include_once "function.php";
+ include_once "function.php";
 if(isset($_POST["submit"]) ) {
 
     if( tambah($_POST) > 0) {
-        echo "<script>alert('Data berhasil ditambahkan');</script>";
+        echo "<script>alert('Data berhasil ditambahkan');
+            header('Location: sukses.php');
+            </script>";
+        // header("Location: sukses.php");
     } 
     else {
         echo "<script>alert('Data Gagal ditambahkan');</script>";
+        
     }
 }
-if(!isset($_SESSION["user"])){
+
+if( !isset($_SESSION["user"])){
     header("Location:login.php");
     exit;
 }
+
 ?>
 
 
@@ -34,7 +40,7 @@ if(!isset($_SESSION["user"])){
         <!--  pembuka Header -->
         <header>
             <img src="img/ellipse_2.png" alt="missingcenter-logo" class="logo1" />
-            <h1 class="logo">MISSING CENTER</h1>
+            <h1 class="logo">Laporkan Barang Hilang</h1>
             <nav>
                 <ul>
                     <li><button class="btn-cta"><a href="daftarbrg.php">Lihat barang hilang</a></button></li>
@@ -45,7 +51,7 @@ if(!isset($_SESSION["user"])){
             <div class="row justify-content-center">
                 <div class="col-md-12 box">
                     <h3 class="text-center">FORM LAPORAN</h3>
-                    <form action="" method="post">
+                    <form action="" method="post" enctype="multipart/form-data">
                         <div class="mb-4">
                             <label for="nama">
                                 <input type="text" name="nama" id="nama" placeholder="Nama" required autofocus>

@@ -1,14 +1,10 @@
 <?php
-session_start();
-require "function.php";
+require_once "function.php";
 
-if(!isset($_SESSION["admin"])){
-    header("Location:login.php");
-    exit;
-}
+
 $id = $_GET["id"];
 
-$barang_hilang = query("SELECT * FROM barang_hilang WHERE idbarang = $id")[0];
+$barang_temuan = query("SELECT * FROM barang_temuan WHERE id = $id")[0];
 
 if(isset($_POST["submit"] ) ) {
 
@@ -17,7 +13,7 @@ if(isset($_POST["submit"] ) ) {
             <script>
               alert('data berhasil diubah!');
                 document.location.href = 
-                    'daftarbrgadmin.php';
+                    'lost.php';
                 </script>
         ";
     } else {
@@ -25,7 +21,7 @@ if(isset($_POST["submit"] ) ) {
             <script>
                 alert('data gagal diubah!');
                 document.location.href = 
-                    'daftarbrgadmin.php';
+                    'lost.php';
             </script>
         ";
     }
@@ -51,7 +47,7 @@ if(isset($_POST["submit"] ) ) {
             <h1 class="logo">MISSING CENTER</h1>
             <nav>
                 <ul>
-                    <li><button class="btn-cta"><a href="daftarbrg.php">Lihat barang hilang</a></button></li>
+                    <li><button class="btn-cta"><a href="">Lihat barang hilang</a></button></li>
                 </ul>
             </nav>
         </header>
@@ -60,77 +56,72 @@ if(isset($_POST["submit"] ) ) {
                 <div class="col-md-12 box">
                     <h3 class="text-center">FORM EDIT</h3>
                     <form action="" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="id" value="<?= $barang_hilang["idbarang"];?>" >
-                        <input type="hidden" name="gambarlama" value="<?= $barang_hilang["gambar"];?>" >
+                        <input type="hidden" name="id" value="<?= $barang_temuan["id"];?>" >
+                        <input type="hidden" name="gambarlama" value="<?= $barang_temuan["gambar"];?>" >
                         <div class="mb-4">
                             <label for="nama">
-                                <input type="text" name="nama" id="nama" placeholder="Nama" required autofocus
-                                value="<?=$barang_hilang["nama"];?>">
+                                <input type="text" name="nama" id="nama" placeholder="Nama Penemu" required autofocus
+                                value="<?=$barang_temuan["nama"];?>">
                             </label>
                         </div>
                         <div class="mb-4">
-                            <label for="telepon">
-                                <input type="text" name="telepon" id="telepon" placeholder="No.Wa" required autofocus
-                                value="<?=$barang_hilang["telepon"];?>">
+                            <label for="tipe">
+                                <input type="text" name="tipe" id="tipe" placeholder="Nama Barang" required autofocus
+                                value="<?=$barang_temuan["tipe"];?>">
                             </label> 
                         </div>
                         <div class="mb-4">
-                            <label for="namabarang">
-                                <input type="text" name="namabarang" id="namabarang" placeholder="Nama Barang" required autofocus
-                                value="<?=$barang_hilang["namabarang"];?>">
+                            <label for="merek">
+                                <input type="text" name="merek" id="merek" placeholder="Merek" required autofocus
+                                value="<?=$barang_temuan["merek"];?>">
                             </label>
                         </div>
                         <div class="mb-4">
                             <label for="deskripsi">
-                                <input type="text" name="deskripsi" id="deskripsi" placeholder="Deskripsi" required autofocus
-                                value="<?=$barang_hilang["deskripsi"];?>">
+                                <input type="text" name="deskripsi" id="deskripsi" placeholder="deskripsi" required autofocus
+                                value="<?=$barang_temuan["deskripsi"];?>">
                             </label>
                         </div>
                         <div class="mb-4">
-                            <label for="tempatkehilangan">
-                                <input type="text" name="tempatkehilangan" id="tempatkehilangan" placeholder="Tempat Kehilangan" required autofocus
-                                value="<?=$barang_hilang["tempatkehilangan"];?>">
-                            </label>
-                        </div>
-                        <div class="mb-4">
-                            <label for="nim">
-                                <input type="text" name="nim" id="nim" placeholder="Nim" required autofocus
-                                value="<?=$barang_hilang["nim"];?>">
+                            <label for="lokasi">
+                                <input type="text" name="lokasi" id="lokasi" placeholder="Tempat ditemukan" required autofocus
+                                value="<?=$barang_temuan["lokasi"];?>">
                             </label>
                         </div>
                         <div class="mb-4">
                             <label for="status">
                                 <input type="text" name="status" id="status" placeholder="status" required autofocus
-                                value="<?=$barang_hilang["status"];?>">
+                                value="<?=$barang_temuan["status"];?>">
+                                
                             </label>
                         </div>
                         <div class="mb-4">
-                            <label for="tglhilang">Tanggal
-                                <input type="date" name="tglhilang" id="tglhilang" required autofocus
-                                value="<?=$barang_hilang["tglhilang"];?>">
+                            <label for="tanggal">Tanggal
+                                <input type="date" name="tanggal" id="tanggal" required autofocus
+                                value="<?=$barang_temuan["tanggal"];?>">
                             </label>
                         </div>
                         <div class="mb-4">
-                            <label for="wkthilang">Waktu: 
-                                <input type="time" name="wkthilang" id="wkthilang" required autofocus
-                                value="<?=$barang_hilang["wkthilang"];?>">
+                            <label for="waktu">Waktu: 
+                                <input type="time" name="waktu" id="waktu" required autofocus
+                                value="<?=$barang_temuan["waktu"];?>">
                             </label>
                         </div>
                         <div class="mb-4">
                             <label for="gambar">Masukan Gambar Jika Ada
                                 <br>
-                                <img src="img/<?= $barang_hilang["gambar"];?>" alt="gambar"  width="250">
+                                <img src="img/<?= $barang_temuan["gambar"];?>" alt="gambar" width="250">
                                 <input type="file" name="gambar" id="gambar">
                             </label>
                         </div>
                         <div class="d-flex justify-content-center">
                             <label for="submit">
-                                <button class="btn" type="submit" name="submit" id="submit">Ubah</button>
+                                <button class="btn" type="submit" name="submit" id="submit"  for="submit">Simpan</button>
                             </label>
                         </div>
                         <br>
                         <div class="d-flex justify-content-center">
-                            <a href="daftarbrgadmin.php">Kembali</a>
+                            <a href="admin.php">Kembali</a>
                         </div>
                     </form>
                 </div>

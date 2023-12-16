@@ -1,7 +1,7 @@
 <?php 
 //mendefinisikan konstanta-konstanta
-DEFINE ('DB_USER', 'root');
-DEFINE ('DB_PASSWORD','');
+DEFINE ('DB_USER', 'andre1');
+DEFINE ('DB_PASSWORD','ANDRE_bowo)!01');
 DEFINE ('DB_HOST','localhost');
 DEFINE ('DB_NAME', 'missingcenter');
 
