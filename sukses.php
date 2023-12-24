@@ -4,8 +4,6 @@
 		<title>MISSING CENTER</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
@@ -30,7 +28,7 @@
 				<div class="content">
 				<h2>Laporan anda berhasil dikirim.</h2>
 					<p>Kami akan segera memproses laporan anda, pemberitahuan akan kami informasikan melalui panggilan telepon atau melalui WhatsApp.
-						Hubungi kami jika barang anda sudah ditemukan sebelum kami proses beserta kirimkan bukti melalui kontak Admin.
+						Hubungi kami jika barang anda sudah ditemukan sebelum kami proses, beserta kirimkan bukti melalui kontak Admin.
 					</p>
 					<a href='user.php'>KEMBALI</a>
 				</div>

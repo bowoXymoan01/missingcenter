@@ -4,14 +4,10 @@ session_start();
 if(isset($_POST["submit"]) ) {
 
     if( tambah($_POST) > 0) {
-        echo "<script>alert('Data berhasil ditambahkan');
-            header('Location: sukses.php');
-            </script>";
-        // header("Location: sukses.php");
+        header("Location: sukses.php");
     } 
     else {
-        echo "<script>alert('Data Gagal ditambahkan');</script>";
-        
+        echo "<script>alert('Data Gagal ditambahkan');</script>";  
     }
 }
 
