@@ -24,8 +24,8 @@
             <nav>
                 <ul>
                     <li><a href="found.php">Barang Sudah <br>Diklaim</a></li>
-                    <li><a href="lost.php">Barang Belum <br>Diklaim</a></li>
                     <li><a href="daftarbrgadmin.php">Barang <br>Diproses</a></li>
+                    <li><a href="lost.php">Barang Temuan & <br>Hilang</a></li>
                     <li><a href="formtemuan.php">Input <br>Data</a></li>
                     <li><a href="register.php">Daftar</a></li>
                     <li><a href="logout.php">Logout</a></li>

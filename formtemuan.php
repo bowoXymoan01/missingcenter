@@ -77,11 +77,6 @@ if(isset($_POST["submit"]) ) {
                             </label>
                         </div>
                         <div class="mb-4">
-                            <label for="status">Status Barang :
-                                <input type="text" name="status" id="status"  required autofocus>
-                            </label>
-                        </div>
-                        <div class="mb-4">
                             <label for="tanggal">Tanggal :
                                 <input type="date" name="tanggal" id="tanggal" required autofocus>
                             </label>

@@ -69,6 +69,7 @@ if ( isset($_POST["cari"])){
                 <td><?= $i ?></td> <!--no-->
                 <td>
                     <a class="btn" href="update2.php?id=<?= $row ["id"]; ?>">Ubah</a> <!--aksi-->
+                    <a class="btn" href="cetakpdf.php?id=<?= $row ["id"]; ?>" target="_blank">Cetak</a>
                 </td>
                 <td><img src="img/<?= $row["gambar"];?>" width="80"></td> <!--gambar-->
                 <td><?= $row["nama"]; ?></td> <!--nama penemu-->
@@ -92,6 +93,7 @@ if ( isset($_POST["cari"])){
                 <th>Gambar </th>
                 <th>Nama Pemilik</th>
                 <th>Telepon </th>
+                <th>NIM</th>
                 <th>Nama Barang </th>
                 <th>Deskripsi </th>
                 <th>Tempat Kehilangan </th>
@@ -110,6 +112,7 @@ if ( isset($_POST["cari"])){
                 <td><img src="img/<?= $row["gambar"];?>" width="80"></td>
                 <td><?= $row["nama"]; ?></td>
                 <td><?= $row["telepon"]; ?></td>
+                <td><?=$row["nim"]?></td>
                 <td><?= $row["namabarang"]; ?></td>
                 <td><?= $row["deskripsi"]; ?></td>
                 <td><?= $row["tempatkehilangan"]; ?></td>

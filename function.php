@@ -89,7 +89,7 @@ function tambah($data) {
     if(!$gambar){
         return false;
     }
-    $query = "INSERT INTO barang_hilang VALUES ('', '$nama', '$telepon', '$namabarang', '$deskripsi', '$tempatkehilangan', '$nim', '$tglhilang', '$wkthilang', '$gambar','belum ditemukan')";
+    $query = "INSERT INTO barang_hilang VALUES ('','$nama', '$telepon', '$nim', '$namabarang', '$deskripsi', '$tempatkehilangan', '$tglhilang', '$wkthilang','belum ditemukan','$gambar')";
 
     mysqli_query($conn, $query);
 
@@ -143,7 +143,6 @@ function tambah_barang_temuan($data) {
     $deskripsi = htmlspecialchars($data["deskripsi"]);
     $tanggal = htmlspecialchars($data["tanggal"]);
     $lokasi = htmlspecialchars($data["lokasi"]);
-    $status = htmlspecialchars($data["status"]);
     $waktu = htmlspecialchars($data["waktu"]);
     
     $gambar = upload();
@@ -151,7 +150,7 @@ function tambah_barang_temuan($data) {
         return false;
     }
 
-    $query = "INSERT INTO barang_temuan VALUES ('', '$tipe', '$merek', '$nama', '$deskripsi','$tanggal','$lokasi','$status','$waktu','$gambar','$telepon')";
+    $query = "INSERT INTO barang_temuan VALUES ('', '$tipe', '$merek', '$nama', '$deskripsi','$tanggal','$lokasi','belum diklaim','$waktu','$gambar','$telepon')";
 
     mysqli_query($conn, $query);
 

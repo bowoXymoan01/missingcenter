@@ -4,6 +4,10 @@
         header("Location: admin.php");
         exit;
     }
+    if (isset($_SESSION["user"])){
+        header("Location: user.php");
+        exit;
+    }
     include_once 'mysqli-connect.php';
     if (isset($_POST['login'])){
         $username = $_POST['username'];
@@ -66,7 +70,7 @@
                     </div>
                     <div class="mb-4">
                         <input id="login"  class="btn"
-						type="submit" name="login" value="LOGIN"/>
+						type="submit" name="login" value="Masuk"/>
                     </div>
                     <div class="d-flex justify-content-center">
                         <a href="login.php">Kembali</a>

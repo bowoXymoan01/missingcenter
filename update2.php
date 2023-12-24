@@ -130,7 +130,7 @@ if(isset($_POST["submit"] ) ) {
                         </div>
                         <br>
                         <div class="d-flex justify-content-center">
-                            <a href="found.php">Kembali</a>
+                            <a href="lost.php">Kembali</a>
                         </div>
                     </form>
                 </div>

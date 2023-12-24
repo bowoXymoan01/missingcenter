@@ -77,7 +77,10 @@ if ( isset($_POST["cari"])){
                 </td>
                 <td><img src="img/<?= $row["gambar"];?>" width="80"></td> <!--gambar-->
                 <td><?= $row["nama"]; ?></td> <!--nama penemu-->
-                <td><?= $row["telepon"]; ?></td> <!--telepon-->
+                <td>
+                    <?= $row["telepon"]; ?>
+                    <button class="btn" onclick="redirWhatsapp(<?= $row['telepon']; ?>)" target="_blank">Hubungi</button>
+                </td> <!--telepon-->
                 <td><?= $row["tipe"]; ?></td> <!--nama barang-->
                 <td><?= $row["merek"]; ?></td> <!--merek-->
                 <td><?= $row["deskripsi"]; ?></td> <!--deskripsi-->
@@ -116,7 +119,10 @@ if ( isset($_POST["cari"])){
                 </td>
                 <td><img src="img/<?= $row["gambar"];?>" width="80"></td>
                 <td><?= $row["nama"]; ?></td>
-                <td><?= $row["telepon"]; ?></td>
+                <td>
+                    <?= $row["telepon"]; ?>
+                    <button class="btn" onclick="redirWhatsapp(<?= $row['telepon']; ?>)" target="_blank">Hubungi</button>
+                </td>
                 <td><?= $row["namabarang"]; ?></td>
                 <td><?= $row["deskripsi"]; ?></td>
                 <td><?= $row["tempatkehilangan"]; ?></td>
@@ -127,5 +133,10 @@ if ( isset($_POST["cari"])){
             <?php $i++; ?>
             <?php endforeach; ?>
         </table>
+        <script>
+            function redirWhatsapp(nomor) {
+                window.location.href = "https://wa.me/+62" + nomor;
+            }
+        </script>
     </body>
 </html>

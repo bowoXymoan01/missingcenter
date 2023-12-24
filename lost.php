@@ -6,7 +6,7 @@ if(!isset($_SESSION["admin"])){
     header("Location:login.php");
     exit;
 }
-$barang_temuan = query(" SELECT * FROM barang_temuan WHERE status='belum diklaim' ");
+$barang_temuan = query("SELECT * FROM barang_temuan WHERE status='belum diklaim'");
 $barang_hilang = query("SELECT * FROM barang_hilang WHERE status='belum ditemukan'");
 
 if ( isset($_POST["cari"])){
@@ -35,7 +35,7 @@ if ( isset($_POST["cari"])){
         <!--  pembuka Header -->
         <header>
             <img src="img/ellipse_2.png" alt="missingcenter-logo" class="logo1" />
-            <h1 class="logo">Barang Belum Diklaim</h1>
+            <h1 class="logo">Barang Temuan & Hilang</h1>
             <nav>
                 <ul>
                     <li><a href="admin.php">Kembali</a></li>
@@ -49,7 +49,7 @@ if ( isset($_POST["cari"])){
             </form>
         </header>
         <h1>Barang Temuan</h1>
-		<table border="2" cellpadding="10" cellspacing="0" class="table">
+        <table border="2" cellpadding="10" cellspacing="0" class="table">
             <tr>
                 <th>No.</th>
                 <th>Aksi</th>
@@ -67,20 +67,24 @@ if ( isset($_POST["cari"])){
             <?php $i = 1; ?>
             <?php foreach( $barang_temuan as $row ) : ?>
             <tr>
-                <td><?= $i ?></td> <!--no-->
-                <td>
-                    <a class="btn" href="update2.php?id=<?= $row ["id"]; ?>">Ubah</a> <!--aksi-->
+                <td><?= $i ?></td>
+                <td>    
+                    <a class="btn" href="update2.php?id=<?= $row ["id"]; ?>">Ubah</a>
+                    <a class="btn" href="cetakpdf.php?id=<?= $row ["id"]; ?>" target="_blank">Cetak</a>
                 </td>
-                <td><img src="img/<?= $row["gambar"];?>" width="80"></td> <!--gambar-->
-                <td><?= $row["nama"]; ?></td> <!--nama penemu-->
-                <td><?= $row["telepon"]; ?></td> <!--telepon-->
-                <td><?= $row["tipe"]; ?></td> <!--nama barang-->
-                <td><?= $row["merek"]; ?></td> <!--merek-->
-                <td><?= $row["deskripsi"]; ?></td> <!--deskripsi-->
-                <td><?= $row["waktu"]; ?></td> <!--waktu ditemukan-->
-                <td><?= $row["tanggal"]; ?></td> <!--tanggal-->
-                <td><?= $row["lokasi"]; ?></td> <!--lokasi-->
-                <td><?= $row["status"]; ?></td> <!--status-->
+                <td><img src="img/<?= $row["gambar"];?>" width="80"></td>
+                <td><?= $row["nama"]; ?></td>
+                <td>
+                <?= $row["telepon"]; ?>
+                <button class="btn" onclick="redirWhatsapp(<?= $row['telepon']; ?>)">Hubungi</button>
+                </td>
+                <td><?= $row["tipe"]; ?></td>
+                <td><?= $row["merek"]; ?></td>
+                <td><?= $row["deskripsi"]; ?></td>
+                <td><?= $row["waktu"]; ?></td>
+                <td><?= $row["tanggal"]; ?></td>
+                <td><?= $row["lokasi"]; ?></td>
+                <td><?= $row["status"]; ?></td>
             </tr>
             <?php $i++; ?>
             <?php endforeach; ?>
@@ -92,7 +96,8 @@ if ( isset($_POST["cari"])){
                 <th>Aksi </th>
                 <th>Gambar </th>
                 <th>Nama Pemilik</th>
-                <th>Telepon </th>
+                <th>Telepon</th>
+                <th>NIM</th>  
                 <th>Nama Barang </th>
                 <th>Deskripsi </th>
                 <th>Tempat Kehilangan </th>
@@ -110,7 +115,11 @@ if ( isset($_POST["cari"])){
                 </td>
                 <td><img src="img/<?= $row["gambar"];?>" width="80"></td>
                 <td><?= $row["nama"]; ?></td>
-                <td><?= $row["telepon"]; ?></td>
+                <td>
+                    <?= $row["telepon"]; ?>
+                    <button class="btn" onclick="redirWhatsapp(<?= $row['telepon']; ?>)" target="_blank">Hubungi</button>
+                </td>
+                <td><?= $row["nim"]; ?></td>
                 <td><?= $row["namabarang"]; ?></td>
                 <td><?= $row["deskripsi"]; ?></td>
                 <td><?= $row["tempatkehilangan"]; ?></td>
@@ -121,5 +130,10 @@ if ( isset($_POST["cari"])){
             <?php $i++; ?>
             <?php endforeach; ?>
         </table>
+        <script>
+            function redirWhatsapp(nomor) {
+                window.location.href = "https://wa.me/+62" + nomor;
+            }
+        </script>
     </body>
 </html>
