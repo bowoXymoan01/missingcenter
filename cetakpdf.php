@@ -51,5 +51,5 @@ $html ='<!DOCTYPE html>
 </body>
 </html>';
 $mpdf->WriteHTML($html);
-$mpdf->Output('daftar-BarangHilang-Mahasiswa-'.$barang_temuan["nama"], "I");
+$mpdf->Output('daftar-BarangHilang-Mahasiswa-.pdf'.$barang_temuan["nama"], "I");
 ?>
