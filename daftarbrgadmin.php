@@ -117,7 +117,6 @@ if ( isset($_POST["cari"])){
                     <br> <!--aksi-->
                     <br>
                     <a class="btn" href="cetakpdf2.php?id=<?= $row ["idbarang"]; ?>" target="_blank">Cetak</a>
-
                 </td>
                 <td><img src="img/<?= $row["gambar"];?>" width="150"></td>
                 <td><?= $row["nama"]; ?></td>

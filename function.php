@@ -258,7 +258,7 @@ function cari($keyword){
         nim LIKE '%$keyword%' OR
         tglhilang LIKE '%$keyword%' OR
         wkthilang LIKE '%$keyword%' OR
-        status LIKE '%$keyword%'
+        status = 'belum ditemukan'
     ";
 
     return query($query);
@@ -276,7 +276,7 @@ function cari2($keyword){
         status LIKE '%$keyword%' OR
         waktu LIKE '%$keyword%' OR
         telepon LIKE '%$keyword%' OR
-        status LIKE '%$keyword%'
+        status = 'belum diklaim'
     ";
 
     return query($query);

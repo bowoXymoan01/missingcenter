@@ -17,9 +17,9 @@ $html ='<!DOCTYPE html>
     <title>Document</title>
 </head>
 <body>
-    <h1>MISING CENTER</h1>
+    <h1>MISSING CENTER</h1>
     <p>Halo pengguna aplikasi missingcenter</p>
-    <p>Apakah data berikut barang milik anda? <br> Ketikan (<a href="index.html" >Ya</a> / <a href="" >Tidak</a>) melalui kontak admin </p>    
+    <p>Apakah data barang ini milik anda? <br> Ketikan (<a href="index.html" >Ya</a> / <a href="" >Tidak</a>) melalui kontak admin </p>    
     <input type="hidden" name="id" value="'.$barang_temuan["id"].'" >
     <input type="hidden" name="gambarlama" value="'.$barang_temuan["gambar"].'" >
     <table border="1" cellpadding="10" cellspacing="0">
@@ -52,40 +52,40 @@ $html ='<!DOCTYPE html>
                     <td>'.$barang_temuan["status"].'</td>
                 </tr>';
             $i++;
-    $html .= '</table>';
-    $html .='<input type="hidden" name="id" value="'.$barang_hilang["idbarang"].'" >
-    <input type="hidden" name="gambarlama" value="'.$barang_hilang["gambar"].'" >
-    <h1>Laporan Barang Hilang Anda</h1>
-    <table border="1" cellpadding="10" cellspacing="0">
-    <tr>
-        <th>No. </th>
-        <th>Gambar </th>
-        <th>Nama Pemilik</th>
-        <th>Whatsapp</th>
-        <th>NIM</th>  
-        <th>Nama Barang </th>
-        <th>Deskripsi </th>
-        <th>Tempat Kehilangan </th>
-        <th>Tanggal Hilang </th>
-        <th>Waktu Hilang </th>
-        <th>Status</th>
-    </tr>';
-        $i= 1;
-            $html .= 
-                '<tr>
-                    <td>'.$i.'</td>
-                    <td><img src="img/'.$barang_hilang["gambar"].'" width="150"></td>
-                    <td>'.$barang_hilang["nama"].'</td>
-                    <td>'.$barang_hilang["telepon"].'</td>
-                    <td>'.$barang_hilang["nim"].'</td>
-                    <td>'.$barang_hilang["namabarang"].'</td>
-                    <td>'.$barang_hilang["deskripsi"].'</td>
-                    <td>'.$barang_hilang["tempatkehilangan"].'</td>
-                    <td>'.$barang_hilang["tglhilang"].'</td>
-                    <td>'.$barang_hilang["wkthilang"].'</td>
-                    <td>'.$barang_hilang["status"].'</td>
-                </tr>';
-            $i++;
+    // $html .= '</table>';
+    // $html .='<input type="hidden" name="id" value="'.$barang_hilang["idbarang"].'" >
+    // <input type="hidden" name="gambarlama" value="'.$barang_hilang["gambar"].'" >
+    // <h1>Laporan Barang Hilang Anda</h1>
+    // <table border="1" cellpadding="10" cellspacing="0">
+    // <tr>
+    //     <th>No. </th>
+    //     <th>Gambar </th>
+    //     <th>Nama Pemilik</th>
+    //     <th>Whatsapp</th>
+    //     <th>NIM</th>  
+    //     <th>Nama Barang </th>
+    //     <th>Deskripsi </th>
+    //     <th>Tempat Kehilangan </th>
+    //     <th>Tanggal Hilang </th>
+    //     <th>Waktu Hilang </th>
+    //     <th>Status</th>
+    // </tr>';
+    //     $i= 1;
+    //         $html .= 
+    //             '<tr>
+    //                 <td>'.$i.'</td>
+    //                 <td><img src="img/'.$barang_hilang["gambar"].'" width="150"></td>
+    //                 <td>'.$barang_hilang["nama"].'</td>
+    //                 <td>'.$barang_hilang["telepon"].'</td>
+    //                 <td>'.$barang_hilang["nim"].'</td>
+    //                 <td>'.$barang_hilang["namabarang"].'</td>
+    //                 <td>'.$barang_hilang["deskripsi"].'</td>
+    //                 <td>'.$barang_hilang["tempatkehilangan"].'</td>
+    //                 <td>'.$barang_hilang["tglhilang"].'</td>
+    //                 <td>'.$barang_hilang["wkthilang"].'</td>
+    //                 <td>'.$barang_hilang["status"].'</td>
+    //             </tr>';
+    //         $i++;
     $html .='</table>
 
 </body>

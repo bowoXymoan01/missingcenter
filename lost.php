@@ -69,9 +69,7 @@ if ( isset($_POST["cari"])){
             <tr>
                 <td><?= $i ?></td>
                 <td>    
-                    <a class="btn" href="update2.php?id=<?= $row ["id"]; ?>">Ubah</a><br>
-                    <br>
-                    <a class="btn" href="cetakpdf.php?id=<?= $row ["id"]; ?>" target="_blank">Cetak</a>
+                    <a class="btn" href="update2.php?id=<?= $row ["id"]; ?>">Ubah</a>
                 </td>
                 <td><img src="img/<?= $row["gambar"];?>" width="150"></td>
                 <td><?= $row["nama"]; ?></td>
@@ -108,13 +106,10 @@ if ( isset($_POST["cari"])){
             </tr>
             <?php $i = 1; ?>
             <?php foreach( $barang_hilang as $row ) : ?>
-
             <tr>
                 <td><?= $i ?></td>
                 <td>
                     <a class="btn" href="update.php?id=<?= $row ["idbarang"]; ?>">Ubah</a><br>
-                    <br>
-                    <a class="btn" href="cetakpdf2.php?id=<?= $row ["idbarang"]; ?>" target="_blank">Cetak</a> <br>
                 </td>
                 <td><img src="img/<?= $row["gambar"];?>" width="150"></td>
                 <td><?= $row["nama"]; ?></td>
