@@ -38,7 +38,7 @@ if(isset($_POST["register"]) ) {
                     <div class="mb-4">
                         <label for="username">
                             <input class="form-control" id="username" for="username" 
-                            placeholder="Username" name="username" type="email" required autofocus />
+                            placeholder="Email" name="username" type="email" required autofocus />
                         </label>
                     </div>
                     <div class="mb-4">

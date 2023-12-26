@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include_once "mysqli-connect.php";
     if(isset($_SESSION["admin"])){
         header("Location:admin.php");
         exit;
@@ -64,7 +65,7 @@
                     <div class="mb-4">
                         <label for="username">
                             <input class="form-control" id="username"  for="username" 
-						        placeholder="Username" name="username" type="text" required autofocus/>
+						        placeholder="Email" name="username" type="text" required autofocus/>
                         </label>
                     </div>
                     <div class="mb-4">
