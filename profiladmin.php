@@ -24,13 +24,14 @@
         <link rel="stylesheet" href="assets/bootstrap/css/LoginAdminstyle.css">
         <link rel="stylesheet" href="assets/bootstrap/css/profiladmin.css">
         <link rel="stylesheet" href="assets/bootstrap/css/adminpage.css">
+        
         <title>MISSING CENTER</title>
     </head>
     <body>
         <!--  pembuka Header -->
         <header>
-            <img src="img/" alt="missingcenter-logo" class="logo1" />
-            <h1 class="logo">MISSING CENTER</h1>
+            <img src="img/ellipse_2.png" alt="missingcenter-logo" class="logo1" />
+            <h1 class="logo">Profil</h1>
             <nav>
                 <ul>
                     <li><a href="admin.php">kembali</a></li>
@@ -43,7 +44,7 @@
                 <div class="col-md-12 box">
                     <div class="container">
                         <div class="d-flex flex-column align-items-center text-center">
-                            <img src="" alt="Admin" class="rounded-circle" width="150">                            
+                            <img src="fotoprofil/<?php echo $row["gambar"]; ?>" alt="Admin" class="rounded-circle" width="150">                            
                         </div>
                         <br>
                         <h3><?php echo $_SESSION["admin"];?>
@@ -52,19 +53,26 @@
                         </h3>
                         <hr>                            
                         <div class="contact-info">
-                            <p class="email">Email <br>
+                            <p class="email">Email<br>
                             <?php echo $row["username"];?>
                             </p>
-                            <p class="no_wa">no_wa <br>
-                            <?php echo $row["nowa"];?>
+                            <p class="no_wa">whatsapp <i class="fab fa-whatsapp fa-2x"></i><br>
+                            <a href="#" onclick="redirWhatsapp(<?= $row['nowa']; ?>)"> <?php echo $row["nowa"];?> </a>
                             </p>
                         </div>
-                        <a href="ubah3.php?">ubah profil</a>
+                        <a href="ubah3.php?id=<?= $row ["iduser"]; ?>">ubah profil</a>
 
                     </div>
                 </div>
             </div>
         </main>
+
+        <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+        <script>
+            function redirWhatsapp(nomor) {
+                window.location.href = "https://wa.me/+62" + nomor;
+            }
+        </script>
     </body>
 <!-- <form action="" method="post">
 <div class="mb-4">

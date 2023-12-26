@@ -213,6 +213,50 @@ function hapus1($id){
     return mysqli_affected_rows($conn);
 }
 
+function ubah3($data) {
+    global $conn;
+
+    // Sanitize all user input to prevent SQL injection:
+    $id = mysqli_real_escape_string($conn, $data["id"]);
+    $nama = mysqli_real_escape_string($conn, htmlspecialchars($data["nama"]));
+    $username = mysqli_real_escape_string($conn, htmlspecialchars($data["username"]));
+    $password = mysqli_real_escape_string($conn, $data["password"]);
+    $password1 = mysqli_real_escape_string($conn, $data["password1"]);
+    $nim = mysqli_real_escape_string($conn, htmlspecialchars($data["nim"]));
+    $nowa = mysqli_real_escape_string($conn, htmlspecialchars($data["nowa"]));
+    $gambarlama = mysqli_real_escape_string($conn, $data["gambarlama"]);
+
+    // Enhanced password validation:
+    if ($password !== $password1) {
+        // Use a more appropriate error handling mechanism:
+        throw new Exception("Konfirmasi password tidak sesuai");
+    }
+    $password = password_hash($password, PASSWORD_DEFAULT); // Hash the password
+
+    // Handle image upload effectively:
+    if (isset($_FILES['gambar']) && $_FILES['gambar']['error'] === 4) {
+        $gambar = $gambarlama;
+    } else {
+        $gambar = upload2(); // Assuming upload2() handles image uploads securely
+    }
+
+    // Correctly format the UPDATE query:
+    $query = "UPDATE pengguna SET
+            username = '$username',
+            password = '$password',
+            level = 'admin',
+            nama = '$nama',
+            nim = '$nim',
+            nowa = '$nowa',
+            gambar = '$gambar'
+            WHERE iduser = $id";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+
+
 function ubah($data){
     global $conn;
 
