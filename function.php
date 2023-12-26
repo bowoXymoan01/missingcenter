@@ -10,6 +10,10 @@ function register($data) {
     $nim = strtolower(stripslashes($data["nim"]));
     $nowa = strtolower(stripslashes($data["nowa"]));
 
+    $gambar = upload2();
+    if(!$gambar){
+        return false;
+    }
     $banding = mysqli_query($conn, "SELECT username FROM pengguna WHERE username ='$username'");
     if (mysqli_fetch_assoc($banding)){
         echo "<script>
@@ -24,11 +28,51 @@ function register($data) {
         return false;  
     }
     $password = password_hash($password,PASSWORD_DEFAULT);
-
-    mysqli_query($conn, "INSERT INTO pengguna VALUES ('','$username','$password','admin','$nama','$nim','$nowa')");
+    
+    $query = "INSERT INTO pengguna VALUES ('','$username','$password','admin','$nama','$nim','$nowa','$gambar')";
+    mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
+}
+
+function upload2(){
+
+    $namafile = $_FILES['gambar']['name'];
+    $ukuranfile = $_FILES['gambar']['size'];
+    $error = $_FILES['gambar']['error'];
+    $tmpName = $_FILES['gambar']['tmp_name'];
+
+    if($error === 4 ){
+        echo "<script>
+                alert('pilih gambar terlebih dahulu');
+                </script>";
+            return false;
+    }
+    $ekstensiGambarValid = ['jpg','png','jpeg'];
+    $ekstensiGambar = explode('.', $namafile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+    if( !in_array($ekstensiGambar, $ekstensiGambarValid)){
+        echo "<script>
+        alert('yang anda upload bukan gambar');
+        </script>";
+    }
+    if( $ukuranfile > 2000000){
+        echo "<script>
+        alert('Ukuruan gambar terlalu besar');
+        </script>";
+    }
+
+    $namafilebaru = uniqid();
+    $namafilebaru .= '.';
+    $namafilebaru .= $ekstensiGambar;
+    var_dump($namafilebaru);
+
+    move_uploaded_file($tmpName, 'fotoprofil/'.$namafilebaru);
+    return $namafilebaru;
 
 }
+
+
+
 
 function daftarmhs($data) {
     global $conn;

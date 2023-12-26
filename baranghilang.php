@@ -97,7 +97,7 @@ if(mysqli_num_rows($result) > 0 ){
                             </label>
                         </div>
                         <div class="mb-4">
-                            <label for="gambar">Masukan Gambar Jika Ada
+                            <label for="gambar">Masukan Gambar
                                 <input type="file" name="gambar" id="gambar">
                             </label>
                         </div>

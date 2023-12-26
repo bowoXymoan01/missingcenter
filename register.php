@@ -47,7 +47,7 @@ if(isset($_POST["register"]) ) {
         <div class="row justify-content-center">
             <div class="col-md-9 box">
                 <h2 class="text-center">DAFTAR ADMIN</h2>
-                <form action="" method="post">
+                <form action="" method="post" enctype="multipart/form-data">
                     <div class="mb-4">
                         <label for="nama">
                             <input class="form-control" id="nama"  for="nama" 
@@ -57,7 +57,7 @@ if(isset($_POST["register"]) ) {
                     <div class="mb-4">
                         <label for="username">
                             <input class="form-control" id="username" for="username" 
-                            placeholder="Username" name="username" type="email" required autofocus />
+                            placeholder="Email" name="username" type="email" required autofocus />
                         </label>
                     </div>
                     <div class="mb-4">
@@ -82,6 +82,11 @@ if(isset($_POST["register"]) ) {
                         <label for="nowa">
                             <input class="form-control" id="nowa" for="nowa" 
                             placeholder="No Wa" name="nowa" type="text" required autofocus />
+                        </label>
+                    </div>
+                    <div class="mb-4">
+                        <label for="gambar">Masukan Foto
+                            <input type="file" name="gambar" id="gambar">
                         </label>
                     </div>
                     <br>

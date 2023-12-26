@@ -69,10 +69,10 @@ if ( isset($_POST["cari"])){
             <tr>
                 <td><?= $i ?></td> <!--no-->
                 <td>
-                    <a class="btn" href="update2.php?id=<?= $row ["id"]; ?>">Ubah</a>
+                    <a class="btn" href="update2.php?id=<?= $row["id"];?>">Ubah</a>
                     <br> <!--aksi-->
                     <br> <!--aksi-->
-                    <a class="btn" href="cetakpdf.php?id=<?= $row ["id"]; ?>" target="_blank">Cetak</a>
+                    <a class="btn" href="cetakpdf.php?id=<?= $row["id"];?>" target="_blank">Cetak</a>
                 </td>
                 <td><img src="img/<?= $row["gambar"];?>" width="150"></td> <!--gambar-->
                 <td><?= $row["nama"]; ?></td> <!--nama penemu-->
