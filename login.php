@@ -9,23 +9,36 @@
         exit;
     }
     include_once 'mysqli-connect.php';
-    if (isset($_POST['login'])){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-
-        $result = mysqli_query($conn, "SELECT * FROM usermhs WHERE username = '$username'");
-
-        if( mysqli_num_rows($result) === 1 ){
-            $row = mysqli_fetch_array($result);
-            if (password_verify($password, $row["password"])){
-                //set session
-                $_SESSION["user"] = true;
+    if (isset($_POST['login'])) {
+        // Validasi dan sanitasi input
+        $username = mysqli_real_escape_string($conn, $_POST['username']);
+        $password = mysqli_real_escape_string($conn, $_POST['password']);
+    
+        // Query yang aman untuk mencegah SQL injection
+        $select = "SELECT * FROM usermhs WHERE username = '$username'";
+        $query = mysqli_query($conn, $select);
+        $user_count = mysqli_num_rows($query);
+    
+        if ($user_count > 0) {
+            $user_pass = mysqli_fetch_assoc($query);
+            $db_pass = $user_pass['password'];
+    
+            if (password_verify($password, $db_pass)) {  // Verifikasi password dengan hash
+                // Login berhasil
+                $_SESSION['username'] = $username;
+                $_SESSION['user'] = $user_pass['nama_lengkap'];
                 header("Location:user.php");
                 exit;
+            } else {
+                // Password salah
+                // echo "<h2 style='color : red; font-style: italic;'>Password anda salah</h2>";
+                echo "<script>alert('Password yang anda masukan salah!')</script>";
             }
+        } else {
+            // Username tidak ditemukan
+            // echo "<h2 style='color : red; font-style: italic;'>Username tidak ditemukan</h2>";
+            echo "<script>alert('Username yang anda masukan tidak ada, cek lagi username atau password anda!')</script>";
         }
-        $error = true;
-
     }
     ?>
 
@@ -48,7 +61,6 @@
         <h1 class="logo">MISSING CENTER</h1>
         <nav>
             <ul>
-                <input type="hidden">
                 <li><a href="loginadmin.php">Masuk<br>Admin</a></li>
             </ul>
         </nav>
@@ -58,9 +70,6 @@
         <div class="row justify-content-center">
             <div class="col-md-12 box">
                 <h2 class="text-center">LOGIN</h2>
-                    <?php if( isset($error)):?>
-                        <p style="color : red; font-style: italic; ">username / password salah</p>
-                    <?php endif; ?>
                 <form action="" method="post">
                     <div class="mb-4">
                         <label for="username">

@@ -1,6 +1,10 @@
 <?php 
 session_start();
- include_once "function.php";
+if( !isset($_SESSION["user"])){
+    header("Location:login.php");
+    exit;
+}
+include_once "function.php";
 if(isset($_POST["submit"]) ) {
 
     if( tambah($_POST) > 0) {
@@ -11,10 +15,15 @@ if(isset($_POST["submit"]) ) {
     }
 }
 
-if( !isset($_SESSION["user"])){
-    header("Location:login.php");
-    exit;
+$select = "SELECT * FROM usermhs WHERE nama_lengkap = '{$_SESSION["user"]}'";
+$result = mysqli_query($conn, $select);
+
+if(mysqli_num_rows($result) > 0 ){
+    $row = mysqli_fetch_array($result);
 }
+
+// var_dump($row);
+
 
 ?>
 
@@ -49,17 +58,17 @@ if( !isset($_SESSION["user"])){
                     <form action="" method="post" enctype="multipart/form-data">
                         <div class="mb-4">
                             <label for="nama">
-                                <input type="text" name="nama" id="nama" placeholder="Nama" required autofocus>
+                                <input type="text" name="nama" id="nama" placeholder="Nama" value="<?php echo $_SESSION["user"];?>"  required autofocus>
                             </label>
                         </div>
                         <div class="mb-4">
                             <label for="nim">
-                                <input type="text" name="nim" id="nim" placeholder="Nim" required autofocus>
+                                <input type="text" name="nim" id="nim" placeholder="Nim" value="<?php echo $row["nim"];?>" required autofocus>
                             </label>
                         </div>
                         <div class="mb-4">
                             <label for="telepon">
-                                <input type="text" name="telepon" id="telepon" placeholder="No.Wa" required autofocus>
+                                <input type="text" name="telepon" id="telepon" placeholder="No.Wa" value="<?php echo $row["no_wa"];?>" required autofocus>
                             </label> 
                         </div>
                         <div class="mb-4">

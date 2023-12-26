@@ -1,10 +1,16 @@
+<!-- user mahasiswa -->
 <?php
 session_start();
 
-if( !isset($_SESSION["user"])){
-    header("Location:login.php");
+if (!isset($_SESSION["user"])) {
+    header("Location: login.php");
     exit;
 }
+// if (isset($_SESSION['nama_lengkap'])) {
+//     echo "SELAMAT DATANG, " . $_SESSION['nama_lengkap'];
+
+// }
+
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +34,8 @@ if( !isset($_SESSION["user"])){
                 <ul>
                     <li><button class="btn-cta"><a href="baranghilang.php">Laporkan barang<br>hilang</a></button></li>
                     <li><button class="btn-cta"><a href="daftarbrg.php">Lihat barang<br>hilang</a></button></li>
-                    <li><button class="btn-cta"><a href="logout.php">Logout</a></button></li>
+                    <li><button class="btn-cta"><a href="daftarbrguser.php">Lihat barang<br>hilang saya</a></button></li>
+                    <li><button method="post" name="logout" class="btn-cta"><a href="logout.php">Logout</a></button></li>
                 </ul>
             </nav>
         </header>
@@ -36,7 +43,11 @@ if( !isset($_SESSION["user"])){
         <!--isi content-->
         <main>
             <div class="container-fluid jumbotron">
-                <h1>HALO USER!</h1>
+                <h1>HALO <?php
+                            echo $_SESSION["user"];
+                        ?>
+                !
+                </h1>
             </div>
         </main>
     </body>

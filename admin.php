@@ -36,6 +36,11 @@
         <!-- jumbotron -->
         <main>
             <div class="container-fluid jumbotron">
-                <h1>HALO ADMIN!</h1>
+                <h1>HALO 
+                    <?php
+                        echo $_SESSION["admin"];
+                    ?>
+                !
+                </h1>
             </div>
         </main>
