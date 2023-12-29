@@ -370,4 +370,20 @@ function cari2($keyword){
     return query($query);
 }
 
+function form_kontak_kami ($data) {
+    global $conn;
+
+    $nama = htmlspecialchars($data["nama"]);
+    $email = htmlspecialchars($data["email"]);
+    $nim = htmlspecialchars($data["nim"]);
+    $telepon = htmlspecialchars($data["telepon"]);
+    $pesan = htmlspecialchars($data["pesan"]);
+
+    $query = "INSERT INTO kontak_kami VALUES ('','$nama','$email','$nim','$telepon','$pesan')";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_effected_rows($conn);
+}
+
 ?>

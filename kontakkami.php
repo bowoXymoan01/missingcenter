@@ -1,3 +1,18 @@
+<?php
+require "function.php";
+
+if(isset($_POST["button"]) ) {
+    if( form_kontak_kami($_POST) > 0) {
+        echo "<script>alert('Laporan berhasil Dikirim Ke Admin');</script>";
+    } 
+    else {
+        echo "<script>alert('Laporan Gagal Dikirim Ke Admin');</script>";
+    }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,16 +50,38 @@
                 </div>
                 <div class="right">
                     <div class="right-container">
-                        <form action="">
-                            <h2 class="lg-view">Hubungi Kami</h2>
-                            <h2 class="sm-view">Hubungi Kami</h2>
-                            <input type="text" placeholder="Nama">
-                            <input type="email" placeholder="Alamat Email">
-                            <input type="text" placeholder="Nim" autocomplete="off">
-                            <input type="phone" placeholder="Telepone" autocomplete="off">
-                            <textarea rows="10" placeholder="Pesan"></textarea>
-                            <button>Kirim</button>
-                        </form>
+                    <h3 class="text-center">Hubungi Kami</h3>
+                        <form action="" action="" method="post" enctype="multipart/form-data">
+                        <div class="mb-4">
+                            <label for="nama">
+                                <input type="text" name="nama" id="nama" placeholder="Nama" required autofocus>
+                            </label>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email">
+                                <input type="text" name="email" id="email" placeholder="email" required autofocus>
+                            </label>
+                        </div>
+                        <div class="mb-4">
+                            <label for="nim">
+                                <input type="text" name="nim" id="nim" placeholder="nim" required autofocus>
+                            </label>
+                        </div>
+                        <div class="mb-4">
+                            <label for="telepon">
+                                <input type="phone" name="telepon" id="telepon" placeholder="telepon" required autofocus>
+                            </label>
+                        </div>
+                        <div class="mb-4">
+                            <label for="pesan">
+                                <input type="text" name="pesan" id="pesan" placeholder="pesan" required autofocus>
+                            </label>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <label for="submit">
+                                <button class="btn" type="submit" name="submit" id="submit"  for="submit">Kirim</button>
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
