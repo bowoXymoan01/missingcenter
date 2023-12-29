@@ -47,7 +47,7 @@
                             <img src="fotoprofil/<?php echo $row["gambar"]; ?>" alt="Admin" class="rounded-circle" width="150">                            
                         </div>
                         <br>
-                        <h3><?php echo $_SESSION["admin"];?>
+                        <h3><?php echo $row["nama"];?>
                         <br>
                         Admin
                         </h3>
@@ -60,7 +60,7 @@
                             <a href="#" onclick="redirWhatsapp(<?= $row['nowa']; ?>)"> <?php echo $row["nowa"];?> </a>
                             </p>
                         </div>
-                        <a href="ubah3.php?id=<?= $row ["iduser"]; ?>">ubah profil</a>
+                        <a href="ubah3.php?id=<?= $row["iduser"]; ?>">ubah profil</a>
 
                     </div>
                 </div>

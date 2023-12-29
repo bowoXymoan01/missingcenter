@@ -6,12 +6,15 @@ if (!isset($_SESSION["user"])) {
     header("Location: login.php");
     exit;
 }
-// if (isset($_SESSION['nama_lengkap'])) {
-//     echo "SELAMAT DATANG, " . $_SESSION['nama_lengkap'];
+include_once 'mysqli-connect.php';
+$select = "SELECT * FROM usermhs WHERE nama_lengkap = '{$_SESSION["user"]}'";
+$result = mysqli_query($conn, $select);
 
-// }
-
+if(mysqli_num_rows($result) > 0 ){
+    $row = mysqli_fetch_array($result);
+}  
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,9 +35,11 @@ if (!isset($_SESSION["user"])) {
             <h1 class="logo">MISSING CENTER</h1>
             <nav>
                 <ul>
+                    <li><a href="profiluser.php">Profil</a></li>
                     <li><button class="btn-cta"><a href="baranghilang.php">Laporkan barang<br>hilang</a></button></li>
                     <li><button class="btn-cta"><a href="daftarbrg.php">Lihat barang<br>hilang</a></button></li>
                     <li><button class="btn-cta"><a href="daftarbrguser.php">Lihat barang<br>hilang saya</a></button></li>
+                    <li><button class="btn-cta"><a href="kontakkami.php">Kirim Pesan</a></button></li>
                     <li><button method="post" name="logout" class="btn-cta"><a href="logout.php">Logout</a></button></li>
                 </ul>
             </nav>

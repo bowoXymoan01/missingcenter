@@ -4,6 +4,13 @@
         header("Location:login.php");
         exit;
     }
+    include_once 'mysqli-connect.php';
+    $select = "SELECT * FROM pengguna WHERE nama = '{$_SESSION["admin"]}'";
+    $result = mysqli_query($conn, $select);
+
+    if(mysqli_num_rows($result) > 0 ){
+        $row = mysqli_fetch_array($result);
+    }    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +28,7 @@
         <!--  pembuka Header -->
         <header>
             <img src="img/ellipse_2.png" alt="missingcenter-logo" class="logo1" />
-            <h1 class="logo"><?php echo $_SESSION["admin"];?></h1>
+            <h1 class="logo"><?php echo $row["nama"];?></h1>
             <nav>
                 <ul>
                     <li><a href="profiladmin.php">Profil</a></li>
@@ -30,6 +37,7 @@
                     <li><a href="lost.php">Barang Temuan & <br>Hilang</a></li>
                     <li><a href="formtemuan.php">Input <br>Data</a></li>
                     <li><a href="register.php">Daftar</a></li>
+                    <li><a href="pesanuser.php">Pesan Masuk</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </nav>

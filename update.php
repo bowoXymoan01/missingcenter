@@ -10,6 +10,8 @@ $id = $_GET["id"];
 
 $barang_hilang = query("SELECT * FROM barang_hilang WHERE idbarang = $id")[0];
 
+var_dump($barang_hilang);
+
 if(isset($_POST["submit"] ) ) {
 
     if(ubah($_POST) > 0) {
@@ -25,7 +27,7 @@ if(isset($_POST["submit"] ) ) {
             <script>
                 alert('data gagal diubah!');
                 document.location.href = 
-                    'daftarbrgadmin.php';
+                    'lost.php';
             </script>
         ";
     }
@@ -51,7 +53,7 @@ if(isset($_POST["submit"] ) ) {
             <h1 class="logo">MISSING CENTER</h1>
             <nav>
                 <ul>
-                    <li><button class="btn-cta"><a href="daftarbrg.php">Lihat barang hilang</a></button></li>
+                    <li><button class="btn-cta"><a href="lost.php">kembali</a></button></li>
                 </ul>
             </nav>
         </header>
@@ -99,9 +101,14 @@ if(isset($_POST["submit"] ) ) {
                             </label>
                         </div>
                         <div class="mb-4">
-                            <label for="status">
-                                <input type="text" name="status" id="status" placeholder="status" required autofocus
-                                value="<?=$barang_hilang["status"];?>">
+                            <label for="status">Status
+                                <select type="text" name="status" id="status" required autofocus>
+                                    <option value="<?=$barang_hilang["status"];?>"><?php echo $barang_hilang["status"];?></option>
+                                    <option>belum ditemukan</option>
+                                    <option>diproses</option>
+                                    <option>belum diklaim</option>
+                                    <option>sudah diklaim</option>
+                                </select>
                             </label>
                         </div>
                         <div class="mb-4">

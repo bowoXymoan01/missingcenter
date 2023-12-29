@@ -98,10 +98,14 @@ if(isset($_POST["submit"] ) ) {
                             </label>
                         </div>
                         <div class="mb-4">
-                            <label for="status">
-                                <input type="text" name="status" id="status" placeholder="status" required autofocus
-                                value="<?=$barang_temuan["status"];?>">
-                                
+                            <label for="status">Status
+                                <select type="text" name="status" id="status" required autofocus>
+                                    <option value="<?=$barang_temuan["status"];?>"><?php echo $barang_temuan["status"];?></option>
+                                    <option>belum ditemukan</option>
+                                    <option>diproses</option>
+                                    <option>belum diklaim</option>
+                                    <option>sudah diklaim</option>
+                                </select>
                             </label>
                         </div>
                         <div class="mb-4">

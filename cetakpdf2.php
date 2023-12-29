@@ -53,7 +53,7 @@ $html ='<!DOCTYPE html>
             $i++;
     $html .= '</table>
     <p>Kami akan informasikan lebih lanjut terkait barang anda,</p>
-    <p>jika anda sudah menemukan barang anda sebelum kami proses silahkan konfirmasi segera ke admin </p>    <a href="index.html" >ADMIN</a>
+    <p>jika anda sudah menemukan barang anda sebelum kami proses silahkan konfirmasi segera ke admin </p>    <a href="kontakadmin.php" >ADMIN</a>
 </body>
 </html>';
 $mpdf->WriteHTML($html);

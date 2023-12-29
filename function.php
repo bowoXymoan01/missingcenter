@@ -83,6 +83,10 @@ function daftarmhs($data) {
     $username = strtolower(stripslashes($data["username"]));
     $password = mysqli_real_escape_string($conn, $data["password"]);
     $password1 = mysqli_real_escape_string($conn, $data["password1"]);
+    $gambar = upload2();
+    if(!$gambar){
+        return false;
+    }
 
     $banding = mysqli_query($conn, "SELECT username FROM usermhs WHERE username ='$username'");
     if (mysqli_fetch_assoc($banding)){
@@ -101,7 +105,7 @@ function daftarmhs($data) {
 
     $password = password_hash($password,PASSWORD_DEFAULT);
 
-    mysqli_query($conn, "INSERT INTO usermhs VALUES('', '$username','$password','$nama','$nim','$no_wa')");
+    mysqli_query($conn, "INSERT INTO usermhs VALUES('', '$username','$password','$nama','$nim','$no_wa','$gambar')");
     return mysqli_affected_rows($conn);
 
 }
@@ -210,49 +214,6 @@ function hapus($id){
 function hapus1($id){
     global $conn;
     mysqli_query($conn, "DELETE FROM barang_temuan WHERE id=$id ");
-    return mysqli_affected_rows($conn);
-}
-
-function ubah3($data) {
-    global $conn;
-
-    // Sanitize all user input to prevent SQL injection:
-    $id = mysqli_real_escape_string($conn, $data["id"]);
-    $nama = mysqli_real_escape_string($conn, htmlspecialchars($data["nama"]));
-    $username = mysqli_real_escape_string($conn, htmlspecialchars($data["username"]));
-    $password = mysqli_real_escape_string($conn, $data["password"]);
-    $password1 = mysqli_real_escape_string($conn, $data["password1"]);
-    $nim = mysqli_real_escape_string($conn, htmlspecialchars($data["nim"]));
-    $nowa = mysqli_real_escape_string($conn, htmlspecialchars($data["nowa"]));
-    $gambarlama = mysqli_real_escape_string($conn, $data["gambarlama"]);
-
-    // Enhanced password validation:
-    if ($password !== $password1) {
-        // Use a more appropriate error handling mechanism:
-        throw new Exception("Konfirmasi password tidak sesuai");
-    }
-    $password = password_hash($password, PASSWORD_DEFAULT); // Hash the password
-
-    // Handle image upload effectively:
-    if (isset($_FILES['gambar']) && $_FILES['gambar']['error'] === 4) {
-        $gambar = $gambarlama;
-    } else {
-        $gambar = upload2(); // Assuming upload2() handles image uploads securely
-    }
-
-    // Correctly format the UPDATE query:
-    $query = "UPDATE pengguna SET
-            username = '$username',
-            password = '$password',
-            level = 'admin',
-            nama = '$nama',
-            nim = '$nim',
-            nowa = '$nowa',
-            gambar = '$gambar'
-            WHERE iduser = $id";
-
-    mysqli_query($conn, $query);
-
     return mysqli_affected_rows($conn);
 }
 
@@ -370,7 +331,7 @@ function cari2($keyword){
     return query($query);
 }
 
-function form_kontak_kami ($data) {
+function form_kontak_kami($data) {
     global $conn;
 
     $nama = htmlspecialchars($data["nama"]);
@@ -379,11 +340,9 @@ function form_kontak_kami ($data) {
     $telepon = htmlspecialchars($data["telepon"]);
     $pesan = htmlspecialchars($data["pesan"]);
 
-    $query = "INSERT INTO kontak_kami VALUES ('','$nama','$email','$nim','$telepon','$pesan')";
+    mysqli_query($conn, "INSERT INTO kontak_kami VALUES ('','$nama','$email','$nim','$telepon','$pesan')");
+    return mysqli_affected_rows($conn);
 
-    mysqli_query($conn, $query);
-
-    return mysqli_effected_rows($conn);
 }
 
 ?>

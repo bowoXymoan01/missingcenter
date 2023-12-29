@@ -34,7 +34,7 @@ if(isset($_POST["register"]) ) {
             <div class="col-md-9 box">
                 <h2 class="text-center">DAFTAR</h2>
                 <p>isikan data dengan benar!</p>
-                <form action="" method="post">
+                <form action="" method="post" enctype="multipart/form-data">
                     <div class="mb-4">
                         <label for="username">
                             <input class="form-control" id="username" for="username" 
@@ -71,6 +71,11 @@ if(isset($_POST["register"]) ) {
                             placeholder="No. WA" name="no_wa" type="text" required autofocus/>
                         </label>
                     </div>
+                    <div class="mb-4">
+                            <label for="gambar">Masukan Foto
+                                <input type="file" name="gambar" id="gambar">
+                            </label>
+                        </div>
                     <div class="mb-4">
                         <label for="register">
                             <button class="btn" type="submit" name="register" id="register"  for="register">Daftarkan</button>

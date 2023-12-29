@@ -35,9 +35,10 @@ if ( isset($_POST["cari"])){
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/bootstrap/css/LoginAdminstyle.css">
     <link rel="stylesheet" href="assets/bootstrap/css/landing_page.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/kontak.css">
     <title>MISSING CENTER</title>
 </head>
 <body>
@@ -73,7 +74,8 @@ if ( isset($_POST["cari"])){
         <a class="btn" href="?halaman=<?= $halamanaktif + 1; ?>">&raquo;</a>
     <?php endif; ?>
     <br>
-    <table border="2" cellpadding="20" cellspacing="20" class="table" >
+    <br>
+    <!-- <table border="2" cellpadding="20" cellspacing="20" class="table" >
         <tr>
             <th>No.</th>
             <th>Gambar</th>
@@ -100,6 +102,36 @@ if ( isset($_POST["cari"])){
             </tr>
             <?php $i++; ?>
             <?php endforeach; ?>
-    </table>
+    </table> -->
+    <div class="row row-cols-10 row-cols-md-1 g-1">
+        <?php foreach ($barang_hilang as $row) : ?>
+        <div class="card mb-5 card text-bg-light mb-1" style="max-width: 500px;">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <img src="img/<?= $row["gambar"]; ?>" class="img-fluid rounded-start" alt="..." width=700">
+                </div>
+                <div class="col-md-10">
+                    <div class="card-body">
+                        <h3 class="card-title"><?= $row["namabarang"]; ?></h3>
+                        <hr>
+                        <p class="card-text">
+                            Nama Pemilik        :   <?= $row["nama"]; ?><br>
+                            <hr>
+                            Tempat Kehilangan   :   <?= $row["tempatkehilangan"]; ?><br>
+                            <hr>
+                            Tanggal Hilang      :   <?= $row["tglhilang"]; ?><br>
+                            <hr>
+                            Waktu Hilang        :   <?= $row["wkthilang"]; ?><br>
+                            <hr>
+                            Status: <?= $row["status"]; ?>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php endforeach; ?>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

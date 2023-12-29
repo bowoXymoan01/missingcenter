@@ -24,7 +24,7 @@ if ( isset($_POST["cari"])){
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/bootstrap/css/LoginAdminstyle.css">
         <link rel="stylesheet" href="assets/bootstrap/css/landing_page.css">
         <link rel="stylesheet" href="assets/bootstrap/css/adminpage.css">
@@ -48,7 +48,7 @@ if ( isset($_POST["cari"])){
         </form>
     </header>
     <h1>Barang Temuan</h1> <p>( daftar barang inputan dari Admin)</p>
-		<table border="2" cellpadding="10" cellspacing="0" class="table">
+		<table style="padding: 5px; border: 1px solid black;" border="1" cellpadding="20" cellspacing="0" class="table table-bordered table-striped table-hover">
             <tr>
                 <th>No.</th>
                 <th>Aksi</th>
@@ -92,7 +92,7 @@ if ( isset($_POST["cari"])){
             <?php endforeach; ?>
         </table>
         <h1>Barang Hilang</h1> <p>( daftar barang inputan dari Mahasiswa)</p>
-        <table border="2" cellpadding="20" cellspacing="20" class="table" >
+        <table style="padding: 5px; border: 1px solid black;" border="1" cellpadding="20" cellspacing="0" class="table table-bordered table-striped table-hover" >
             <tr>
                 <th>No. </th>
                 <th>Aksi </th>
@@ -140,5 +140,7 @@ if ( isset($_POST["cari"])){
                 window.location.href = "https://wa.me/+62" + nomor;
             }
         </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
     </body>
 </html>
