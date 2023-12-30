@@ -14,8 +14,8 @@
 .right {
     display: flex;
     flex: 1;
-    height: 522px;
-    background-color: #78b77c;
+    height: 550px;
+    background-color: #eee;
     justify-content: center;
     align-items: center;
 }
@@ -23,10 +23,10 @@
 .left {
     display: flex;
     flex: 1;
-    height: 522px;
+    height: 550px;
     justify-content: center;
     align-items: center;
-    color: #5E7C60;
+    color: #ffffff;
 }
 
 
@@ -54,7 +54,7 @@ h2 {
 
 input,
 textarea {
-    background-color: black;
+    background-color: #eee;
     border: none;
     padding: 12px 15px;
     margin: 8px 0;
@@ -71,7 +71,7 @@ button {
     border-radius: 20px;
     border: 1px solid #5E7C60;
     background-color: #5E7C60;
-    color: black;
+    color: #eee;
     font-size: 12px;
     font-weight: bold;
     padding: 12px 45px;
