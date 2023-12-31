@@ -35,11 +35,9 @@ $pesan = query("SELECT id, nama, email,nim,telepon, pesan, CONCAT(DATE_FORMAT(wa
             </ul>
         </nav>
     </header>
-    <br>
     <table  style="padding: 5px; border: 1px solid black;" border="1" cellpadding="20" cellspacing="0" class="table table-bordered table-striped table-hover">
         <tr>
             <th>No.</th>
-            <th>Aksi</th>
             <th>Nama</th>
             <th>NIM</th>
             <th>Email</th>
@@ -52,10 +50,6 @@ $pesan = query("SELECT id, nama, email,nim,telepon, pesan, CONCAT(DATE_FORMAT(wa
         <?php foreach( $pesan as $row ) : ?>
         <tr>
             <td><?= $i ?></td> <!--no-->
-            <td>
-                <a class="btn">Ubah</a>
-                <br> <!--aksi-->
-            </td>
             <td><?= $row["nama"]; ?></td> <!--nama penemu-->
             <td><?= $row["nim"]; ?></td> <!--nama barang-->
             <td><?= $row["email"]; ?></td> <!--nama barang-->

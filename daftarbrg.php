@@ -39,6 +39,8 @@ if ( isset($_POST["cari"])){
     <link rel="stylesheet" href="assets/bootstrap/css/LoginAdminstyle.css">
     <link rel="stylesheet" href="assets/bootstrap/css/landing_page.css">
     <link rel="stylesheet" href="assets/bootstrap/css/kontak.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/adminpage2.css">
+
     <title>MISSING CENTER</title>
 </head>
 <body>
@@ -48,15 +50,14 @@ if ( isset($_POST["cari"])){
         <h1 class="logo">Barang Hilang</h1>
         <nav>
             <ul>
-                <li><button class="btn-cta"><a href="baranghilang.php">Laporkan barang hilang</a></button></li>
-                <li><button class="btn-cta"><a href="user.php">Kembali</a></button></li> 
+                <a href="user.php" class="btn" style="color:white; padding:5px;" ><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-back-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 14l-4 -4l4 -4" /><path d="M5 10h11a4 4 0 1 1 0 8h-1" /></svg><br>Kembali</a>
             </ul>
         </nav>
         <form action="" method="post">
-            <dv class="mb-4">
-                <input type="text" name="keyword" size="40" placeholder="masukan keyword yang anda cari" autocomplete="off" > 
-                <button class="btn-cta" type="submit" name="cari" >cari</button>
-            </dv>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Cari" aria-label="Recipient's username" aria-describedby="basic-addon1" name="keyword" size="50">
+                <button class="input-group-text" id="basic-addon1" type="sumbit"  name="cari">Cari</button>
+            </div>
         </form>
     </header>
     halaman
@@ -110,7 +111,7 @@ if ( isset($_POST["cari"])){
                 <div class="col-md-4">
                     <img src="img/<?= $row["gambar"]; ?>" class="img-fluid rounded-start" alt="..." width=700">
                 </div>
-                <div class="col-md-10">
+                <div class="col-md-8">
                     <div class="card-body">
                         <h3 class="card-title"><?= $row["namabarang"]; ?></h3>
                         <hr>
