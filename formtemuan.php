@@ -25,10 +25,10 @@ if(isset($_POST["submit"]) ) {
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/bootstrap/css/LoginAdminstyle.css">
         <link rel="stylesheet" href="assets/bootstrap/css/landing_page.css">
-        <link rel="stylesheet" href="assets/bootstrap/css/adminpage.css">
+        <link rel="stylesheet" href="assets/bootstrap/css/adminpage2.css">
         <title>MISSING CENTER</title>
     </head>
     <body>
@@ -38,7 +38,7 @@ if(isset($_POST["submit"]) ) {
             <h1 class="logo">Input Data Barang Temuan</h1>
             <nav>
                 <ul>
-                    <li><a href="admin.php">Kembali</a></li>
+                    <a href="admin.php" class="btn" style="color:white; padding:5px;" ><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-back-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 14l-4 -4l4 -4" /><path d="M5 10h11a4 4 0 1 1 0 8h-1" /></svg><br>Kembali</a>
                 </ul>
             </nav>
         </header>
@@ -47,49 +47,49 @@ if(isset($_POST["submit"]) ) {
                 <div class="col-md-12 box">
                     <form action="" method="post" enctype="multipart/form-data">
                         <div class="mb-4">
-                            <label for="nama">Nama Penemu :
-                                <input type="text" name="nama" id="nama" required autofocus>
+                            <label for="nama">
+                                <input class="form-control" size="45" type="text" name="nama" id="nama" placeholder="Nama Penemu" required autofocus>
                             </label>
                         </div>
                         <div class="mb-4">
-                            <label for="telepon">no WA :
-                                <input type="text" name="telepon" id="telepon" required autofocus>
+                            <label for="telepon">
+                                <input class="form-control" size="45" type="text" name="telepon" id="telepon" placeholder="No WA" required autofocus>
                             </label>
                         </div>
                         <div class="mb-4">
-                            <label for="tipe">Nama Barang :
-                                <input type="text" name="tipe" id="tipe"  required autofocus>
+                            <label for="tipe">
+                                <input class="form-control" size="45" type="text" name="tipe" id="tipe" placeholder="Nama Barang" required autofocus>
                             </label> 
                         </div>
                         <div class="mb-4">
-                            <label for="merek">Merek Barang : 
-                                <input type="text" name="merek" id="merek" required autofocus>
+                            <label for="merek">
+                                <input class="form-control" size="45" type="text" name="merek" id="merek" placeholder="Merek Barang" required autofocus>
                             </label>
                         </div>
                         <div class="mb-4"> 
-                            <label for="deskripsi">Deskripsi :
-                                <input type="text" name="deskripsi" id="deskripsi"  required autofocus>
+                            <label for="deskripsi">
+                                <input class="form-control" size="45" type="text" name="deskripsi" id="deskripsi" placeholder="Deskripsi Jelas"  required autofocus>
                             </label>
                         </div>
                         <div class="mb-4">
-                            <label for="lokasi">Lokasi Ditemukan :
-                                <input type="text" name="lokasi" id="lokasi"  required autofocus>
+                            <label for="lokasi">
+                                <input class="form-control" size="45" type="text" name="lokasi" id="lokasi" placeholder="Lokasi Ditemukan" required autofocus>
+                            </label>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="tanggal">Tanggal
+                                <input class="form-select" size="45" type="date" name="tanggal" id="tanggal" required autofocus>
                             </label>
                         </div>
                         <div class="mb-4">
-                            <label for="tanggal">Tanggal :
-                                <input type="date" name="tanggal" id="tanggal" required autofocus>
+                            <label for="waktu">Waktu
+                                <input class="form-control" size="45" type="time" name="waktu" id="waktu" required autofocus>
                             </label>
                         </div>
                         <div class="mb-4">
-                            <label for="waktu">Waktu :
-                                <input type="time" name="waktu" id="waktu" required autofocus>
-                            </label>
-                        </div>
-                        <div class="mb-4">
-                            <label for="gambar">Masukan Gambar Jika Ada :
-                                <input type="file" name="gambar" id="gambar">
-                            </label>
+                            <label for="formFile" class="form-label">Masukan Gambar</label>
+                            <input class="form-control" type="file" id="formFile" name="gambar">
                         </div>
                         <div class="d-flex justify-content-center">
                             <label for="submit">
@@ -97,15 +97,12 @@ if(isset($_POST["submit"]) ) {
                             </label>
                         </div>
                         <br>
-                        <div class="d-flex justify-content-center">
-                            <a href="admin.php">Kembali</a>
-                        </div>
                     </form>
                 </div>
             </div>
         </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
     </body>    
 </html>
-
-
 

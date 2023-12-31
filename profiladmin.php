@@ -23,8 +23,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/bootstrap/css/LoginAdminstyle.css">
         <link rel="stylesheet" href="assets/bootstrap/css/profiladmin.css">
-        <link rel="stylesheet" href="assets/bootstrap/css/adminpage.css">
-        
+        <link rel="stylesheet" href="assets/bootstrap/css/adminpage2.css">
         <title>MISSING CENTER</title>
     </head>
     <body>
@@ -34,8 +33,8 @@
             <h1 class="logo">Profil</h1>
             <nav>
                 <ul>
-                    <li><a href="admin.php">kembali</a></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <a href="ubah3.php?id=<?= $row["iduser"]; ?>" class="btn" style="color:white; padding:5px;"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-edit" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h3.5" /><path d="M18.42 15.61a2.1 2.1 0 0 1 2.97 2.97l-3.39 3.42h-3v-3l3.42 -3.39z" /></svg><br>Ubah<br>Profil</a>
+                    <a href="admin.php" class="btn" style="color:white; padding:5px;" ><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-back-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 14l-4 -4l4 -4" /><path d="M5 10h11a4 4 0 1 1 0 8h-1" /></svg><br>Kembali</a>
                 </ul>
             </nav>
         </header>
@@ -60,8 +59,6 @@
                             <a href="#" onclick="redirWhatsapp(<?= $row['nowa']; ?>)"> <?php echo $row["nowa"];?> </a>
                             </p>
                         </div>
-                        <a href="ubah3.php?id=<?= $row["iduser"]; ?>">ubah profil</a>
-
                     </div>
                 </div>
             </div>

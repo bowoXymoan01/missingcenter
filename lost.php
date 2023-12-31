@@ -27,7 +27,7 @@ if ( isset($_POST["cari"])){
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/bootstrap/css/LoginAdminstyle.css">
         <link rel="stylesheet" href="assets/bootstrap/css/landing_page.css">
-        <link rel="stylesheet" href="assets/bootstrap/css/adminpage.css">
+        <link rel="stylesheet" href="assets/bootstrap/css/adminpage2.css">
 
         <title>MISSING CENTER</title>
     </head>
@@ -38,14 +38,14 @@ if ( isset($_POST["cari"])){
             <h1 class="logo">Barang Temuan & Hilang</h1>
             <nav>
                 <ul>
-                    <li><a href="admin.php">Kembali</a></li>
+                    <a href="admin.php" class="btn" style="color:white; padding:5px;" ><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-back-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 14l-4 -4l4 -4" /><path d="M5 10h11a4 4 0 1 1 0 8h-1" /></svg><br>Kembali</a>
                 </ul>
             </nav>
             <form action="" method="post">
-                <dv class="mb-4">
-                    <input type="text" name="keyword" size="40" placeholder="masukan keyword yang anda cari" autocomplete="off" > 
-                    <button class="btn-cta" type="submit" name="cari" >cari</button>
-                </dv>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Cari" aria-label="Recipient's username" aria-describedby="basic-addon1" name="keyword" size="50">
+                    <button class="input-group-text" id="basic-addon1" type="sumbit"  name="cari">Cari</button>
+                </div>
             </form>
         </header>
         <h1>Barang Temuan</h1> <p>( daftar barang inputan dari Admin)</p>

@@ -340,7 +340,7 @@ function form_kontak_kami($data) {
     $telepon = htmlspecialchars($data["telepon"]);
     $pesan = htmlspecialchars($data["pesan"]);
 
-    mysqli_query($conn, "INSERT INTO kontak_kami VALUES ('','$nama','$email','$nim','$telepon','$pesan')");
+    mysqli_query($conn, "INSERT INTO kontak_kami VALUES ('','$nama','$email','$nim','$telepon','$pesan',current_timestamp())");
     return mysqli_affected_rows($conn);
 
 }

@@ -22,7 +22,7 @@ $pesan = query("SELECT id, nama, email,nim,telepon, pesan, CONCAT(DATE_FORMAT(wa
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/bootstrap/css/LoginAdminstyle.css">
     <link rel="stylesheet" href="assets/bootstrap/css/profiladmin.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/adminpage.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/adminpage2.css">
     <title>Document</title>
 </head>
 <body>
@@ -31,7 +31,7 @@ $pesan = query("SELECT id, nama, email,nim,telepon, pesan, CONCAT(DATE_FORMAT(wa
         <h1 class="logo">Pesan dari Mahasiswa</h1>
         <nav>
             <ul>
-                <li><a href="user.php">kembali</a></li>
+                <a href="admin.php" class="btn" style="color:white; padding:5px;" ><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-back-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 14l-4 -4l4 -4" /><path d="M5 10h11a4 4 0 1 1 0 8h-1" /></svg><br>Kembali</a>
             </ul>
         </nav>
     </header>
