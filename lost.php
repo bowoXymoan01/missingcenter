@@ -49,7 +49,7 @@ if ( isset($_POST["cari"])){
             </form>
         </header>
         <h1>Barang Temuan</h1> <p>( daftar barang inputan dari Admin)</p>
-        <table style="padding: 5px; border: 1px solid black;" border="1" cellpadding="20" cellspacing="0" class="table table-bordered table-striped table-hover">
+        <table style="padding: 5px; border: 1px solid black;" border="1" cellpadding="10" cellspacing="0" class="table table-bordered table-striped table-hover">
             <tr>
                 <th>No.</th>
                 <th>Aksi</th>
@@ -89,7 +89,7 @@ if ( isset($_POST["cari"])){
             <?php endforeach; ?>
         </table>
         <h1>Barang Hilang</h1> <p>( daftar barang inputan dari Mahasiswa)</p>
-        <table style="padding: 5px; border: 1px solid black;" border="1" cellpadding="20" cellspacing="0" class="table table-bordered table-striped table-hover">
+        <table style="padding: 5px; border: 1px solid black;" border="1" cellpadding="10" cellspacing="0" class="table table-bordered table-striped table-hover">
             <tr>
                 <th>No. </th>
                 <th>Aksi </th>

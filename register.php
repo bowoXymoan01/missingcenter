@@ -36,7 +36,7 @@ if(isset($_POST["register"]) ) {
 <body>
     <header>
         <img src="img/ellipse_2.png" alt="missingcenter-logo" class="logo1" />
-        <h1 class="logo">MISSING CENTER</h1>
+        <h1 class="logo">Daftar Akun Admin</h1>
         <nav>
             <ul>
                 <a href="admin.php" class="btn" style="color:white; padding:5px;" ><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-back-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 14l-4 -4l4 -4" /><path d="M5 10h11a4 4 0 1 1 0 8h-1" /></svg><br>Kembali</a>
@@ -46,7 +46,6 @@ if(isset($_POST["register"]) ) {
     <main class="container md-12">				 
         <div class="row justify-content-center">
             <div class="col-md-9 box">
-                <h2 class="text-center">DAFTAR ADMIN</h2>
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="mb-4">
                         <label for="nama">
@@ -90,7 +89,7 @@ if(isset($_POST["register"]) ) {
                         </div>
                     <br>
                     <div class="mb-4">
-                        <button class="btn" type="submit" name="register">Daftarkan</button>
+                        <button class="btn" type="submit" name="register" style="color:white;">Daftarkan</button>
                     </div>
                 </form>
             </div>

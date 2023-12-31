@@ -43,6 +43,8 @@ if(isset($_POST["submit"] ) ) {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/bootstrap/css/LoginAdminstyle.css">
         <link rel="stylesheet" href="assets/bootstrap/css/landing_page.css">
+        <link rel="stylesheet" href="assets/bootstrap/css/adminpage2.css">
+
         <title>MISSING CENTER</title>
     </head>
     <body>
@@ -51,7 +53,10 @@ if(isset($_POST["submit"] ) ) {
             <img src="img/ellipse_2.png" alt="missingcenter-logo" class="logo1" />
             <h1 class="logo">MISSING CENTER</h1>
             <nav>
-                
+                <ul>
+                    <a href="lost.php" class="btn" style="color:white; padding:5px;" ><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-back-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 14l-4 -4l4 -4" /><path d="M5 10h11a4 4 0 1 1 0 8h-1" /></svg><br>Kembali</a>
+
+                </ul>
             </nav>
         </header>
         <main class="container">      
@@ -63,43 +68,43 @@ if(isset($_POST["submit"] ) ) {
                         <input type="hidden" name="gambarlama" value="<?= $barang_temuan["gambar"];?>" >
                         <div class="mb-4">
                             <label for="nama">
-                                <input type="text" name="nama" id="nama" placeholder="Nama Penemu" required autofocus
+                                <input class="form-control" size="40" type="text" name="nama" id="nama" placeholder="Nama Penemu" required autofocus
                                 value="<?=$barang_temuan["nama"];?>">
                             </label>
                         </div>
                         <div class="mb-4">
                             <label for="telepon">
-                                <input type="text" name="telepon" id="telepon" placeholder="telepon Penemu" required autofocus
+                                <input class="form-control" size="40" type="text" name="telepon" id="telepon" placeholder="telepon Penemu" required autofocus
                                 value="<?=$barang_temuan["telepon"];?>">
                             </label>
                         </div>
                         <div class="mb-4">
                             <label for="tipe">
-                                <input type="text" name="tipe" id="tipe" placeholder="Nama Barang" required autofocus
+                                <input class="form-control" size="40" type="text" name="tipe" id="tipe" placeholder="Nama Barang" required autofocus
                                 value="<?=$barang_temuan["tipe"];?>">
                             </label> 
                         </div>
                         <div class="mb-4">
                             <label for="merek">
-                                <input type="text" name="merek" id="merek" placeholder="Merek" required autofocus
+                                <input class="form-control" size="40" type="text" name="merek" id="merek" placeholder="Merek" required autofocus
                                 value="<?=$barang_temuan["merek"];?>">
                             </label>
                         </div>
                         <div class="mb-4">
                             <label for="deskripsi">
-                                <input type="text" name="deskripsi" id="deskripsi" placeholder="deskripsi" required autofocus
+                                <input class="form-control" size="40" type="text" name="deskripsi" id="deskripsi" placeholder="deskripsi" required autofocus
                                 value="<?=$barang_temuan["deskripsi"];?>">
                             </label>
                         </div>
                         <div class="mb-4">
                             <label for="lokasi">
-                                <input type="text" name="lokasi" id="lokasi" placeholder="Tempat ditemukan" required autofocus
+                                <input class="form-control" size="40" ="text" name="lokasi" id="lokasi" placeholder="Tempat ditemukan" required autofocus
                                 value="<?=$barang_temuan["lokasi"];?>">
                             </label>
                         </div>
                         <div class="mb-4">
                             <label for="status">Status
-                                <select type="text" name="status" id="status" required autofocus>
+                                <select class="form-control"  type="text" name="status" id="status" required autofocus>
                                     <option value="<?=$barang_temuan["status"];?>"><?php echo $barang_temuan["status"];?></option>
                                     <option>belum ditemukan</option>
                                     <option>diproses</option>
@@ -110,13 +115,13 @@ if(isset($_POST["submit"] ) ) {
                         </div>
                         <div class="mb-4">
                             <label for="tanggal">Tanggal
-                                <input type="date" name="tanggal" id="tanggal" required autofocus
+                                <input class="form-control" type="date" name="tanggal" id="tanggal" required autofocus
                                 value="<?=$barang_temuan["tanggal"];?>">
                             </label>
                         </div>
                         <div class="mb-4">
                             <label for="waktu">Waktu: 
-                                <input type="time" name="waktu" id="waktu" required autofocus
+                                <input class="form-control"  type="time" name="waktu" id="waktu" required autofocus
                                 value="<?=$barang_temuan["waktu"];?>">
                             </label>
                         </div>
@@ -124,17 +129,14 @@ if(isset($_POST["submit"] ) ) {
                             <label for="gambar">Masukan Gambar Jika Ada
                                 <br>
                                 <img src="img/<?= $barang_temuan["gambar"];?>" alt="gambar" width="250">
-                                <input type="file" name="gambar" id="gambar">
+                                <label for="formFile" class="form-label"></label>
+                                <input class="form-control" type="file" id="formFile" name="gambar">
                             </label>
                         </div>
                         <div class="d-flex justify-content-center">
                             <label for="submit">
-                                <button class="btn" type="submit" name="submit" id="submit"  for="submit">Simpan</button>
+                                <button class="btn" type="submit" name="submit" id="submit"  for="submit" style="color:white;">Ubah</button>
                             </label>
-                        </div>
-                        <br>
-                        <div class="d-flex justify-content-center">
-                            <a href="admin.php">Kembali</a>
                         </div>
                     </form>
                 </div>

@@ -6,10 +6,9 @@
         <title>Bootstrap demo</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="assets/bootstrap/css/adminpage.css">
         <link rel="stylesheet" href="assets/bootstrap/css/kontak.css">
         <link rel="stylesheet" href="assets/bootstrap/css/LoginAdminstyle.css">
-
+        <link rel="stylesheet" href="assets/bootstrap/css/adminpage2.css">
     </head>
     <body>
         <header>
@@ -17,7 +16,7 @@
             <h1 class="logo">Kontak Admin</h1>
             <nav>
                 <ul>
-                    <li><a href="index.html">Kembali</a></li>
+                    <a href="index.html" class="btn" style="color:white; padding:5px;" ><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-back-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 14l-4 -4l4 -4" /><path d="M5 10h11a4 4 0 1 1 0 8h-1" /></svg><br>Kembali</a>
                 </ul>
             </nav>
         </header>
@@ -43,15 +42,16 @@
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="fotoprofil/<?php echo $row['gambar']; ?>" class="img-fluid rounded-start" alt="...">
+                                <img src="fotoprofil/<?php echo $row['gambar']; ?>" class="img-fluid rounded-start" alt="..." style="border-radius: 50%;">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h5 class="card-title"><?php echo $row['nama']; ?></h5>
+                                    <h4 class="card-title"><?php echo $row['nama']; ?></h4>
+                                    <hr>
                                     <p class="card-text"><?php echo $row['nowa']; ?></p>
                                     <a href="#" onclick="redirWhatsapp(<?= $row['nowa']; ?>)" class="btn" target="_blank">Hubungi</a>
-                                    <h3>SAYA SATPOL!</h3>
-                                    
+                                    <hr>
+                                    <p>Kebenaran.. takkan pernah takut.<br>`papa zola`</p>
                                 </div>
                             </div>
                         </div>

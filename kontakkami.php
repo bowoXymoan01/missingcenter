@@ -42,16 +42,19 @@ if(mysqli_num_rows($result) > 0 ){
     <link rel="stylesheet" href="assets/bootstrap/css/LoginAdminstyle.css">
     <link rel="stylesheet" href="assets/bootstrap/css/landing_page.css">
     <link rel="stylesheet" href="assets/bootstrap/css/style.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/adminpage2.css">
+
     <title>Form Kontak</title>
 </head>
 
 <body>
 <header>
     <img src="img/ellipse_2.png" alt="missingcenter-logo" class="logo1" />
-    <h1 class="logo">Form Kontak</h1>
+    <h1 class="logo">Kirim Pesan</h1>
     <nav>
         <ul>
-            <li><button class="btn-cta"><a href="user.php">Kembali</a></button></li> 
+            <a href="user.php" class="btn" style="color:white; padding:5px;" ><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-back-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 14l-4 -4l4 -4" /><path d="M5 10h11a4 4 0 1 1 0 8h-1" /></svg><br>Kembali</a>
+
         </ul>
     </nav>
 </header>
@@ -69,32 +72,32 @@ if(mysqli_num_rows($result) > 0 ){
                 <form action="" action="" method="post" enctype="multipart/form-data">
                     <div class="mb-4">
                         <label for="nama">
-                            <input type="text" name="nama" id="nama" placeholder="Nama" value="<?=$row['nama_lengkap']?>" required autofocus>
+                            <input class="form-control" type="text" name="nama" id="nama" placeholder="Nama" value="<?=$row['nama_lengkap']?>" required autofocus>
                         </label>
                     </div>
                     <div class="mb-4">
                         <label for="email">
-                            <input type="text" name="email" id="email" placeholder="email" value="<?=$row['username']?>" required autofocus>
+                            <input class="form-control" type="text" name="email" id="email" placeholder="email" value="<?=$row['username']?>" required autofocus>
                         </label>
                     </div>
                     <div class="mb-4">
                         <label for="nim">
-                            <input type="text" name="nim" id="nim" placeholder="nim" value="<?=$row['nim']?>" required autofocus>
+                            <input class="form-control" type="text" name="nim" id="nim" placeholder="nim" value="<?=$row['nim']?>" required autofocus>
                         </label>
                     </div>
                     <div class="mb-4">
                         <label for="telepon">
-                            <input type="phone" name="telepon" id="telepon" placeholder="telepon" value="<?=$row['no_wa']?>" required autofocus>
+                            <input class="form-control" type="phone" name="telepon" id="telepon" placeholder="telepon" value="<?=$row['no_wa']?>" required autofocus>
                         </label>
                     </div>
                     <div class="mb-4">
                         <label for="pesan">
-                            <input type="text" name="pesan" id="pesan" placeholder="pesan" required autofocus>
+                            <input class="form-control" type="text" name="pesan" id="pesan" placeholder="pesan" required autofocus>
                         </label>
                     </div>
                     <div class="d-flex justify-content-center">
                         <label for="submit">
-                            <button class="btn" type="submit" name="submit" id="submit"  for="submit">Kirim</button>
+                            <button  class="btn" type="submit" name="submit" id="submit"  for="submit" style="color:white;" >Kirim</button>
                         </label>
                     </div>
                 </form>

@@ -80,7 +80,7 @@ function editFotoProfilUser(){
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/bootstrap/css/LoginAdminstyle.css">
         <link rel="stylesheet" href="assets/bootstrap/css/landing_page.css">
-        <link rel="stylesheet" href="assets/bootstrap/css/adminpage.css">
+        <link rel="stylesheet" href="assets/bootstrap/css/adminpage2.css">
 
         <title>MISSING CENTER</title>
     </head>
@@ -91,7 +91,7 @@ function editFotoProfilUser(){
             <h1 class="logo">MISSING CENTER</h1>
             <nav>
                 <ul>
-                    <li><a href="user.php">kembali</a></li>
+                    <a href="profiluser.php" class="btn" style="color:white; padding:5px;" ><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-back-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 14l-4 -4l4 -4" /><path d="M5 10h11a4 4 0 1 1 0 8h-1" /></svg><br>Kembali</a>
                 </ul>
             </nav>
         </header>
@@ -104,31 +104,31 @@ function editFotoProfilUser(){
                     <input type="hidden" name="gambarlama" value="<?= $row["gambar"];?>" >
                     <div class="mb-4">
                         <label for="nama">Nama
-                            <input class="form-control" id="nama"  for="nama" 
+                            <input size="30" class="form-control" id="nama"  for="nama" 
                             placeholder="Nama Lengkap" name="nama" type="text" value="<?=$row["nama_lengkap"];?>"/>
                         </label>
                     </div>
                     <div class="mb-4">
                         <label for="username">Email
-                            <input class="form-control" id="username" for="username" 
+                            <input size="30" class="form-control" id="username" for="username" 
                             placeholder="Username" name="username" type="email" value="<?=$row["username"];?>" />
                         </label>
                     </div>
                     <div class="mb-4">
                         <label for="nim">NIM
-                            <input class="form-control" id="nim" for="nim" 
+                            <input size="30" class="form-control" id="nim" for="nim" 
                             placeholder="Nim" name="nim" type="text" value="<?=$row["nim"];?>" />
                         </label>
                     </div>
                     <div class="mb-4">
                         <label for="nowa">No WA
-                            <input class="form-control" id="nowa" for="nowa" 
+                            <input size="30" class="form-control" id="nowa" for="nowa" 
                             placeholder="No WA" name="no_wa" type="text" value="<?=$row["no_wa"];?>" />
                         </label>
                     </div>
                     <div class="mb-4">
                         <label for="nowa">Password
-                            <input class="form-control" id="password" for="password" 
+                            <input size="30" class="form-control" id="password" for="password" 
                             placeholder="Password" name="user_password" type="text"/>
                         </label>
                     </div>
@@ -136,16 +136,14 @@ function editFotoProfilUser(){
                     <div class="mb-4">
                             <label for="gambar">ubah foto
                                 <br>
-                                <img src="fotoprofil/<?= $row["gambar"];?>" alt="gambar" width="250">
-                                <input type="file" name="gambar" id="gambar">
+                                <img src="fotoprofil/<?= $row["gambar"];?>" alt="" width="250">
+                                <label for="formFile" class="form-label">Masukan Gambar</label>
+                                <input class="form-control" type="file" id="formFile" name="gambar">
                             </label>
                         </div>
                     <br>
                     <div class="mb-4">
-                        <button class="btn" type="submit" name="ubah" onclick="return confirm('Pastikan data ada yang dirubah!, klik batal untuk batalkan edit, klik ok untuk lanjutkan');">Update Profile</button>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <a href="admin.php">Kembali</a>
+                        <button class="btn" type="submit" name="ubah" onclick="return confirm('Pastikan data ada yang dirubah!, klik batal untuk batalkan edit, klik ok untuk lanjutkan');" style="color:white;" >Update Profile</button>
                     </div>
                 </form>
             </div>
@@ -173,7 +171,7 @@ function editFotoProfilUser(){
         if(empty($nama) OR empty($username) OR empty($nowa) OR empty($nim) OR empty($gambar)){
             echo "Field masih Kosong";
         }else {
-            if(filter_var($username, FILTER_VALIDATE_EMAIL)){
+            if(!filter_var($username, FILTER_VALIDATE_EMAIL)){
                 echo "masukan Email degan benar 'gunakan @' !";
             }else{
                 if (empty($user_password)){

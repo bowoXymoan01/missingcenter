@@ -93,7 +93,7 @@ if(isset($_POST["submit"]) ) {
                         </div>
                         <div class="d-flex justify-content-center">
                             <label for="submit">
-                                <button class="btn" type="submit" name="submit" id="submit"  for="submit">Simpan</button>
+                                <button class="btn" type="submit" name="submit" id="submit"  for="submit" style="color:white;" >Simpan</button>
                             </label>
                         </div>
                         <br>

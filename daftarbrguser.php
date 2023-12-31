@@ -38,6 +38,7 @@ $barang_hilang = query(" SELECT * FROM barang_hilang WHERE nama = '{$_SESSION["u
     <link rel="stylesheet" href="assets/bootstrap/css/LoginAdminstyle.css">
     <link rel="stylesheet" href="assets/bootstrap/css/landing_page.css">
     <link rel="stylesheet" href="assets/bootstrap/css/kontak.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/adminpage2.css">
     <title>MISSING CENTER</title>
 </head>
 <body>
@@ -47,8 +48,7 @@ $barang_hilang = query(" SELECT * FROM barang_hilang WHERE nama = '{$_SESSION["u
         <h1 class="logo">Barang Hilang Saya</h1>
         <nav>
             <ul>
-                <li><button class="btn-cta"><a href="baranghilang.php">Laporkan barang hilang</a></button></li>
-                <li><button class="btn-cta"><a href="user.php">Kembali</a></button></li> 
+                <a href="user.php" class="btn" style="color:white; padding:5px;" ><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-back-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 14l-4 -4l4 -4" /><path d="M5 10h11a4 4 0 1 1 0 8h-1" /></svg><br>Kembali</a>
             </ul>
         </nav>
         <!-- <form action="" method="post">
@@ -58,7 +58,7 @@ $barang_hilang = query(" SELECT * FROM barang_hilang WHERE nama = '{$_SESSION["u
             </dv>
         </form> -->
     </header>
-    halaman
+    Halaman
     <?php if( $halamanaktif > 1):?>
         <a class="btn" href="?halaman=<?= $halamanaktif - 1; ?>">&laquo;</a>
     <?php endif; ?>
