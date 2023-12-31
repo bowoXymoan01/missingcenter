@@ -64,7 +64,7 @@ textarea {
 
 input:focus,
 textarea:focus {
-    outline: 1px solid #5E7C60;
+    outline: 1px solid black;
 }
 
 button {
