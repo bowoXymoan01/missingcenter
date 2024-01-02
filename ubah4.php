@@ -171,7 +171,7 @@ function editFotoProfilUser(){
         if(empty($nama) OR empty($username) OR empty($nowa) OR empty($nim) OR empty($gambar)){
             echo "Field masih Kosong";
         }else {
-            if(!filter_var($username, FILTER_VALIDATE_EMAIL)){
+            if(filter_var($username, FILTER_VALIDATE_EMAIL)){
                 echo "masukan Email degan benar 'gunakan @' !";
             }else{
                 if (empty($user_password)){
