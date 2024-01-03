@@ -61,12 +61,12 @@
         <h1 class="logo">Masuk</h1>
         <nav>
             <ul>
-                <a href="loginadmin.php" class="btn" style="color:white; padding:5px;"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><path d="M21 21v-2a4 4 0 0 0 -3 -3.85" /></svg><br>Masuk<br>Admin</a>
                 <a href="index.html" class="btn" style="color:white; padding:5px;" ><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-back-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 14l-4 -4l4 -4" /><path d="M5 10h11a4 4 0 1 1 0 8h-1" /></svg><br>Kembali</a>
+                <a href="loginadmin.php" class="btn" style="color:white; padding:5px;"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><path d="M21 21v-2a4 4 0 0 0 -3 -3.85" /></svg><br>Masuk<br>Admin</a>
             </ul>
         </nav>
     </header>
-    <main class="container md-10">      
+    <main class="container md-10">
         <div class="row justify-content-center">
             <div class="col-md-12 box">
                 <form action="" method="post">
@@ -87,6 +87,7 @@
 						type="submit" name="login" value="Masuk"/>
                     </div>
                     <div class="d-flex justify-content-center">
+                        Anda Belum Punya Akun?
                         <a class="btn" href="daftarmhs.php">Buat akun</a>
                     </div>
                 </form>

@@ -8,7 +8,7 @@ include_once "function.php";
 if(isset($_POST["submit"]) ) {
 
     if( tambah($_POST) > 0) {
-        header("Location:sukses.php");
+        echo "<script>alert('Barang Anda Berhasil Ditambahkan, Tunggu Admin akan Segera Memprosesnya!')</script>";
     } 
     else {
         echo "<script>alert('Data Gagal ditambahkan');</script>";  

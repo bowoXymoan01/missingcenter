@@ -77,7 +77,7 @@ if(isset($_POST["register"]) ) {
                         </label>
                     </div>
                     <div class="mb-4">
-                            <label for="formFile" class="form-label">Masukan Foto yang ada di KTM anda!</label>
+                            <label for="formFile" class="form-label" style="color:red; font:italic;"  >Masukan Foto yang ada di KTM anda!</label>
                             <input class="form-control" type="file" id="formFile" name="gambar">
                     </div>
                     <div class="mb-4">
