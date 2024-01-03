@@ -66,7 +66,7 @@
             </ul>
         </nav>
     </header>
-    <main class="container md-10">      
+    <main class="container md-10">
         <div class="row justify-content-center">
             <div class="col-md-12 box">
                 <form action="" method="post">

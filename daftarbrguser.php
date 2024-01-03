@@ -8,7 +8,7 @@ if( !isset($_SESSION["user"])){
 
 //pagination
 //konfiguration
-$jumlahdataperhalaman =  3 ;
+$jumlahdataperhalaman =  4 ;
 $jumlahdata = count(query("SELECT * FROM barang_hilang WHERE nama = '{$_SESSION["user"]}'"));
 $jumlahhalaman = ceil($jumlahdata / $jumlahdataperhalaman);
 $halamanaktif = ( isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
@@ -58,6 +58,7 @@ $barang_hilang = query(" SELECT * FROM barang_hilang WHERE nama = '{$_SESSION["u
             </dv>
         </form> -->
     </header>
+    <br>
     Halaman
     <?php if( $halamanaktif > 1):?>
         <a class="btn" href="?halaman=<?= $halamanaktif - 1; ?>">&laquo;</a>
@@ -72,6 +73,7 @@ $barang_hilang = query(" SELECT * FROM barang_hilang WHERE nama = '{$_SESSION["u
     <?php if( $halamanaktif < $jumlahhalaman):?>
         <a class="btn" href="?halaman=<?= $halamanaktif + 1; ?>">&raquo;</a>
     <?php endif; ?>
+    <br>
     <br>
     <!-- <table border="2" cellpadding="20" cellspacing="20" class="table" >
         <tr>
@@ -101,34 +103,27 @@ $barang_hilang = query(" SELECT * FROM barang_hilang WHERE nama = '{$_SESSION["u
             <?php $i++; ?>
             <?php endforeach; ?>
     </table> -->
-    <div class="row row-cols-10 row-cols-md-1 g-1">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
         <?php foreach ($barang_hilang as $row) : ?>
-        <div class="card mb-5 card text-bg-light mb-1" style="max-width: 500px;">
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <img src="img/<?= $row["gambar"]; ?>" class="img-fluid rounded-start" alt="..." width="700">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h3 class="card-title"><?= $row["namabarang"]; ?></h3>
-                        <hr>
-                        <p class="card-text" >
-                            Nama Pemilik        :   <?= $row["nama"]; ?><br>
-                            <hr>
-                            Tempat Kehilangan   :   <?= $row["tempatkehilangan"]; ?><br>
-                            <hr>
-                            Tanggal Hilang      :   <?= $row["tglhilang"]; ?><br>
-                            <hr>
-                            Waktu Hilang        :   <?= $row["wkthilang"]; ?><br>
-                            <hr>
-                            Status: <?= $row["status"]; ?>
-                        </p>
+            <div class="card border-secondary  mb-3" style="width: 18rem;">
+                <img src="img/<?= $row["gambar"]; ?>"class="card-img-top" alt="Tidak Ada Gambar">
+                <div class="card-body">
+                    <h3 class="card-title"><?= $row["namabarang"]; ?></h3>
+                    <hr>
+                    <p class="card-text" style="font-family: Arial, Helvetica, sans-serif;" >
+                        Nama Pemilik        :   <?= $row["nama"]; ?><br>
+                        Tempat Kehilangan   :   <?= $row["tempatkehilangan"]; ?><br>
+                        Tanggal Hilang      :   <?= $row["tglhilang"]; ?><br>
+                        Waktu Hilang        :   <?= $row["wkthilang"]; ?><br>
+                    </p>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Status:<?= $row["status"]; ?></small>
                     </div>
                 </div>
             </div>
-        </div>
         <?php endforeach; ?>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
+
