@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bootstrap demo</title>
+        <title>Kontak Admin</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="assets/bootstrap/css/kontak.css">
@@ -23,15 +23,15 @@
         <br>
         <br>
         <?php
-            // Database connection details (replace with your actual credentials)
+
             include_once "mysqli-connect.php";    
             // Check connection
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
         
-            // Retrieve data from the database
-            $sql = "SELECT * FROM pengguna";  // Replace with your actual table name
+           
+            $sql = "SELECT * FROM pengguna";  
             $result = $conn->query($sql);
         
             if ($result->num_rows > 0) {
@@ -51,7 +51,7 @@
                                     <p class="card-text"><?php echo $row['nowa']; ?></p>
                                     <a href="#" onclick="redirWhatsapp(<?= $row['nowa']; ?>)" class="btn" target="_blank">Hubungi</a>
                                     <hr>
-                                    <p>Kebenaran.. takkan pernah takut.<br>`papa zola`</p>
+                                    <p>Tetaplah Bernafas Walaupun Tidak Berguna<br>- NA 44</p>
                                 </div>
                             </div>
                         </div>
